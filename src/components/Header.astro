@@ -1,33 +1,15 @@
 ---
 import Icon from './Icon.astro';
-
-const pathname = Astro.url.pathname;
-const navItems = [
-  { href: '/posts/', label: '글' },
-  { href: '/categories/', label: '분류' },
-  { href: '/about/', label: '소개' },
-];
+import { SITE } from '../consts';
 ---
 
 <header class="site-header">
   <div class="header-inner">
-    <a class="wordmark" href="/" aria-label="ludens.dev 홈">ludens<span>.dev</span></a>
-    <nav aria-label="주요 탐색">
-      {
-        navItems.map((item) => (
-          <a
-            class:list={{ active: pathname.startsWith(item.href) }}
-            href={item.href}
-          >
-            {item.label}
-          </a>
-        ))
-      }
-    </nav>
+    <a class="wordmark" href="/" aria-label="Ludens.dev 홈">Ludens.dev</a>
     <div class="header-actions">
-      <button class="icon-button search-trigger" type="button" aria-label="글 검색" title="글 검색">
-        <Icon name="search" />
-      </button>
+      <a class="icon-button" href={SITE.github} target="_blank" rel="noreferrer" aria-label="Ludens GitHub" title="GitHub">
+        <Icon name="github" />
+      </a>
       <button class="icon-button theme-toggle" type="button" aria-label="테마 전환" title="테마 전환">
         <span class="sun-icon"><Icon name="sun" /></span>
         <span class="moon-icon"><Icon name="moon" /></span>

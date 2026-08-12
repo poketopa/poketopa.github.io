@@ -11,6 +11,7 @@ const posts = defineCollection({
     updatedAt: z.coerce.date().optional(),
     category: z.enum(['Development', 'Retrospective', 'Books']),
     tags: z.array(z.string()).default([]),
+    cover: z.string().optional(),
     draft: z.boolean().default(false),
   }),
 });

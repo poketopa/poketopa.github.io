@@ -1,0 +1,27 @@
+---
+import { CATEGORY_LABELS } from '../consts';
+
+interface Props {
+  active?: string;
+}
+
+const { active = 'all' } = Astro.props;
+const items = [
+  { key: 'all', label: '전체', href: '/' },
+  ...Object.entries(CATEGORY_LABELS).map(([key, label]) => ({
+    key: key.toLocaleLowerCase(),
+    label,
+    href: `/categories/${key.toLocaleLowerCase()}/`,
+  })),
+];
+---
+
+<nav class="category-tabs" aria-label="글 분류">
+  {
+    items.map((item) => (
+      <a class:list={{ active: active === item.key }} href={item.href} aria-current={active === item.key ? 'page' : undefined}>
+        {item.label}
+      </a>
+    ))
+  }
+</nav>

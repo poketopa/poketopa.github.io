@@ -1,7 +1,7 @@
 ---
 import type { Post } from '../utils/posts';
 import { CATEGORY_LABELS } from '../consts';
-import { formatDate, readingTime } from '../utils/posts';
+import { formatDate } from '../utils/posts';
 
 interface Props {
   posts: Post[];
@@ -14,19 +14,20 @@ const { posts } = Astro.props;
   {
     posts.map((post) => (
       <article class="post-card">
-        <div class="post-meta">
-          <span>{formatDate(post.data.publishedAt)}</span>
-          <span aria-hidden="true">·</span>
-          <span>{readingTime(post.body ?? '')}분</span>
-          <span aria-hidden="true">·</span>
-          <a href={`/categories/${post.data.category.toLocaleLowerCase()}/`}>
-            {CATEGORY_LABELS[post.data.category]}
-          </a>
-        </div>
-        <h2><a href={`/posts/${post.id}/`}>{post.data.title}</a></h2>
-        <p>{post.data.description}</p>
-        <div class="tag-row" aria-label="태그">
-          {post.data.tags.map((tag) => <a href={`/tags/${encodeURIComponent(tag.toLocaleLowerCase())}/`}>#{tag}</a>)}
+        <a class="post-cover" href={`/posts/${post.id}/`} tabindex="-1" aria-hidden="true">
+          {post.data.cover ? <img src={post.data.cover} alt="" loading="lazy" /> : <span>{post.data.category.slice(0, 1)}</span>}
+        </a>
+        <div class="post-summary">
+          <h2><a href={`/posts/${post.id}/`}>{post.data.title}</a></h2>
+          <p>{post.data.description}</p>
+          <div class="post-meta">
+            <a class="category-badge" href={`/categories/${post.data.category.toLocaleLowerCase()}/`}>
+              {CATEGORY_LABELS[post.data.category]}
+            </a>
+            <span>Ludens</span>
+            <span aria-hidden="true">·</span>
+            <time datetime={post.data.publishedAt.toISOString()}>{formatDate(post.data.publishedAt)}</time>
+          </div>
         </div>
       </article>
     ))

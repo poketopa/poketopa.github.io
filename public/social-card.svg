@@ -1,9 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
-  <rect width="1200" height="630" fill="#f8fafc"/>
-  <circle cx="1070" cy="-20" r="330" fill="#eaf0fa"/>
-  <path d="M90 105h1020" stroke="#dfe5ec"/>
-  <text x="90" y="87" fill="#315da8" font-family="Arial, sans-serif" font-size="22" font-weight="700" letter-spacing="4">PLAY · LEARN · REFLECT</text>
-  <text x="90" y="285" fill="#18212f" font-family="Georgia, serif" font-size="92" font-weight="700">ludens.dev</text>
-  <text x="90" y="385" fill="#687386" font-family="Arial, sans-serif" font-size="38">개발하고, 읽고, 돌아보며 남기는 기록</text>
-  <text x="90" y="540" fill="#315da8" font-family="Arial, sans-serif" font-size="26" font-weight="700">LUDENS</text>
+  <rect width="1200" height="630" fill="#ffffff"/>
+  <circle cx="1035" cy="0" r="315" fill="#f0f8e5"/>
+  <path d="M90 112h1020" stroke="#e3e8df"/>
+  <path d="M90 112h130" stroke="#83c431" stroke-width="5"/>
+  <text x="90" y="330" fill="#1d241a" font-family="Georgia, serif" font-size="108" font-weight="700">Ludens.dev</text>
+  <text x="90" y="515" fill="#69a91d" font-family="Arial, sans-serif" font-size="26" font-weight="700" letter-spacing="5">DEVELOPMENT · RETROSPECTIVE · BOOKS</text>
 </svg>

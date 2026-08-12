@@ -4,7 +4,8 @@ description: "만들고 읽으며 배운 것을 오래 남기기 위한 첫 번�
 publishedAt: 2026-08-13
 category: Retrospective
 tags: [Blog, Writing]
-draft: true
+cover: /covers/welcome.svg
+draft: false
 ---
 
 이곳은 개발 과정에서 마주친 문제와 해결의 흔적, 프로젝트를 끝낸 뒤의 회고, 책을 읽고 오래 남은 생각을 남기는 공간입니다.

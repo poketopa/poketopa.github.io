@@ -1,7 +1,7 @@
 export const SITE = {
-  title: 'ludens.dev',
+  title: 'Ludens.dev',
   author: 'Ludens',
-  description: '개발하고, 읽고, 돌아보며 남기는 기록',
+  description: 'Ludens의 개발 기록, 회고, 독후감',
   url: 'https://poketopa.github.io',
   github: 'https://github.com/Poketopa',
 } as const;

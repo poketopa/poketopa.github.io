@@ -1,55 +1,26 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import PostList from '../components/PostList.astro';
-import Icon from '../components/Icon.astro';
-import { CATEGORY_LABELS } from '../consts';
+import CategoryTabs from '../components/CategoryTabs.astro';
 import { getPublishedPosts } from '../utils/posts';
 
 const posts = await getPublishedPosts();
-const latestPosts = posts.slice(0, 5);
 ---
 
 <BaseLayout>
-  <section class="hero container">
-    <p class="eyebrow">PLAY · LEARN · REFLECT</p>
-    <h1>개발하고, 읽고,<br /><span>돌아보며 남기는 기록</span></h1>
-    <p class="hero-description">
-      새로운 것을 만들고 배우며 마주친 고민과 깨달음을 기록합니다.<br />
-      개발과 회고, 그리고 책에서 건진 생각을 나눕니다.
-    </p>
-    <a class="primary-link" href="/posts/">글 보러가기 <Icon name="arrow" size={18} /></a>
-  </section>
-
-  <section class="home-section container">
-    <div class="section-heading">
-      <div>
-        <p class="eyebrow">RECENT WRITING</p>
-        <h2>최근 글</h2>
-      </div>
-      <a href="/posts/">전체 글 <Icon name="arrow" size={16} /></a>
-    </div>
+  <div class="index-shell container">
+    <CategoryTabs active="all" />
+    <section class="index-list" aria-label="전체 글">
     {
-      latestPosts.length > 0 ? (
-        <PostList posts={latestPosts} />
+      posts.length > 0 ? (
+        <PostList posts={posts} />
       ) : (
         <div class="empty-state">
-          <p>첫 번째 기록을 준비하고 있습니다.</p>
+          <strong>첫 번째 기록을 준비하고 있어요.</strong>
+          <p>개발, 회고, 독서에 대한 글이 이곳에 쌓입니다.</p>
         </div>
       )
     }
-  </section>
-
-  <section class="category-strip">
-    <div class="container category-grid">
-      {
-        Object.entries(CATEGORY_LABELS).map(([slug, label]) => (
-          <a href={`/categories/${slug.toLocaleLowerCase()}/`}>
-            <span>{label}</span>
-            <small>{slug}</small>
-            <Icon name="arrow" size={18} />
-          </a>
-        ))
-      }
-    </div>
-  </section>
+    </section>
+  </div>
 </BaseLayout>
