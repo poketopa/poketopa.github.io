@@ -1,0 +1,32 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Icon from '../../components/Icon.astro';
+import { CATEGORY_LABELS } from '../../consts';
+import { getPublishedPosts } from '../../utils/posts';
+
+const posts = await getPublishedPosts();
+---
+
+<BaseLayout title="분류" description="주제별로 보는 ludens.dev의 기록">
+  <div class="page-header container">
+    <p class="eyebrow">CATEGORIES</p>
+    <h1>분류</h1>
+    <p>관심있는 주제로 기록을 탐색해보세요.</p>
+  </div>
+  <section class="container category-page-grid">
+    {
+      Object.entries(CATEGORY_LABELS).map(([category, label]) => {
+        const count = posts.filter((post) => post.data.category === category).length;
+        return (
+          <a href={`/categories/${category.toLocaleLowerCase()}/`}>
+            <span class="category-number">0{Object.keys(CATEGORY_LABELS).indexOf(category) + 1}</span>
+            <h2>{label}</h2>
+            <p>{category}</p>
+            <small>{count}개의 글</small>
+            <Icon name="arrow" />
+          </a>
+        );
+      })
+    }
+  </section>
+</BaseLayout>

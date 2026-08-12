@@ -1,0 +1,77 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import { CATEGORY_LABELS } from '../consts';
+import { formatDate, readingTime, type Post } from '../utils/posts';
+
+interface Props {
+  post: Post;
+  previous?: Post;
+  next?: Post;
+  headings: { depth: number; slug: string; text: string }[];
+}
+
+const { post, previous, next, headings } = Astro.props;
+const toc = headings.filter((heading) => heading.depth === 2 || heading.depth === 3);
+---
+
+<BaseLayout title={post.data.title} description={post.data.description} article>
+  <article class="article-shell">
+    <header class="article-header">
+      <div class="post-meta">
+        <a href={`/categories/${post.data.category.toLocaleLowerCase()}/`}>
+          {CATEGORY_LABELS[post.data.category]}
+        </a>
+        <span aria-hidden="true">·</span>
+        <time datetime={post.data.publishedAt.toISOString()}>{formatDate(post.data.publishedAt)}</time>
+        <span aria-hidden="true">·</span>
+        <span>{readingTime(post.body ?? '')}분 읽기</span>
+      </div>
+      <h1>{post.data.title}</h1>
+      <p>{post.data.description}</p>
+      <div class="tag-row">
+        {post.data.tags.map((tag) => <a href={`/tags/${encodeURIComponent(tag.toLocaleLowerCase())}/`}>#{tag}</a>)}
+      </div>
+    </header>
+
+    <div class="article-grid">
+      <div class="prose">
+        <slot />
+      </div>
+      {
+        toc.length > 0 && (
+          <aside class="toc" aria-label="목차">
+            <strong>목차</strong>
+            <ol>
+              {toc.map((heading) => (
+                <li class:list={{ nested: heading.depth === 3 }}>
+                  <a href={`#${heading.slug}`}>{heading.text}</a>
+                </li>
+              ))}
+            </ol>
+          </aside>
+        )
+      }
+    </div>
+
+    <nav class="post-navigation" aria-label="이전 및 다음 글">
+      {
+        previous ? (
+          <a class="previous" href={`/posts/${previous.id}/`}>
+            <span>이전 글</span>
+            <strong>{previous.data.title}</strong>
+          </a>
+        ) : <span />
+      }
+      {
+        next && (
+          <a class="next" href={`/posts/${next.id}/`}>
+            <span>다음 글</span>
+            <strong>{next.data.title}</strong>
+          </a>
+        )
+      }
+    </nav>
+
+    <a class="back-link" href="/posts/"><span aria-hidden="true">←</span> 전체 글 보기</a>
+  </article>
+</BaseLayout>

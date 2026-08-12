@@ -1,0 +1,28 @@
+---
+import type { GetStaticPaths } from 'astro';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PostList from '../../components/PostList.astro';
+import { CATEGORY_LABELS, type Category } from '../../consts';
+import { getPublishedPosts } from '../../utils/posts';
+
+export const getStaticPaths = (async () => {
+  const posts = await getPublishedPosts();
+  return Object.entries(CATEGORY_LABELS).map(([category, label]) => ({
+    params: { category: category.toLocaleLowerCase() },
+    props: { category: category as Category, label, posts: posts.filter((post) => post.data.category === category) },
+  }));
+}) satisfies GetStaticPaths;
+
+const { category, label, posts } = Astro.props;
+---
+
+<BaseLayout title={label} description={`${label} 분류의 글`}>
+  <div class="page-header container">
+    <p class="eyebrow">{category.toLocaleUpperCase()}</p>
+    <h1>{label}</h1>
+    <p>{posts.length}개의 기록</p>
+  </div>
+  <section class="container listing-section">
+    {posts.length > 0 ? <PostList posts={posts} /> : <p class="empty-state">아직 공개된 글이 없습니다.</p>}
+  </section>
+</BaseLayout>

@@ -1,0 +1,14 @@
+---
+import { SITE } from '../consts';
+import Icon from './Icon.astro';
+---
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <p>&copy; {new Date().getFullYear()} {SITE.author}. 기록은 천천히, 꾸준히.</p>
+    <div class="footer-links">
+      <a href={SITE.github} aria-label="GitHub" target="_blank" rel="noreferrer"><Icon name="github" /></a>
+      <a href="/rss.xml" aria-label="RSS"><Icon name="rss" /></a>
+    </div>
+  </div>
+</footer>
