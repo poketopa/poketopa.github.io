@@ -41,7 +41,7 @@
 ## Visual language
 
 - Color: White canvas, olive-black text, muted gray metadata, lime `#9DD84B`, pale lime `#F1F8E7`.
-- Typography: `Noto Sans KR` for interface and index; `Gowun Batang` for the wordmark and long-form article headings/body.
+- Typography: `Pretendard Variable` across interface, index, wordmark, headings, and long-form content. Fallback order mirrors the approved reference: Pretendard, Apple/system UI, `Apple SD Gothic Neo`, then `Noto Sans KR`.
 - Spacing/layout rhythm: Maximum 1180px content width; 8px base rhythm; generous 80-120px vertical whitespace.
 - Shape/radius/elevation: 8px or less, hairline borders, no default shadows.
 - Motion: 160ms color/translation feedback; disabled for reduced-motion users.

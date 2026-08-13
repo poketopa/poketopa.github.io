@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Inter:wght@400;500;600;700&family=Noto+Sans+KR:wght@400;500;600;700&display=swap');
-
 :root {
   color-scheme: light;
   --background: #ffffff;
@@ -14,8 +12,8 @@
   --accent-strong: #69a91d;
   --accent-soft: #f0f8e5;
   --code-background: #f5f7f3;
-  --sans: 'Inter', 'Noto Sans KR', system-ui, -apple-system, sans-serif;
-  --serif: 'Gowun Batang', Georgia, serif;
+  --sans: 'Pretendard Variable', Pretendard, -apple-system, BlinkMacSystemFont, system-ui, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif;
+  --serif: var(--sans);
 }
 
 :root[data-theme='dark'] {
@@ -122,7 +120,7 @@ a {
 .wordmark {
   font-family: var(--serif);
   font-size: 1.55rem;
-  font-weight: 700;
+  font-weight: 650;
   letter-spacing: -0.045em;
 }
 
@@ -453,8 +451,8 @@ a {
 .prose {
   min-width: 0;
   font-family: var(--serif);
-  font-size: 1.06rem;
-  line-height: 2;
+  font-size: 1.05rem;
+  line-height: 1.9;
   word-break: keep-all;
 }
 
