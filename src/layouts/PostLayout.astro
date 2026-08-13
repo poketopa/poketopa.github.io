@@ -33,12 +33,12 @@ const toc = headings.filter((heading) => heading.depth === 2 || heading.depth ==
       </div>
     </header>
 
-    <div class="article-grid">
+    <div class:list={['article-grid', { 'without-toc': toc.length < 3 }]}>
       <div class="prose">
         <slot />
       </div>
       {
-        toc.length > 0 && (
+        toc.length >= 3 && (
           <aside class="toc" aria-label="목차">
             <strong>목차</strong>
             <ol>

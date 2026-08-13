@@ -13,7 +13,7 @@ const posts = await getPublishedPosts();
     <section class="index-list" aria-label="전체 글">
     {
       posts.length > 0 ? (
-        <PostList posts={posts} />
+        <PostList posts={posts} featuredFirst />
       ) : (
         <div class="empty-state">
           <strong>첫 번째 기록을 준비하고 있어요.</strong>

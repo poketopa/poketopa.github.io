@@ -1,0 +1,97 @@
+---
+import type { Post } from '../utils/posts';
+import Bookshelf from './Bookshelf.astro';
+import Icon from './Icon.astro';
+import PostList from './PostList.astro';
+
+interface Props {
+  posts: Post[];
+}
+
+const { posts } = Astro.props;
+---
+
+<section class="book-library" data-book-views aria-labelledby="book-library-title">
+  <header class="book-library-heading">
+    <div>
+      <p class="bookshelf-eyebrow">READING LIST</p>
+      <div class="book-library-title-row">
+        <h1 id="book-library-title">독후감 목록</h1>
+        <div class="book-view-tabs" role="tablist" aria-label="독후감 보기 방식">
+          <button
+            id="bookshelf-tab"
+            type="button"
+            role="tab"
+            aria-label="책장 보기"
+            title="책장 보기"
+            aria-selected="true"
+            aria-controls="bookshelf-panel"
+            data-book-tab="shelf"
+          >
+            <Icon name="shelf" size={18} />
+          </button>
+          <button
+            id="book-list-tab"
+            type="button"
+            role="tab"
+            aria-label="목록 보기"
+            title="목록 보기"
+            aria-selected="false"
+            aria-controls="book-list-panel"
+            tabindex="-1"
+            data-book-tab="list"
+          >
+            <Icon name="list" size={18} />
+          </button>
+        </div>
+      </div>
+    </div>
+    <p><strong>{posts.length}</strong>권의 기록을 모았습니다.</p>
+  </header>
+
+  <div id="bookshelf-panel" role="tabpanel" aria-labelledby="bookshelf-tab" data-book-panel="shelf">
+    <Bookshelf posts={posts} />
+  </div>
+
+  <div id="book-list-panel" role="tabpanel" aria-labelledby="book-list-tab" data-book-panel="list" hidden>
+    <section class="book-list-view" aria-label="독후감 목록">
+      <PostList posts={posts} />
+    </section>
+  </div>
+</section>
+
+<script>
+  document.querySelectorAll<HTMLElement>('[data-book-views]').forEach((switcher) => {
+    const tabs = Array.from(switcher.querySelectorAll<HTMLButtonElement>('[data-book-tab]'));
+    const panels = Array.from(switcher.querySelectorAll<HTMLElement>('[data-book-panel]'));
+
+    const selectView = (view: string, focus = false) => {
+      tabs.forEach((tab) => {
+        const selected = tab.dataset.bookTab === view;
+        tab.setAttribute('aria-selected', String(selected));
+        tab.tabIndex = selected ? 0 : -1;
+        if (selected && focus) tab.focus();
+      });
+
+      panels.forEach((panel) => {
+        panel.hidden = panel.dataset.bookPanel !== view;
+      });
+    };
+
+    tabs.forEach((tab, index) => {
+      tab.addEventListener('click', () => selectView(tab.dataset.bookTab ?? 'shelf'));
+      tab.addEventListener('keydown', (event) => {
+        if (!['ArrowLeft', 'ArrowRight', 'Home', 'End'].includes(event.key)) return;
+        event.preventDefault();
+
+        const nextIndex = event.key === 'Home'
+          ? 0
+          : event.key === 'End'
+            ? tabs.length - 1
+            : (index + (event.key === 'ArrowRight' ? 1 : -1) + tabs.length) % tabs.length;
+
+        selectView(tabs[nextIndex].dataset.bookTab ?? 'shelf', true);
+      });
+    });
+  });
+</script>

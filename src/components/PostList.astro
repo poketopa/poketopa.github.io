@@ -5,16 +5,17 @@ import { formatDate } from '../utils/posts';
 
 interface Props {
   posts: Post[];
+  featuredFirst?: boolean;
 }
 
-const { posts } = Astro.props;
+const { posts, featuredFirst = false } = Astro.props;
 ---
 
-<div class="post-list">
+<div class:list={['post-list', { 'has-featured': featuredFirst }]}>
   {
-    posts.map((post) => (
-      <article class="post-card">
-        <a class="post-cover" href={`/posts/${post.id}/`} tabindex="-1" aria-hidden="true">
+    posts.map((post, index) => (
+      <article class:list={['post-card', { 'is-featured': featuredFirst && index === 0, 'is-book-post': post.data.category === 'Books' }]}>
+        <a class:list={['post-cover', { 'is-book-cover': post.data.category === 'Books', 'is-illustration-cover': post.data.cover?.endsWith('.svg') }]} href={`/posts/${post.id}/`} tabindex="-1" aria-hidden="true">
           {post.data.cover ? <img src={post.data.cover} alt="" loading="lazy" /> : <span>{post.data.category.slice(0, 1)}</span>}
         </a>
         <div class="post-summary">
@@ -24,7 +25,7 @@ const { posts } = Astro.props;
             <a class="category-badge" href={`/categories/${post.data.category.toLocaleLowerCase()}/`}>
               {CATEGORY_LABELS[post.data.category]}
             </a>
-            <span>ludens</span>
+            {post.data.book && <span class="book-list-facts">★ {post.data.book.rating} · {post.data.book.pageCount}쪽</span>}
             <span aria-hidden="true">·</span>
             <time datetime={post.data.publishedAt.toISOString()}>{formatDate(post.data.publishedAt)}</time>
           </div>

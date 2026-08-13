@@ -12,6 +12,16 @@ const posts = defineCollection({
     category: z.enum(['Development', 'Retrospective', 'Books']),
     tags: z.array(z.string()).default([]),
     cover: z.string().optional(),
+    book: z
+      .object({
+        author: z.string(),
+        pageCount: z.number().int().positive(),
+        rating: z.number().min(0).max(5).optional(),
+        spineColor: z.string().regex(/^#[0-9a-fA-F]{6}$/),
+        isbn: z.string().optional(),
+        sourceUrl: z.url().optional(),
+      })
+      .optional(),
     draft: z.boolean().default(false),
   }),
 });
