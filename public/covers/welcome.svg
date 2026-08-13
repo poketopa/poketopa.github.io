@@ -7,5 +7,5 @@
   <circle cx="212" cy="132" r="9" fill="#d2ecaa"/>
   <circle cx="260" cy="91" r="12" fill="#9dd84b"/>
   <path d="M68 112l48 28 48-39 48 31 48-41" fill="none" stroke="#1e261b" stroke-width="3"/>
-  <text x="44" y="35" fill="#1e261b" font-family="Arial, sans-serif" font-size="14" font-weight="700">LUDENS / 01</text>
+  <text x="44" y="35" fill="#1e261b" font-family="Arial, sans-serif" font-size="14" font-weight="700">ludens / 01</text>
 </svg>

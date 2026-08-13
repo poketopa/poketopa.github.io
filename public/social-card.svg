@@ -3,6 +3,6 @@
   <circle cx="1035" cy="0" r="315" fill="#f0f8e5"/>
   <path d="M90 112h1020" stroke="#e3e8df"/>
   <path d="M90 112h130" stroke="#83c431" stroke-width="5"/>
-  <text x="90" y="330" fill="#1d241a" font-family="Georgia, serif" font-size="108" font-weight="700">Ludens.dev</text>
+  <text x="90" y="330" fill="#1d241a" font-family="Georgia, serif" font-size="108" font-weight="700">ludens.dev</text>
   <text x="90" y="515" fill="#69a91d" font-family="Arial, sans-serif" font-size="26" font-weight="700" letter-spacing="5">DEVELOPMENT · RETROSPECTIVE · BOOKS</text>
 </svg>

@@ -110,7 +110,7 @@ a {
 
 .header-inner {
   display: flex;
-  width: min(1320px, calc(100% - 56px));
+  width: min(1180px, calc(100% - 48px));
   height: 82px;
   margin-inline: auto;
   align-items: center;

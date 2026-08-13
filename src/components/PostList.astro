@@ -24,7 +24,7 @@ const { posts } = Astro.props;
             <a class="category-badge" href={`/categories/${post.data.category.toLocaleLowerCase()}/`}>
               {CATEGORY_LABELS[post.data.category]}
             </a>
-            <span>Ludens</span>
+            <span>ludens</span>
             <span aria-hidden="true">·</span>
             <time datetime={post.data.publishedAt.toISOString()}>{formatDate(post.data.publishedAt)}</time>
           </div>
