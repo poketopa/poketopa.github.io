@@ -15,13 +15,13 @@
 
 ## Product goals
 
-- Goals: Make development notes, retrospectives, and book reviews easy to scan and comfortable to read; present Ludens as a thoughtful developer.
+- Goals: Make development notes, retrospectives, and book reviews easy to scan and comfortable to read; present ludens as a thoughtful developer.
 - Non-goals: Social feed, newsletter funnel, commercial landing page, or dense portfolio showcase.
 - Success signals: A visitor can identify the author, browse a category, and open a post without explanation.
 
 ## Personas and jobs
 
-- Primary personas: Ludens, other developers, and hiring reviewers.
+- Primary personas: ludens, other developers, and hiring reviewers.
 - User jobs: Find recent writing, filter by subject, assess writing quality, and reach the author's GitHub.
 - Key contexts of use: Desktop research, mobile reading, and quick portfolio review.
 
@@ -35,14 +35,14 @@
 
 - Content before introduction: The index starts with filtering and writing, not a manifesto hero.
 - Lime as punctuation: Lime identifies state and category; it never becomes a large decorative field.
-- Familiar but original: Reuse the scan pattern of a technical editorial index while retaining Ludens typography and tokens.
+- Familiar but original: Reuse the scan pattern of a technical editorial index while retaining ludens typography and tokens.
 - Tradeoffs: Article thumbnails improve scanning but remain optional; text must carry the experience when an image is absent.
 
 ## Visual language
 
 - Color: White canvas, olive-black text, muted gray metadata, lime `#9DD84B`, pale lime `#F1F8E7`.
 - Typography: `Pretendard Variable` across interface, index, wordmark, headings, and long-form content. Fallback order mirrors the approved reference: Pretendard, Apple/system UI, `Apple SD Gothic Neo`, then `Noto Sans KR`.
-- Spacing/layout rhythm: Maximum 1180px content width; 8px base rhythm; generous 80-120px vertical whitespace.
+- Spacing/layout rhythm: Maximum 1180px content width shared by the index and header; the left wordmark and right header actions align with the article-list edges; 8px base rhythm; generous 80-120px vertical whitespace.
 - Shape/radius/elevation: 8px or less, hairline borders, no default shadows.
 - Motion: 160ms color/translation feedback; disabled for reduced-motion users.
 - Imagery/iconography: Optional 160px editorial thumbnails; simple line icons only.
@@ -93,5 +93,5 @@
 
 ## Open questions
 
-- [ ] Replace the generic welcome cover when Ludens provides the first post artwork / Ludens / visual specificity only.
-- [ ] Decide whether the dormant search endpoint should return as a visible control after enough posts exist / Ludens / navigation density.
+- [ ] Replace the generic welcome cover when ludens provides the first post artwork / ludens / visual specificity only.
+- [ ] Decide whether the dormant search endpoint should return as a visible control after enough posts exist / ludens / navigation density.
