@@ -1,7 +1,7 @@
 ---
 import type { Post } from '../utils/posts';
 import { CATEGORY_LABELS } from '../consts';
-import { formatDate } from '../utils/posts';
+import { cleanDescription, formatDate } from '../utils/posts';
 
 interface Props {
   posts: Post[];
@@ -14,13 +14,22 @@ const { posts, featuredFirst = false } = Astro.props;
 <div class:list={['post-list', { 'has-featured': featuredFirst }]}>
   {
     posts.map((post, index) => (
-      <article class:list={['post-card', { 'is-featured': featuredFirst && index === 0, 'is-book-post': post.data.category === 'Books' }]}>
-        <a class:list={['post-cover', { 'is-book-cover': post.data.category === 'Books', 'is-illustration-cover': post.data.cover?.endsWith('.svg') }]} href={`/posts/${post.id}/`} tabindex="-1" aria-hidden="true">
+      <article
+        class:list={['post-card', { 'is-featured': featuredFirst && index === 0, 'is-book-post': post.data.category === 'Books' }]}
+        data-post-item
+        data-post-id={post.id}
+        data-title={post.data.title}
+        data-tags={JSON.stringify(post.data.tags)}
+        data-year={post.data.publishedAt.getFullYear()}
+        data-date={post.data.publishedAt.valueOf()}
+        data-search={`${post.data.title} ${cleanDescription(post.data.description)} ${post.data.tags.join(' ')} ${CATEGORY_LABELS[post.data.category]}`}
+      >
+        <div class:list={['post-cover', { 'is-book-cover': post.data.category === 'Books', 'is-illustration-cover': post.data.cover?.endsWith('.svg') }]} aria-hidden="true">
           {post.data.cover ? <img src={post.data.cover} alt="" loading="lazy" /> : <span>{post.data.category.slice(0, 1)}</span>}
-        </a>
+        </div>
         <div class="post-summary">
           <h2><a href={`/posts/${post.id}/`}>{post.data.title}</a></h2>
-          <p>{post.data.description}</p>
+          <p>{cleanDescription(post.data.description)}</p>
           <div class="post-meta">
             <a class="category-badge" href={`/categories/${post.data.category.toLocaleLowerCase()}/`}>
               {CATEGORY_LABELS[post.data.category]}

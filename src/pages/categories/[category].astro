@@ -1,7 +1,7 @@
 ---
 import type { GetStaticPaths } from 'astro';
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import PostList from '../../components/PostList.astro';
+import ArchiveExplorer from '../../components/ArchiveExplorer.astro';
 import CategoryTabs from '../../components/CategoryTabs.astro';
 import CategorySummary from '../../components/CategorySummary.astro';
 import BookViewSwitcher from '../../components/BookViewSwitcher.astro';
@@ -30,7 +30,7 @@ const { category, label, posts } = Astro.props;
           <CategorySummary category={category} count={posts.length} />
         </div>
         <section class="index-list" aria-label={`${label} 글`}>
-          {posts.length > 0 ? <PostList posts={posts} /> : <p class="empty-state">아직 공개된 글이 없습니다.</p>}
+          {posts.length > 0 ? <ArchiveExplorer posts={posts} label={`${label} 기록`} /> : <p class="empty-state">아직 공개된 글이 없습니다.</p>}
         </section>
       </>
     )}

@@ -1,11 +1,13 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import ArchiveExplorer from '../components/ArchiveExplorer.astro';
 import PostList from '../components/PostList.astro';
 import CategoryTabs from '../components/CategoryTabs.astro';
 import CategorySummary from '../components/CategorySummary.astro';
 import { getPublishedPosts } from '../utils/posts';
 
 const posts = await getPublishedPosts();
+const featuredPost = posts[0];
 ---
 
 <BaseLayout>
@@ -14,10 +16,24 @@ const posts = await getPublishedPosts();
     <div class="category-overview">
       <CategorySummary category="all" count={posts.length} />
     </div>
-    <section class="index-list" aria-label="전체 글">
     {
       posts.length > 0 ? (
-        <PostList posts={posts} featuredFirst />
+        <>
+          <section class="home-featured" aria-labelledby="featured-title">
+            <header class="section-heading">
+              <p>가장 최근에 남긴 기록</p>
+              <h1 id="featured-title">최근 기록</h1>
+            </header>
+            <PostList posts={[featuredPost]} featuredFirst />
+          </section>
+          <section class="home-archive" aria-labelledby="archive-title">
+            <header class="section-heading archive-heading">
+              <p>검색하거나 조건을 골라 기록을 찾아보세요.</p>
+              <h2 id="archive-title">기록 보관함</h2>
+            </header>
+            <ArchiveExplorer posts={posts} label="전체 기록" featuredId={featuredPost.id} />
+          </section>
+        </>
       ) : (
         <div class="empty-state">
           <strong>첫 번째 기록을 준비하고 있어요.</strong>
@@ -25,6 +41,5 @@ const posts = await getPublishedPosts();
         </div>
       )
     }
-    </section>
   </div>
 </BaseLayout>

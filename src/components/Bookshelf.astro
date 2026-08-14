@@ -1,5 +1,5 @@
 ---
-import type { Post } from '../utils/posts';
+import { cleanDescription, type Post } from '../utils/posts';
 
 interface Props {
   posts: Post[];
@@ -30,6 +30,10 @@ const books = posts
             href={`/posts/${id}/`}
             style={style}
             aria-label={`${data.title}${book.author ? `, ${book.author}` : ''}${book.pageCount ? `, ${book.pageCount}쪽` : ''}${book.rating !== undefined ? `, 평점 ${book.rating}점` : ''}`}
+            data-book-item
+            data-year={data.publishedAt.getFullYear()}
+            data-tags={JSON.stringify(data.tags)}
+            data-search={`${data.title} ${book.author ?? ''} ${cleanDescription(data.description)} ${data.tags.join(' ')}`}
           >
             <span class="display-object">
               <span class="display-order" aria-hidden="true">{String(index + 1).padStart(2, '0')}</span>

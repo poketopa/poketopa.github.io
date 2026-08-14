@@ -10,6 +10,8 @@ interface Props {
 }
 
 const { posts } = Astro.props;
+const tags = [...new Set(posts.flatMap((post) => post.data.tags))].sort((a, b) => a.localeCompare(b, 'ko'));
+const years = [...new Set(posts.map((post) => post.data.publishedAt.getFullYear()))].sort((a, b) => b - a);
 ---
 
 <section class="book-library" data-book-views aria-label="독후감 보기">
@@ -44,6 +46,37 @@ const { posts } = Astro.props;
     </div>
   </div>
 
+  <div class="archive-tools book-library-tools" role="search" aria-label="독후감 검색 및 필터">
+    <label class="archive-search">
+      <span class="sr-only">독후감 검색</span>
+      <svg aria-hidden="true" viewBox="0 0 24 24" width="18" height="18">
+        <circle cx="11" cy="11" r="6.5" fill="none" stroke="currentColor" stroke-width="1.8"></circle>
+        <path d="m16 16 4 4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.8"></path>
+      </svg>
+      <input type="search" placeholder="책 제목, 저자, 감상 검색" autocomplete="off" data-book-search />
+    </label>
+    <div class="archive-filters">
+      <label>
+        <span class="sr-only">독후감 연도 선택</span>
+        <select data-book-year aria-label="독후감 연도 필터">
+          <option value="all">모든 연도</option>
+          {years.map((year) => <option value={String(year)}>{year}년</option>)}
+        </select>
+      </label>
+      <label>
+        <span class="sr-only">독후감 태그 선택</span>
+        <select data-book-tag aria-label="독후감 태그 필터">
+          <option value="all">모든 태그</option>
+          {tags.map((tag) => <option value={tag}>{tag}</option>)}
+        </select>
+      </label>
+    </div>
+  </div>
+  <div class="archive-feedback">
+    <p aria-live="polite" data-book-status></p>
+    <button type="button" data-book-reset hidden>필터 초기화</button>
+  </div>
+
   <div id="bookshelf-panel" role="tabpanel" aria-labelledby="bookshelf-tab" data-book-panel="shelf">
     <Bookshelf posts={posts} />
   </div>
@@ -53,14 +86,72 @@ const { posts } = Astro.props;
       <PostList posts={posts} />
     </section>
   </div>
+  <p class="archive-empty" data-book-empty hidden>조건에 맞는 독후감이 없습니다.</p>
+  <button class="load-more-button" type="button" data-book-more hidden>독후감 더 보기</button>
 </section>
 
 <script>
   document.querySelectorAll<HTMLElement>('[data-book-views]').forEach((switcher) => {
     const tabs = Array.from(switcher.querySelectorAll<HTMLButtonElement>('[data-book-tab]'));
     const panels = Array.from(switcher.querySelectorAll<HTMLElement>('[data-book-panel]'));
+    const search = switcher.querySelector<HTMLInputElement>('[data-book-search]');
+    const year = switcher.querySelector<HTMLSelectElement>('[data-book-year]');
+    const tag = switcher.querySelector<HTMLSelectElement>('[data-book-tag]');
+    const status = switcher.querySelector<HTMLElement>('[data-book-status]');
+    const reset = switcher.querySelector<HTMLButtonElement>('[data-book-reset]');
+    const empty = switcher.querySelector<HTMLElement>('[data-book-empty]');
+    const more = switcher.querySelector<HTMLButtonElement>('[data-book-more]');
+    const pageSize = 18;
+    let activeView = 'shelf';
+    let visibleLimit = pageSize;
 
-    const selectView = (view: string, focus = false) => {
+    const normalize = (value: string) => value.normalize('NFKC').toLocaleLowerCase('ko-KR').trim();
+
+    const parseTags = (item: HTMLElement): string[] => {
+      try {
+        return JSON.parse(item.dataset.tags ?? '[]');
+      } catch {
+        return [];
+      }
+    };
+
+    const getItems = (view: string) => Array.from(
+      switcher.querySelectorAll<HTMLElement>(`[data-book-panel="${view}"] ${view === 'shelf' ? '[data-book-item]' : '[data-post-item]'}`),
+    );
+
+    const applyFilters = () => {
+      const query = normalize(search?.value ?? '');
+      const activeYear = year?.value ?? 'all';
+      const activeTag = tag?.value ?? 'all';
+      const isFiltered = Boolean(query) || activeYear !== 'all' || activeTag !== 'all';
+      let activeMatches = 0;
+
+      ['shelf', 'list'].forEach((view) => {
+        const items = getItems(view);
+        const matching = items.filter((item) => {
+          const textMatches = normalize(item.dataset.search ?? '').includes(query);
+          const yearMatches = activeYear === 'all' || item.dataset.year === activeYear;
+          const tagMatches = activeTag === 'all' || parseTags(item).some((value) => normalize(value) === normalize(activeTag));
+          return textMatches && yearMatches && tagMatches;
+        });
+        matching.forEach((item, index) => { item.hidden = index >= visibleLimit; });
+        items.filter((item) => !matching.includes(item)).forEach((item) => { item.hidden = true; });
+        if (view === activeView) activeMatches = matching.length;
+      });
+
+      const shown = Math.min(visibleLimit, activeMatches);
+      if (status) status.textContent = `${activeMatches}권 중 ${shown}권 표시`;
+      if (reset) reset.hidden = !isFiltered;
+      if (empty) empty.hidden = activeMatches !== 0;
+      if (more) {
+        const remaining = Math.max(0, activeMatches - shown);
+        more.hidden = remaining === 0;
+        more.textContent = remaining ? `${Math.min(pageSize, remaining)}권 더 보기` : '독후감 더 보기';
+      }
+    };
+
+    const selectView = (view: string, focus = false, persist = true) => {
+      activeView = view;
       tabs.forEach((tab) => {
         const selected = tab.dataset.bookTab === view;
         tab.setAttribute('aria-selected', String(selected));
@@ -71,6 +162,15 @@ const { posts } = Astro.props;
       panels.forEach((panel) => {
         panel.hidden = panel.dataset.bookPanel !== view;
       });
+
+      if (persist) {
+        try {
+          localStorage.setItem('book-view', view);
+        } catch {
+          // The view switch remains functional when storage is unavailable.
+        }
+      }
+      applyFilters();
     };
 
     tabs.forEach((tab, index) => {
@@ -88,5 +188,33 @@ const { posts } = Astro.props;
         selectView(tabs[nextIndex].dataset.bookTab ?? 'shelf', true);
       });
     });
+
+    const restart = () => {
+      visibleLimit = pageSize;
+      applyFilters();
+    };
+
+    search?.addEventListener('input', restart);
+    year?.addEventListener('change', restart);
+    tag?.addEventListener('change', restart);
+    reset?.addEventListener('click', () => {
+      if (search) search.value = '';
+      if (year) year.value = 'all';
+      if (tag) tag.value = 'all';
+      restart();
+      search?.focus();
+    });
+    more?.addEventListener('click', () => {
+      visibleLimit += pageSize;
+      applyFilters();
+    });
+
+    let savedView: string | null = null;
+    try {
+      savedView = localStorage.getItem('book-view');
+    } catch {
+      // Default to the shelf when storage is unavailable.
+    }
+    selectView(savedView === 'list' ? 'list' : 'shelf', false, false);
   });
 </script>

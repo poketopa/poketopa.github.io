@@ -28,6 +28,14 @@ export function readingTime(body: string): number {
   return Math.max(1, Math.ceil(koreanCharacters / 500 + words / 220));
 }
 
+export function cleanDescription(description: string): string {
+  return description
+    .replace(/!\[[\s\S]*?\]\([^)]*\)/g, '')
+    .replace(/<[^>]+>/g, '')
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
 export function tagSlug(tag: string): string {
   return encodeURIComponent(tag.toLocaleLowerCase());
 }

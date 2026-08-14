@@ -1,7 +1,7 @@
 ---
 import BaseLayout from './BaseLayout.astro';
 import { CATEGORY_LABELS } from '../consts';
-import { formatDate, readingTime, type Post } from '../utils/posts';
+import { cleanDescription, formatDate, readingTime, type Post } from '../utils/posts';
 
 interface Props {
   post: Post;
@@ -17,7 +17,7 @@ const isBook = post.data.category === 'Books';
 ---
 
 <BaseLayout title={post.data.title} description={post.data.description} article>
-  <article class:list={['article-shell', { 'has-toc': hasToc, 'is-book-post': isBook }]}>
+  <article class:list={['article-shell', `category-${post.data.category.toLocaleLowerCase()}`, { 'has-toc': hasToc, 'is-book-post': isBook }]}>
     <header class="article-header">
       <div class="post-meta">
         <a href={`/categories/${post.data.category.toLocaleLowerCase()}/`}>
@@ -29,11 +29,29 @@ const isBook = post.data.category === 'Books';
         <span>{readingTime(post.body ?? '')}분 읽기</span>
       </div>
       <h1>{post.data.title}</h1>
-      {!isBook && <p>{post.data.description}</p>}
+      {!isBook && <p>{cleanDescription(post.data.description)}</p>}
       <div class="tag-row">
         {post.data.tags.map((tag) => <a href={`/tags/${encodeURIComponent(tag.toLocaleLowerCase())}/`}>#{tag}</a>)}
       </div>
     </header>
+
+    {
+      hasToc && (
+        <details class="mobile-toc" data-mobile-toc>
+          <summary>
+            <span>이 글의 목차</span>
+            <small>{toc.length}개</small>
+          </summary>
+          <ol>
+            {toc.map((heading) => (
+              <li class:list={{ nested: heading.depth === 3 }}>
+                <a href={`#${heading.slug}`}>{heading.text}</a>
+              </li>
+            ))}
+          </ol>
+        </details>
+      )
+    }
 
     <div class:list={['article-grid', { 'without-toc': !hasToc }]}>
       <div class="prose">
@@ -41,7 +59,7 @@ const isBook = post.data.category === 'Books';
       </div>
       {
         hasToc && (
-          <aside class="toc" aria-label="목차">
+          <aside class="toc" aria-label="목차" data-article-toc>
             <strong>목차</strong>
             <ol>
               {toc.map((heading) => (
@@ -77,3 +95,34 @@ const isBook = post.data.category === 'Books';
     <a class="back-link" href="/posts/"><span aria-hidden="true">←</span> 전체 글 보기</a>
   </article>
 </BaseLayout>
+
+<script>
+  document.querySelectorAll<HTMLElement>('[data-mobile-toc]').forEach((toc) => {
+    toc.querySelectorAll<HTMLAnchorElement>('a').forEach((link) => {
+      link.addEventListener('click', () => toc.removeAttribute('open'));
+    });
+  });
+
+  document.querySelectorAll<HTMLElement>('[data-article-toc]').forEach((toc) => {
+    const links = Array.from(toc.querySelectorAll<HTMLAnchorElement>('a[href^="#"]'));
+    const headings = links
+      .map((link) => document.getElementById(decodeURIComponent(link.hash.slice(1))))
+      .filter((heading): heading is HTMLElement => Boolean(heading));
+    if (!headings.length) return;
+
+    const updateCurrent = () => {
+      const current = headings.reduce(
+        (active, heading) => heading.getBoundingClientRect().top <= 120 ? heading : active,
+        headings[0],
+      );
+      links.forEach((link) => {
+        const selected = decodeURIComponent(link.hash.slice(1)) === current.id;
+        if (selected) link.setAttribute('aria-current', 'location');
+        else link.removeAttribute('aria-current');
+      });
+    };
+
+    document.addEventListener('scroll', updateCurrent, { passive: true });
+    updateCurrent();
+  });
+</script>
