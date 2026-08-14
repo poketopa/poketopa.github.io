@@ -217,14 +217,14 @@ a {
 
 .archive-overview-row {
   display: flex;
-  margin-bottom: 8px;
+  margin-bottom: 16px;
   align-items: center;
   justify-content: flex-end;
   gap: 24px;
 }
 
 .archive-overview-row.has-summary {
-  padding-top: clamp(26px, 4vw, 40px);
+  padding-top: clamp(18px, 3vw, 28px);
   justify-content: space-between;
 }
 
@@ -369,12 +369,12 @@ a {
 }
 
 .book-library {
-  padding-top: clamp(26px, 4vw, 40px);
+  padding-top: clamp(18px, 3vw, 28px);
 }
 
 .book-library-heading {
   display: flex;
-  margin-bottom: 8px;
+  margin-bottom: 16px;
   align-items: center;
   justify-content: space-between;
   gap: 24px;
