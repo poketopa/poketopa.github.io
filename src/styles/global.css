@@ -212,34 +212,17 @@ a {
 }
 
 .home-featured {
-  padding-top: clamp(24px, 3.5vw, 38px);
+  padding-top: clamp(16px, 2.5vw, 26px);
 }
 
 .home-archive {
-  margin-top: clamp(34px, 5vw, 58px);
-  padding-top: clamp(30px, 4vw, 48px);
+  margin-top: clamp(28px, 4vw, 44px);
+  padding-top: clamp(22px, 3vw, 34px);
   border-top: 1px solid var(--line);
-}
-
-.section-heading p {
-  margin: 0;
-  color: var(--text-soft);
-  font-size: 0.86rem;
-}
-
-.section-heading h1,
-.section-heading h2 {
-  margin: 5px 0 0;
-  font-size: clamp(1.55rem, 2.6vw, 2.05rem);
-  letter-spacing: -0.045em;
 }
 
 .home-featured .post-card {
   padding-top: 22px;
-}
-
-.archive-heading {
-  margin-bottom: 22px;
 }
 
 .archive-explorer {

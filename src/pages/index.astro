@@ -19,18 +19,10 @@ const featuredPost = posts[0];
     {
       posts.length > 0 ? (
         <>
-          <section class="home-featured" aria-labelledby="featured-title">
-            <header class="section-heading">
-              <p>가장 최근에 남긴 기록</p>
-              <h1 id="featured-title">최근 기록</h1>
-            </header>
+          <section class="home-featured" aria-label="가장 최근에 남긴 기록">
             <PostList posts={[featuredPost]} featuredFirst />
           </section>
-          <section class="home-archive" aria-labelledby="archive-title">
-            <header class="section-heading archive-heading">
-              <p>검색하거나 조건을 골라 기록을 찾아보세요.</p>
-              <h2 id="archive-title">기록 보관함</h2>
-            </header>
+          <section class="home-archive" aria-label="전체 기록 보관 목록">
             <ArchiveExplorer posts={posts} label="전체 기록" featuredId={featuredPost.id} />
           </section>
         </>
