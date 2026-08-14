@@ -15,26 +15,26 @@
 
 ## Product goals
 
-- Goals: Make development notes, retrospectives, and book reviews easy to scan, search, filter, and read; keep 142+ posts navigable as the archive grows; present ludens as a thoughtful developer.
+- Goals: Make development notes, retrospectives, and book reviews easy to scan, search, and read; keep 142+ posts navigable as the archive grows; present ludens as a thoughtful developer.
 - Non-goals: Social feed, newsletter funnel, commercial landing page, or dense portfolio showcase.
-- Success signals: A visitor can identify the author, find a known post by keyword/tag/year, browse a category, and read any post at 360px without horizontal page overflow.
+- Success signals: A visitor can identify the author, find a known post by keyword, browse posts by category and year, and read any post at 360px without horizontal page overflow.
 
 ## Personas and jobs
 
 - Primary personas: ludens, other developers, and hiring reviewers.
-- User jobs: Find recent writing, recover a known post, browse chronologically by visible year groups, filter by category/tag, assess writing quality, and reach the author's GitHub.
+- User jobs: Find recent writing, recover a known post, browse chronologically by visible year groups, move between categories, assess writing quality, and reach the author's GitHub.
 - Key contexts of use: Desktop research, mobile reading, and quick portfolio review.
 
 ## Information architecture
 
 - Primary navigation: `ludens.dev` home link, GitHub, theme toggle.
 - Core routes/screens: `/`, `/posts/`, `/categories/[category]/`, `/tags/[tag]/`, `/posts/[id]/`, `/about/`; `/categories/books/` switches between a visual reading shelf and a standard review list.
-- Content hierarchy: Brand header -> category tabs -> category summary -> featured recent post on the home route -> searchable/filterable archive or category list -> footer.
+- Content hierarchy: Brand header -> category tabs -> category summary -> featured recent post on the home route -> searchable year-grouped archive or category list -> footer.
 
 ## Design principles
 
 - Content before introduction: The index starts with one editorially prominent recent post and practical discovery controls, not a manifesto hero.
-- Large archives need retrieval: Compact search and tag controls remain secondary to a visible chronological archive grouped by year.
+- Large archives need retrieval: A single compact search control remains secondary to a visible chronological archive grouped by year.
 - Mobile reading is non-negotiable: No page-level horizontal overflow; cards may change composition rather than compress their desktop layout.
 - Lime as punctuation: Lime identifies state and category; it never becomes a large decorative field.
 - Familiar but original: Reuse the scan pattern of a technical editorial index while retaining ludens typography and tokens.
@@ -53,7 +53,7 @@
 
 - Existing components to reuse: `BaseLayout`, `PostLayout`, `Icon`, `Footer`.
 - New/changed components: Minimal `Header`, reusable `CategoryTabs`, `FeaturedPost`, searchable `ArchiveExplorer`, consistent `PostList` rows, `Bookshelf`, and an accessible `BookViewSwitcher` for book-review discovery.
-- Variants and states: Active category underline; image and generated monogram thumbnail variants; the home route separates one featured article from a denser archive; archive controls place a compact search field at the desktop right and expose tag/sort plus visible-result feedback; matching posts appear in explicit year groups with per-year counts; book list rows retain portrait cover proportions and expose rating/page metadata; light/dark themes; equal-size book displays wrap into vertically stacked rows with one continuous shelf per row and show author plus rating below each title; compact icon tabs switch separate shelf and list panels.
+- Variants and states: Active category underline; image and generated monogram thumbnail variants; the home route separates one featured article from a denser archive; archive controls place one compact search field at the desktop right with visible-result feedback; matching posts appear in explicit year groups with per-year counts; book list rows retain portrait cover proportions and expose rating/page metadata; light/dark themes; equal-size book displays wrap into vertically stacked rows with one continuous shelf per row and show author plus rating below each title; compact icon tabs switch separate shelf and list panels.
 - Token/component ownership: Global CSS variables in `src/styles/global.css`; components own semantic markup only.
 
 ## Accessibility
@@ -75,7 +75,7 @@
 - Loading: Static HTML requires no blocking loading UI.
 - Empty: A bordered, quiet message explains that the first public post is being prepared.
 - Error: Custom 404 retains the global header and return link.
-- Success: Navigation state is expressed through URL and active underline; book view state is expressed through the selected tab and visible panel; archive filters announce and visibly report the result count.
+- Success: Navigation state is expressed through URL and active underline; book view state is expressed through the selected tab and visible panel; archive search announces and visibly reports the result count.
 - Disabled: Not currently used.
 - Offline/slow network: Core layout and system font fallbacks remain usable without Google Fonts.
 
@@ -83,7 +83,7 @@
 
 - Tone: Direct, reflective, and understated.
 - Terminology: UI uses Korean labels; technical terms and category aliases may remain English.
-- Microcopy rules: No promotional slogans; short nouns and concrete actions; search and filter labels describe their scope; article-list metadata shows category and date without repeating the site author name.
+- Microcopy rules: No promotional slogans; short nouns and concrete actions; search labels describe their scope; article-list metadata shows category and date without repeating the site author name.
 
 ## Implementation constraints
 
@@ -96,4 +96,4 @@
 ## Open questions
 
 - [ ] Replace the generic welcome cover when ludens provides the first post artwork / ludens / visual specificity only.
-- [ ] Decide whether search/filter state should become shareable in the URL after observing actual archive usage / ludens / deep-linking.
+- [ ] Decide whether search state should become shareable in the URL after observing actual archive usage / ludens / deep-linking.

@@ -10,7 +10,6 @@ interface Props {
 }
 
 const { posts } = Astro.props;
-const tags = [...new Set(posts.flatMap((post) => post.data.tags))].sort((a, b) => a.localeCompare(b, 'ko'));
 const years = [...new Set(posts.map((post) => post.data.publishedAt.getFullYear()))].sort((a, b) => b - a);
 const yearGroups = years.map((year) => ({
   year,
@@ -50,16 +49,7 @@ const yearGroups = years.map((year) => ({
     </div>
   </div>
 
-  <div class="archive-tools book-library-tools" role="search" aria-label="독후감 검색 및 필터">
-    <div class="archive-filters">
-      <label>
-        <span class="sr-only">독후감 태그 선택</span>
-        <select data-book-tag aria-label="독후감 태그 필터">
-          <option value="all">모든 태그</option>
-          {tags.map((tag) => <option value={tag}>{tag}</option>)}
-        </select>
-      </label>
-    </div>
+  <div class="archive-tools book-library-tools" role="search" aria-label="독후감 검색">
     <label class="archive-search">
       <span class="sr-only">독후감 검색</span>
       <svg aria-hidden="true" viewBox="0 0 24 24" width="16" height="16">
@@ -129,7 +119,6 @@ const yearGroups = years.map((year) => ({
     const tabs = Array.from(switcher.querySelectorAll<HTMLButtonElement>('[data-book-tab]'));
     const panels = Array.from(switcher.querySelectorAll<HTMLElement>('[data-book-panel]'));
     const search = switcher.querySelector<HTMLInputElement>('[data-book-search]');
-    const tag = switcher.querySelector<HTMLSelectElement>('[data-book-tag]');
     const status = switcher.querySelector<HTMLElement>('[data-book-status]');
     const reset = switcher.querySelector<HTMLButtonElement>('[data-book-reset]');
     const empty = switcher.querySelector<HTMLElement>('[data-book-empty]');
@@ -140,32 +129,19 @@ const yearGroups = years.map((year) => ({
 
     const normalize = (value: string) => value.normalize('NFKC').toLocaleLowerCase('ko-KR').trim();
 
-    const parseTags = (item: HTMLElement): string[] => {
-      try {
-        return JSON.parse(item.dataset.tags ?? '[]');
-      } catch {
-        return [];
-      }
-    };
-
     const getItems = (view: string) => Array.from(
       switcher.querySelectorAll<HTMLElement>(`[data-book-panel="${view}"] ${view === 'shelf' ? '[data-book-item]' : '[data-post-item]'}`),
     );
 
     const applyFilters = () => {
       const query = normalize(search?.value ?? '');
-      const activeTag = tag?.value ?? 'all';
-      const isFiltered = Boolean(query) || activeTag !== 'all';
+      const isFiltered = Boolean(query);
       let activeMatches = 0;
 
       ['shelf', 'list'].forEach((view) => {
         const items = getItems(view);
         const groups = Array.from(switcher.querySelectorAll<HTMLElement>(`[data-book-year-view="${view}"]`));
-        const matching = items.filter((item) => {
-          const textMatches = normalize(item.dataset.search ?? '').includes(query);
-          const tagMatches = activeTag === 'all' || parseTags(item).some((value) => normalize(value) === normalize(activeTag));
-          return textMatches && tagMatches;
-        });
+        const matching = items.filter((item) => normalize(item.dataset.search ?? '').includes(query));
         matching.forEach((item, index) => { item.hidden = index >= visibleLimit; });
         items.filter((item) => !matching.includes(item)).forEach((item) => { item.hidden = true; });
 
@@ -235,10 +211,8 @@ const yearGroups = years.map((year) => ({
     };
 
     search?.addEventListener('input', restart);
-    tag?.addEventListener('change', restart);
     reset?.addEventListener('click', () => {
       if (search) search.value = '';
-      if (tag) tag.value = 'all';
       restart();
       search?.focus();
     });
