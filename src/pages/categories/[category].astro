@@ -25,14 +25,20 @@ const { category, label, posts } = Astro.props;
     {category === 'Books' && posts.length > 0 ? (
       <BookViewSwitcher posts={posts} />
     ) : (
-      <>
-        <div class="category-overview">
-          <CategorySummary category={category} count={posts.length} />
-        </div>
-        <section class="index-list" aria-label={`${label} 글`}>
-          {posts.length > 0 ? <ArchiveExplorer posts={posts} label={`${label} 기록`} /> : <p class="empty-state">아직 공개된 글이 없습니다.</p>}
-        </section>
-      </>
+      <section class="index-list" aria-label={`${label} 글`}>
+        {
+          posts.length > 0 ? (
+            <ArchiveExplorer posts={posts} label={`${label} 기록`}>
+              <CategorySummary slot="summary" category={category} count={posts.length} />
+            </ArchiveExplorer>
+          ) : (
+            <div class="category-overview">
+              <CategorySummary category={category} count={posts.length} />
+              <p class="empty-state">아직 공개된 글이 없습니다.</p>
+            </div>
+          )
+        }
+      </section>
     )}
   </div>
 </BaseLayout>

@@ -11,11 +11,16 @@ const posts = await getPublishedPosts();
 <BaseLayout title="글" description="ludens의 개발 기록, 회고, 독후감">
   <div class="index-shell container">
     <CategoryTabs active="all" />
-    <div class="category-overview">
-      <CategorySummary category="all" count={posts.length} />
-    </div>
     <section class="index-list" aria-label="전체 글">
-      {posts.length > 0 ? <ArchiveExplorer posts={posts} label="전체 기록" /> : <p class="empty-state">아직 공개된 글이 없습니다.</p>}
+      {
+        posts.length > 0 ? (
+          <ArchiveExplorer posts={posts} label="전체 기록">
+            <CategorySummary slot="summary" category="all" count={posts.length} />
+          </ArchiveExplorer>
+        ) : (
+          <p class="empty-state">아직 공개된 글이 없습니다.</p>
+        )
+      }
     </section>
   </div>
 </BaseLayout>

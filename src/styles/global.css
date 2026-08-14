@@ -192,7 +192,7 @@ a {
 }
 
 .index-list {
-  padding-top: 8px;
+  padding-top: 0;
 }
 
 .category-overview {
@@ -246,9 +246,21 @@ a {
   min-width: 0;
 }
 
-.archive-tools {
+.archive-overview-row {
   display: flex;
   margin-bottom: 8px;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 24px;
+}
+
+.archive-overview-row.has-summary {
+  padding-top: clamp(26px, 4vw, 40px);
+  justify-content: space-between;
+}
+
+.archive-tools {
+  display: flex;
   align-items: center;
   justify-content: flex-end;
   gap: 12px;
@@ -393,29 +405,42 @@ a {
 
 .book-library-heading {
   display: flex;
-  margin-bottom: 18px;
+  margin-bottom: 8px;
   align-items: center;
   justify-content: space-between;
   gap: 24px;
 }
 
+.book-library-actions {
+  display: flex;
+  min-width: 0;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+.book-library-tools {
+  min-width: 0;
+}
+
 .book-view-tabs {
   display: inline-flex;
   flex: 0 0 auto;
-  padding: 3px;
+  padding: 2px;
   border: 1px solid var(--line);
-  border-radius: 6px;
-  background: var(--surface-soft);
+  border-radius: 8px;
+  background: var(--surface);
   gap: 2px;
 }
 
 .book-view-tabs button {
   display: grid;
-  width: 40px;
-  height: 40px;
+  width: 36px;
+  height: 36px;
   padding: 0;
   border: 1px solid transparent;
-  border-radius: 4px;
+  border-radius: 6px;
+  background: transparent;
   color: var(--text-muted);
   cursor: pointer;
   place-items: center;
@@ -423,11 +448,12 @@ a {
 }
 
 .book-view-tabs button:hover {
+  background: var(--surface-soft);
   color: var(--text);
 }
 
 .book-view-tabs button[aria-selected='true'] {
-  border-color: var(--accent-strong);
+  border-color: color-mix(in srgb, var(--accent-strong) 55%, transparent);
   background: var(--accent-soft);
   color: var(--accent-strong);
 }
@@ -1399,12 +1425,28 @@ a {
   }
 
   .book-library-heading {
+    align-items: stretch;
+    flex-direction: column;
     gap: 12px;
+  }
+
+  .book-library-actions {
+    width: 100%;
+  }
+
+  .book-library-tools {
+    flex: 1 1 auto;
   }
 
   .archive-tools {
     align-items: stretch;
     flex-direction: column;
+  }
+
+  .archive-overview-row.has-summary {
+    align-items: stretch;
+    flex-direction: column;
+    gap: 12px;
   }
 
   .archive-search {

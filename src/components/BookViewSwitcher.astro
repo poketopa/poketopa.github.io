@@ -20,48 +20,49 @@ const yearGroups = years.map((year) => ({
 <section class="book-library" data-book-views aria-label="독후감 보기">
   <div class="book-library-heading">
     <CategorySummary category="Books" count={posts.length} />
-    <div class="book-view-tabs" role="tablist" aria-label="독후감 보기 방식">
-      <button
-        id="bookshelf-tab"
-        type="button"
-        role="tab"
-        aria-label="책장 보기"
-        title="책장 보기"
-        aria-selected="true"
-        aria-controls="bookshelf-panel"
-        data-book-tab="shelf"
-      >
-        <Icon name="shelf" size={18} />
-      </button>
-      <button
-        id="book-list-tab"
-        type="button"
-        role="tab"
-        aria-label="목록 보기"
-        title="목록 보기"
-        aria-selected="false"
-        aria-controls="book-list-panel"
-        tabindex="-1"
-        data-book-tab="list"
-      >
-        <Icon name="list" size={18} />
-      </button>
+    <div class="book-library-actions">
+      <div class="archive-tools book-library-tools" role="search" aria-label="독후감 검색">
+        <label class="archive-search">
+          <span class="sr-only">독후감 검색</span>
+          <svg aria-hidden="true" viewBox="0 0 24 24" width="16" height="16">
+            <circle cx="11" cy="11" r="6.5" fill="none" stroke="currentColor" stroke-width="1.8"></circle>
+            <path d="m16 16 4 4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.8"></path>
+          </svg>
+          <input type="search" placeholder="독후감 검색" autocomplete="off" data-book-search />
+        </label>
+      </div>
+      <div class="book-view-tabs" role="tablist" aria-label="독후감 보기 방식">
+        <button
+          id="bookshelf-tab"
+          type="button"
+          role="tab"
+          aria-label="책장 보기"
+          title="책장 보기"
+          aria-selected="true"
+          aria-controls="bookshelf-panel"
+          data-book-tab="shelf"
+        >
+          <Icon name="shelf" size={17} />
+        </button>
+        <button
+          id="book-list-tab"
+          type="button"
+          role="tab"
+          aria-label="목록 보기"
+          title="목록 보기"
+          aria-selected="false"
+          aria-controls="book-list-panel"
+          tabindex="-1"
+          data-book-tab="list"
+        >
+          <Icon name="list" size={17} />
+        </button>
+      </div>
     </div>
-  </div>
-
-  <div class="archive-tools book-library-tools" role="search" aria-label="독후감 검색">
-    <label class="archive-search">
-      <span class="sr-only">독후감 검색</span>
-      <svg aria-hidden="true" viewBox="0 0 24 24" width="16" height="16">
-        <circle cx="11" cy="11" r="6.5" fill="none" stroke="currentColor" stroke-width="1.8"></circle>
-        <path d="m16 16 4 4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.8"></path>
-      </svg>
-      <input type="search" placeholder="독후감 검색" autocomplete="off" data-book-search />
-    </label>
   </div>
   <div class="archive-feedback">
     <p aria-live="polite" data-book-status></p>
-    <button type="button" data-book-reset hidden>필터 초기화</button>
+    <button type="button" data-book-reset hidden>검색 초기화</button>
   </div>
 
   <div id="bookshelf-panel" role="tabpanel" aria-labelledby="bookshelf-tab" data-book-panel="shelf">

@@ -10,6 +10,7 @@ interface Props {
 }
 
 const { posts, label = '기록', pageSize = 24, featuredId } = Astro.props;
+const hasSummary = Astro.slots.has('summary');
 const years = [...new Set(posts.map((post) => post.data.publishedAt.getFullYear()))].sort((a, b) => b - a);
 const yearGroups = years.map((year) => ({
   year,
@@ -18,20 +19,23 @@ const yearGroups = years.map((year) => ({
 ---
 
 <section class="archive-explorer" data-archive-explorer data-page-size={pageSize} data-featured-id={featuredId} aria-label={`${label} 찾기`}>
-  <div class="archive-tools" role="search" aria-label={`${label} 검색`}>
-    <label class="archive-search">
-      <span class="sr-only">{label} 검색</span>
-      <svg aria-hidden="true" viewBox="0 0 24 24" width="16" height="16">
-        <circle cx="11" cy="11" r="6.5" fill="none" stroke="currentColor" stroke-width="1.8"></circle>
-        <path d="m16 16 4 4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.8"></path>
-      </svg>
-      <input type="search" placeholder="기록 검색" autocomplete="off" data-archive-search />
-    </label>
+  <div class:list={['archive-overview-row', { 'has-summary': hasSummary }]}>
+    {hasSummary && <slot name="summary" />}
+    <div class="archive-tools" role="search" aria-label={`${label} 검색`}>
+      <label class="archive-search">
+        <span class="sr-only">{label} 검색</span>
+        <svg aria-hidden="true" viewBox="0 0 24 24" width="16" height="16">
+          <circle cx="11" cy="11" r="6.5" fill="none" stroke="currentColor" stroke-width="1.8"></circle>
+          <path d="m16 16 4 4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.8"></path>
+        </svg>
+        <input type="search" placeholder="기록 검색" autocomplete="off" data-archive-search />
+      </label>
+    </div>
   </div>
 
   <div class="archive-feedback">
     <p aria-live="polite" data-archive-status></p>
-    <button type="button" data-archive-reset hidden>필터 초기화</button>
+    <button type="button" data-archive-reset hidden>검색 초기화</button>
   </div>
   <div class="archive-year-groups" data-archive-results>
     {

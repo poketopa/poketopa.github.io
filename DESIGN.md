@@ -44,10 +44,10 @@
 
 - Color: White-only canvas, olive-black text, muted gray metadata, lime `#9DD84B`, pale lime `#F1F8E7`; the site does not expose or follow a dark color scheme.
 - Typography: `Pretendard Variable` across interface, index, wordmark, headings, and long-form content. Fallback order mirrors the approved reference: Pretendard, Apple/system UI, `Apple SD Gothic Neo`, then `Noto Sans KR`. Titles wrap at word boundaries; individual words break only as a last resort when they cannot fit the available width.
-- Spacing/layout rhythm: Maximum 1180px content width shared by the index and header; the left wordmark and right header actions align with the article-list edges; 8px base rhythm; the featured post is separated from the denser archive by a heading and controls; first-view spacing stays compact enough to reveal content without scrolling; shelf captions begin at least 10px below the visible shelf edge.
+- Spacing/layout rhythm: Maximum 1180px content width shared by the index and header; the left wordmark and right header actions align with the article-list edges; category summaries and their search fields share one horizontal centerline on desktop; 8px base rhythm; the featured post is separated from the denser archive by a heading and controls; first-view spacing stays compact enough to reveal content without scrolling; shelf captions begin at least 10px below the visible shelf edge.
 - Shape/radius/elevation: 8px or less, hairline borders, no default shadows.
 - Motion: 160ms color/translation feedback; disabled for reduced-motion users.
-- Imagery/iconography: Optional 160px editorial thumbnails; simple line icons only.
+- Imagery/iconography: Optional 160px editorial thumbnails; simple line icons only; book-view icons depict literal books on a shelf and evenly spaced list rows rather than chart-like abstractions.
 
 ## Components
 
