@@ -3,9 +3,10 @@ import { cleanDescription, type Post } from '../utils/posts';
 
 interface Props {
   posts: Post[];
+  showNote?: boolean;
 }
 
-const { posts } = Astro.props;
+const { posts, showNote = true } = Astro.props;
 
 const books = posts
   .filter((post) => post.data.book && post.data.cover)
@@ -55,7 +56,11 @@ const books = posts
       }
     </div>
   </div>
-  <div class="bookshelf-note">
-    <p>표지나 제목을 선택하면 독후감으로 이동합니다.</p>
-  </div>
+  {
+    showNote && (
+      <div class="bookshelf-note">
+        <p>표지나 제목을 선택하면 독후감으로 이동합니다.</p>
+      </div>
+    )
+  }
 </section>

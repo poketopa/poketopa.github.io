@@ -5,7 +5,7 @@
 - Status: Active
 - Last refreshed: 2026-08-14
 - Primary product surfaces: Blog index, category index, post detail, about, 404
-- Evidence reviewed: `src/pages`, `src/components`, `src/layouts`, `src/styles/global.css`, the approved references in `.omx/artifacts/visual-ralph/ludens-kurly/`, and the 2026-08-14 five-session comparison with `geongyu09.github.io`
+- Evidence reviewed: `src/pages`, `src/components`, `src/layouts`, `src/styles/global.css`, the approved references in `.omx/artifacts/visual-ralph/ludens-kurly/`, the 2026-08-14 five-session comparison with `geongyu09.github.io`, and `.omx/artifacts/visual-ralph/year-archive/`
 
 ## Brand
 
@@ -22,7 +22,7 @@
 ## Personas and jobs
 
 - Primary personas: ludens, other developers, and hiring reviewers.
-- User jobs: Find recent writing, recover a known post, filter by category/tag/year, assess writing quality, and reach the author's GitHub.
+- User jobs: Find recent writing, recover a known post, browse chronologically by visible year groups, filter by category/tag, assess writing quality, and reach the author's GitHub.
 - Key contexts of use: Desktop research, mobile reading, and quick portfolio review.
 
 ## Information architecture
@@ -34,7 +34,7 @@
 ## Design principles
 
 - Content before introduction: The index starts with one editorially prominent recent post and practical discovery controls, not a manifesto hero.
-- Large archives need retrieval: Search, tag, and year filters are first-class controls once the archive exceeds casual scrolling scale.
+- Large archives need retrieval: Compact search and tag controls remain secondary to a visible chronological archive grouped by year.
 - Mobile reading is non-negotiable: No page-level horizontal overflow; cards may change composition rather than compress their desktop layout.
 - Lime as punctuation: Lime identifies state and category; it never becomes a large decorative field.
 - Familiar but original: Reuse the scan pattern of a technical editorial index while retaining ludens typography and tokens.
@@ -53,7 +53,7 @@
 
 - Existing components to reuse: `BaseLayout`, `PostLayout`, `Icon`, `Footer`.
 - New/changed components: Minimal `Header`, reusable `CategoryTabs`, `FeaturedPost`, searchable `ArchiveExplorer`, consistent `PostList` rows, `Bookshelf`, and an accessible `BookViewSwitcher` for book-review discovery.
-- Variants and states: Active category underline; image and generated monogram thumbnail variants; the home route separates one featured article from a denser archive; archive controls expose query, tag, and year plus visible-result feedback; book list rows retain portrait cover proportions and expose rating/page metadata; light/dark themes; equal-size book displays wrap into vertically stacked rows with one continuous shelf per row and show author plus rating below each title; compact icon tabs switch separate shelf and list panels.
+- Variants and states: Active category underline; image and generated monogram thumbnail variants; the home route separates one featured article from a denser archive; archive controls place a compact search field at the desktop right and expose tag/sort plus visible-result feedback; matching posts appear in explicit year groups with per-year counts; book list rows retain portrait cover proportions and expose rating/page metadata; light/dark themes; equal-size book displays wrap into vertically stacked rows with one continuous shelf per row and show author plus rating below each title; compact icon tabs switch separate shelf and list panels.
 - Token/component ownership: Global CSS variables in `src/styles/global.css`; components own semantic markup only.
 
 ## Accessibility

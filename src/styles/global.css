@@ -279,16 +279,16 @@ a {
   display: flex;
   margin-bottom: 8px;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-end;
   gap: 12px;
 }
 
 .archive-search {
   display: flex;
-  width: min(440px, 100%);
-  min-width: 220px;
-  min-height: 46px;
-  padding: 0 14px;
+  width: min(260px, 100%);
+  min-width: 180px;
+  min-height: 40px;
+  padding: 0 12px;
   border: 1px solid var(--line-strong);
   border-radius: 7px;
   background: var(--surface);
@@ -306,7 +306,7 @@ a {
 .archive-search input {
   width: 100%;
   min-width: 0;
-  padding: 10px 0;
+  padding: 8px 0;
   border: 0;
   outline: 0;
   background: transparent;
@@ -328,7 +328,7 @@ a {
 
 .archive-filters select {
   min-width: 124px;
-  min-height: 46px;
+  min-height: 40px;
   padding: 0 34px 0 12px;
   border: 1px solid var(--line-strong);
   border-radius: 7px;
@@ -364,6 +364,46 @@ a {
 .archive-feedback button:hover {
   border-color: var(--accent-strong);
   color: var(--accent-strong);
+}
+
+.archive-year-groups {
+  min-width: 0;
+}
+
+.archive-year-group {
+  display: grid;
+  min-width: 0;
+  border-top: 1px solid var(--line-strong);
+  grid-template-columns: 126px minmax(0, 1fr);
+  column-gap: 32px;
+}
+
+.archive-year-heading {
+  padding: 34px 0;
+  align-self: start;
+}
+
+.archive-year-heading h3 {
+  margin: 0;
+  font-size: clamp(1.75rem, 3vw, 2.25rem);
+  line-height: 1;
+  letter-spacing: -0.045em;
+}
+
+.archive-year-heading p {
+  margin: 8px 0 0;
+  color: var(--text-muted);
+  font-size: 0.68rem;
+  font-weight: 650;
+  letter-spacing: 0.06em;
+}
+
+.archive-year-group .post-card {
+  padding-block: 32px;
+}
+
+.book-library-tools .archive-filters {
+  flex: 0 0 auto;
 }
 
 .archive-empty {
@@ -449,13 +489,18 @@ a {
 }
 
 .book-list-view {
-  padding: 0 0 42px;
-  border-bottom: 1px solid var(--line);
+  min-width: 0;
 }
 
 .bookshelf-section {
   padding: 0 0 42px;
   border-bottom: 1px solid var(--line);
+}
+
+.book-year-group .bookshelf-section {
+  min-width: 0;
+  padding-bottom: 34px;
+  border-bottom: 0;
 }
 
 .bookshelf-viewport {
@@ -1420,11 +1465,13 @@ a {
   }
 
   .archive-search {
+    order: 1;
     width: 100%;
     min-width: 0;
   }
 
   .archive-filters {
+    order: 2;
     display: grid;
     width: 100%;
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1434,13 +1481,37 @@ a {
     min-width: 0;
   }
 
-  .archive-filters label:last-child:nth-child(3) {
-    grid-column: 1 / -1;
-  }
-
   .archive-filters select {
     width: 100%;
     min-width: 0;
+  }
+
+  .book-library-tools .archive-filters {
+    display: block;
+  }
+
+  .archive-year-group {
+    display: block;
+  }
+
+  .archive-year-heading {
+    display: flex;
+    padding: 26px 0 8px;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 16px;
+  }
+
+  .archive-year-heading h3 {
+    font-size: 1.75rem;
+  }
+
+  .archive-year-heading p {
+    margin: 0;
+  }
+
+  .archive-year-group .post-card {
+    padding-block: 26px;
   }
 
   .bookshelf-viewport {

@@ -12,26 +12,15 @@ interface Props {
 const { posts, label = '기록', pageSize = 12, featuredId } = Astro.props;
 const tags = [...new Set(posts.flatMap((post) => post.data.tags))].sort((a, b) => a.localeCompare(b, 'ko'));
 const years = [...new Set(posts.map((post) => post.data.publishedAt.getFullYear()))].sort((a, b) => b - a);
+const yearGroups = years.map((year) => ({
+  year,
+  posts: posts.filter((post) => post.data.publishedAt.getFullYear() === year),
+}));
 ---
 
 <section class="archive-explorer" data-archive-explorer data-page-size={pageSize} data-featured-id={featuredId} aria-label={`${label} 찾기`}>
   <div class="archive-tools" role="search" aria-label={`${label} 검색 및 필터`}>
-    <label class="archive-search">
-      <span class="sr-only">{label} 검색</span>
-      <svg aria-hidden="true" viewBox="0 0 24 24" width="18" height="18">
-        <circle cx="11" cy="11" r="6.5" fill="none" stroke="currentColor" stroke-width="1.8"></circle>
-        <path d="m16 16 4 4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.8"></path>
-      </svg>
-      <input type="search" placeholder="제목, 요약, 태그 검색" autocomplete="off" data-archive-search />
-    </label>
     <div class="archive-filters">
-      <label>
-        <span class="sr-only">연도 선택</span>
-        <select data-archive-year aria-label="연도 필터">
-          <option value="all">모든 연도</option>
-          {years.map((year) => <option value={String(year)}>{year}년</option>)}
-        </select>
-      </label>
       <label>
         <span class="sr-only">태그 선택</span>
         <select data-archive-tag aria-label="태그 필터">
@@ -44,18 +33,35 @@ const years = [...new Set(posts.map((post) => post.data.publishedAt.getFullYear(
         <select data-archive-sort aria-label="정렬 방식">
           <option value="newest">최신순</option>
           <option value="oldest">오래된순</option>
-          <option value="title">제목순</option>
         </select>
       </label>
     </div>
+    <label class="archive-search">
+      <span class="sr-only">{label} 검색</span>
+      <svg aria-hidden="true" viewBox="0 0 24 24" width="16" height="16">
+        <circle cx="11" cy="11" r="6.5" fill="none" stroke="currentColor" stroke-width="1.8"></circle>
+        <path d="m16 16 4 4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.8"></path>
+      </svg>
+      <input type="search" placeholder="기록 검색" autocomplete="off" data-archive-search />
+    </label>
   </div>
 
   <div class="archive-feedback">
     <p aria-live="polite" data-archive-status></p>
     <button type="button" data-archive-reset hidden>필터 초기화</button>
   </div>
-  <div data-archive-results>
-    <PostList {posts} />
+  <div class="archive-year-groups" data-archive-results>
+    {
+      yearGroups.map(({ year, posts: yearPosts }) => (
+        <section class="archive-year-group" data-archive-year-group={year} aria-labelledby={`archive-year-${year}`}>
+          <header class="archive-year-heading">
+            <h3 id={`archive-year-${year}`}>{year}</h3>
+            <p data-archive-year-count>{yearPosts.length}개의 기록</p>
+          </header>
+          <PostList posts={yearPosts} />
+        </section>
+      ))
+    }
   </div>
   <p class="archive-empty" data-archive-empty hidden>조건에 맞는 기록이 없습니다.</p>
   <button class="load-more-button" type="button" data-archive-more hidden>기록 더 보기</button>
@@ -66,14 +72,14 @@ const years = [...new Set(posts.map((post) => post.data.publishedAt.getFullYear(
 
   document.querySelectorAll<HTMLElement>('[data-archive-explorer]').forEach((explorer) => {
     const search = explorer.querySelector<HTMLInputElement>('[data-archive-search]');
-    const year = explorer.querySelector<HTMLSelectElement>('[data-archive-year]');
     const tag = explorer.querySelector<HTMLSelectElement>('[data-archive-tag]');
     const sort = explorer.querySelector<HTMLSelectElement>('[data-archive-sort]');
     const status = explorer.querySelector<HTMLElement>('[data-archive-status]');
     const reset = explorer.querySelector<HTMLButtonElement>('[data-archive-reset]');
     const empty = explorer.querySelector<HTMLElement>('[data-archive-empty]');
     const more = explorer.querySelector<HTMLButtonElement>('[data-archive-more]');
-    const list = explorer.querySelector<HTMLElement>('.post-list');
+    const groupsRoot = explorer.querySelector<HTMLElement>('[data-archive-results]');
+    const groups = Array.from(explorer.querySelectorAll<HTMLElement>('[data-archive-year-group]'));
     const items = Array.from(explorer.querySelectorAll<HTMLElement>('[data-post-item]'));
     const pageSize = Number(explorer.dataset.pageSize) || 12;
     const featuredId = explorer.dataset.featuredId;
@@ -89,29 +95,45 @@ const years = [...new Set(posts.map((post) => post.data.publishedAt.getFullYear(
 
     const applyFilters = () => {
       const query = normalizeArchiveText(search?.value ?? '');
-      const activeYear = year?.value ?? 'all';
       const activeTag = tag?.value ?? 'all';
       const order = sort?.value ?? 'newest';
-      const isFiltered = Boolean(query) || activeYear !== 'all' || activeTag !== 'all' || order !== 'newest';
+      const isFiltered = Boolean(query) || activeTag !== 'all' || order !== 'newest';
 
       const matching = items.filter((item) => {
         if (!isFiltered && featuredId && item.dataset.postId === featuredId) return false;
         const textMatches = normalizeArchiveText(item.dataset.search ?? '').includes(query);
-        const yearMatches = activeYear === 'all' || item.dataset.year === activeYear;
         const tagMatches = activeTag === 'all' || parseTags(item).some((value) => normalizeArchiveText(value) === normalizeArchiveText(activeTag));
-        return textMatches && yearMatches && tagMatches;
+        return textMatches && tagMatches;
       });
 
       matching.sort((a, b) => {
         if (order === 'oldest') return Number(a.dataset.date) - Number(b.dataset.date);
-        if (order === 'title') return (a.dataset.title ?? '').localeCompare(b.dataset.title ?? '', 'ko');
         return Number(b.dataset.date) - Number(a.dataset.date);
       });
 
       const matchingSet = new Set(matching);
-      [...matching, ...items.filter((item) => !matchingSet.has(item))].forEach((item) => list?.append(item));
       matching.forEach((item, index) => { item.hidden = index >= visibleLimit; });
       items.filter((item) => !matchingSet.has(item)).forEach((item) => { item.hidden = true; });
+
+      const orderedGroups = [...groups].sort((a, b) => {
+        const difference = Number(a.dataset.archiveYearGroup) - Number(b.dataset.archiveYearGroup);
+        return order === 'oldest' ? difference : -difference;
+      });
+
+      orderedGroups.forEach((group) => {
+        const groupYear = group.dataset.archiveYearGroup;
+        const groupList = group.querySelector<HTMLElement>('.post-list');
+        const groupMatches = matching.filter((item) => item.dataset.year === groupYear);
+        const groupMatchSet = new Set(groupMatches);
+        const groupItems = items.filter((item) => item.dataset.year === groupYear);
+        [...groupMatches, ...groupItems.filter((item) => !groupMatchSet.has(item))].forEach((item) => groupList?.append(item));
+
+        const visibleInGroup = groupMatches.filter((item) => !item.hidden).length;
+        group.hidden = visibleInGroup === 0;
+        const count = group.querySelector<HTMLElement>('[data-archive-year-count]');
+        if (count) count.textContent = `${groupMatches.length}개의 기록`;
+        groupsRoot?.append(group);
+      });
 
       const shown = Math.min(visibleLimit, matching.length);
       if (status) status.textContent = `${matching.length}개 중 ${shown}개 표시`;
@@ -130,12 +152,10 @@ const years = [...new Set(posts.map((post) => post.data.publishedAt.getFullYear(
     };
 
     search?.addEventListener('input', restart);
-    year?.addEventListener('change', restart);
     tag?.addEventListener('change', restart);
     sort?.addEventListener('change', restart);
     reset?.addEventListener('click', () => {
       if (search) search.value = '';
-      if (year) year.value = 'all';
       if (tag) tag.value = 'all';
       if (sort) sort.value = 'newest';
       restart();
