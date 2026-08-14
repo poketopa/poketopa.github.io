@@ -47,7 +47,7 @@
 - Spacing/layout rhythm: Maximum 1180px content width shared by the index and header; the left wordmark and right header actions align with the article-list edges; category summaries and their search fields share one horizontal centerline on desktop; 8px base rhythm; category summaries sit closer to the category tabs than to result feedback so navigation and context read as one group; summary, search, and the chronological archive form one continuous discovery flow without redundant section titles; article bodies keep the layout-level header separation but suppress the first content element's own top margin to avoid stacked whitespace; first-view spacing stays compact enough to reveal content without scrolling; shelf captions begin at least 10px below the visible shelf edge.
 - Shape/radius/elevation: 8px or less, hairline borders, no default shadows.
 - Motion: 160ms color/translation feedback; disabled for reduced-motion users.
-- Imagery/iconography: Optional 160px editorial thumbnails; thumbnail-free development posts use a restrained `</>` code mark with a small `ludens.dev` label and hairline frame; simple line icons only; book-view icons depict literal books on a shelf and evenly spaced list rows rather than chart-like abstractions.
+- Imagery/iconography: Optional 160px editorial thumbnails; thumbnail-free development posts use a centered, restrained `</>` code mark with a hairline frame; simple line icons only; book-view icons depict literal books on a shelf and evenly spaced list rows rather than chart-like abstractions.
 
 ## Components
 
