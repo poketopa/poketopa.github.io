@@ -53,7 +53,7 @@
 
 - Existing components to reuse: `BaseLayout`, `PostLayout`, `Icon`, `Footer`.
 - New/changed components: Minimal `Header`, reusable `CategoryTabs`, `FeaturedPost`, searchable `ArchiveExplorer`, consistent `PostList` rows, `Bookshelf`, and an accessible `BookViewSwitcher` for book-review discovery.
-- Variants and states: Active category underline; image and generated monogram thumbnail variants; the home route separates one featured article from a denser archive; archive controls place one compact search field at the desktop right with visible-result feedback; matching posts appear in explicit year groups with per-year counts; book list rows retain portrait cover proportions and expose rating/page metadata; one white theme; equal-size book displays wrap into vertically stacked rows with one continuous shelf per row and show author plus rating below each title; compact icon tabs switch separate shelf and list panels.
+- Variants and states: Active category underline; image and generated monogram thumbnail variants; the home route separates one featured article from a denser archive; archive controls place one compact search field at the desktop right with visible-result feedback; matching posts appear in explicit year groups with per-year counts and load in batches of 24; book list rows retain portrait cover proportions and expose rating/page metadata; one white theme; equal-size book displays wrap into vertically stacked rows with one continuous shelf per row and show author plus rating below each title; compact icon tabs switch separate shelf and list panels.
 - Token/component ownership: Global CSS variables in `src/styles/global.css`; components own semantic markup only.
 
 ## Accessibility

@@ -9,7 +9,7 @@ interface Props {
   featuredId?: string;
 }
 
-const { posts, label = '기록', pageSize = 12, featuredId } = Astro.props;
+const { posts, label = '기록', pageSize = 24, featuredId } = Astro.props;
 const years = [...new Set(posts.map((post) => post.data.publishedAt.getFullYear()))].sort((a, b) => b - a);
 const yearGroups = years.map((year) => ({
   year,
@@ -62,7 +62,7 @@ const yearGroups = years.map((year) => ({
     const groupsRoot = explorer.querySelector<HTMLElement>('[data-archive-results]');
     const groups = Array.from(explorer.querySelectorAll<HTMLElement>('[data-archive-year-group]'));
     const items = Array.from(explorer.querySelectorAll<HTMLElement>('[data-post-item]'));
-    const pageSize = Number(explorer.dataset.pageSize) || 12;
+    const pageSize = Number(explorer.dataset.pageSize) || 24;
     const featuredId = explorer.dataset.featuredId;
     let visibleLimit = pageSize;
 
