@@ -32,6 +32,11 @@ const isBook = post.data.category === 'Books';
       {!isBook && <p>{cleanDescription(post.data.description)}</p>}
       <div class="tag-row">
         {post.data.tags.map((tag) => <a href={`/tags/${encodeURIComponent(tag.toLocaleLowerCase())}/`}>#{tag}</a>)}
+        {isBook && post.data.book?.rating !== undefined && (
+          <span class="article-rating" aria-label={`평점 ${post.data.book.rating}점`}>
+            <span aria-hidden="true">★</span> {post.data.book.rating}
+          </span>
+        )}
       </div>
     </header>
 

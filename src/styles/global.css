@@ -988,6 +988,19 @@ a {
   font-size: 0.74rem;
 }
 
+.article-rating {
+  display: inline-flex;
+  padding: 3px 10px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: var(--accent-strong);
+  font-size: 0.74rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  align-items: center;
+  gap: 3px;
+}
+
 .article-grid {
   display: grid;
   padding-top: 48px;
