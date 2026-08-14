@@ -1022,6 +1022,10 @@ a {
   word-break: keep-all;
 }
 
+.prose > :first-child {
+  margin-top: 0;
+}
+
 .prose p {
   margin: 1.15em 0;
 }
