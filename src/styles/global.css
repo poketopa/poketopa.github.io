@@ -1480,8 +1480,8 @@ a {
   }
 
   .bookshelf-stage {
-    --shelf-book-width: 126px;
-    --shelf-book-height: 195px;
+    --shelf-book-width: min(126px, calc(33.333vw - 26px));
+    --shelf-book-height: min(195px, calc(51.587vw - 40.24px));
     --shelf-stage-top: 66px;
     --shelf-caption-gap: 34px;
     --shelf-row-gap: 66px;
@@ -1490,6 +1490,7 @@ a {
     padding-right: 12px;
     padding-bottom: 34px;
     padding-left: 12px;
+    grid-template-columns: repeat(3, var(--shelf-book-width));
     column-gap: 10px;
     min-width: 0;
   }
