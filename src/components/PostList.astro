@@ -19,7 +19,6 @@ const { posts, featuredFirst = false } = Astro.props;
         data-post-item
         data-post-id={post.id}
         data-title={post.data.title}
-        data-tags={JSON.stringify(post.data.tags)}
         data-year={post.data.publishedAt.getFullYear()}
         data-date={post.data.publishedAt.valueOf()}
         data-search={`${post.data.title} ${cleanDescription(post.data.description)} ${post.data.tags.join(' ')} ${CATEGORY_LABELS[post.data.category]}`}
