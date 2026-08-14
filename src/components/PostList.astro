@@ -21,8 +21,15 @@ const { posts } = Astro.props;
         data-date={post.data.publishedAt.valueOf()}
         data-search={`${post.data.title} ${cleanDescription(post.data.description)} ${post.data.tags.join(' ')} ${CATEGORY_LABELS[post.data.category]}`}
       >
-        <div class:list={['post-cover', { 'is-book-cover': post.data.category === 'Books', 'is-illustration-cover': post.data.cover?.endsWith('.svg') }]} aria-hidden="true">
-          {post.data.cover ? <img src={post.data.cover} alt="" loading="lazy" /> : <span>{post.data.category.slice(0, 1)}</span>}
+        <div class:list={['post-cover', { 'is-book-cover': post.data.category === 'Books', 'is-illustration-cover': post.data.cover?.endsWith('.svg'), 'is-default-cover': !post.data.cover }]} aria-hidden="true">
+          {post.data.cover ? (
+            <img src={post.data.cover} alt="" loading="lazy" />
+          ) : (
+            <span class="default-cover">
+              <small>ludens.dev</small>
+              <strong>{'</>'}</strong>
+            </span>
+          )}
         </div>
         <div class="post-summary">
           <h2><a href={`/posts/${post.id}/`}>{post.data.title}</a></h2>
