@@ -27,7 +27,7 @@
 
 ## Information architecture
 
-- Primary navigation: `ludens.dev` home link, GitHub, theme toggle.
+- Primary navigation: `ludens.dev` home link and GitHub.
 - Core routes/screens: `/`, `/posts/`, `/categories/[category]/`, `/tags/[tag]/`, `/posts/[id]/`, `/about/`; `/categories/books/` switches between a visual reading shelf and a standard review list.
 - Content hierarchy: Brand header -> category tabs -> category summary -> featured recent post on the home route -> searchable year-grouped archive or category list -> footer.
 
@@ -42,7 +42,7 @@
 
 ## Visual language
 
-- Color: White canvas, olive-black text, muted gray metadata, lime `#9DD84B`, pale lime `#F1F8E7`.
+- Color: White-only canvas, olive-black text, muted gray metadata, lime `#9DD84B`, pale lime `#F1F8E7`; the site does not expose or follow a dark color scheme.
 - Typography: `Pretendard Variable` across interface, index, wordmark, headings, and long-form content. Fallback order mirrors the approved reference: Pretendard, Apple/system UI, `Apple SD Gothic Neo`, then `Noto Sans KR`. Titles wrap at word boundaries; individual words break only as a last resort when they cannot fit the available width.
 - Spacing/layout rhythm: Maximum 1180px content width shared by the index and header; the left wordmark and right header actions align with the article-list edges; 8px base rhythm; the featured post is separated from the denser archive by a heading and controls; first-view spacing stays compact enough to reveal content without scrolling; shelf captions begin at least 10px below the visible shelf edge.
 - Shape/radius/elevation: 8px or less, hairline borders, no default shadows.
@@ -53,13 +53,13 @@
 
 - Existing components to reuse: `BaseLayout`, `PostLayout`, `Icon`, `Footer`.
 - New/changed components: Minimal `Header`, reusable `CategoryTabs`, `FeaturedPost`, searchable `ArchiveExplorer`, consistent `PostList` rows, `Bookshelf`, and an accessible `BookViewSwitcher` for book-review discovery.
-- Variants and states: Active category underline; image and generated monogram thumbnail variants; the home route separates one featured article from a denser archive; archive controls place one compact search field at the desktop right with visible-result feedback; matching posts appear in explicit year groups with per-year counts; book list rows retain portrait cover proportions and expose rating/page metadata; light/dark themes; equal-size book displays wrap into vertically stacked rows with one continuous shelf per row and show author plus rating below each title; compact icon tabs switch separate shelf and list panels.
+- Variants and states: Active category underline; image and generated monogram thumbnail variants; the home route separates one featured article from a denser archive; archive controls place one compact search field at the desktop right with visible-result feedback; matching posts appear in explicit year groups with per-year counts; book list rows retain portrait cover proportions and expose rating/page metadata; one white theme; equal-size book displays wrap into vertically stacked rows with one continuous shelf per row and show author plus rating below each title; compact icon tabs switch separate shelf and list panels.
 - Token/component ownership: Global CSS variables in `src/styles/global.css`; components own semantic markup only.
 
 ## Accessibility
 
 - Target standard: WCAG 2.2 AA.
-- Keyboard/focus behavior: Visible focus ring; theme button and all tabs keyboard accessible; the book view tabs support arrow, Home, and End keys; skip link retained.
+- Keyboard/focus behavior: Visible focus ring; all tabs are keyboard accessible; the book view tabs support arrow, Home, and End keys; skip link retained.
 - Contrast/readability: Muted text meets 4.5:1 and focus, icons, and selected controls meet 3:1; lime is not used as body text on white; active lime includes weight/underline cues.
 - Screen-reader semantics: Header actions and icon-only book view tabs have explicit names; tabs use navigation landmarks; metadata uses `<time>`.
 - Reduced motion and sensory considerations: `prefers-reduced-motion` disables transitions.

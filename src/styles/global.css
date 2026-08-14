@@ -22,27 +22,6 @@
   --book-serif: 'Nanum Myeongjo', 'Noto Serif KR', Batang, serif;
 }
 
-:root[data-theme='dark'] {
-  color-scheme: dark;
-  --background: #121610;
-  --surface: #171c15;
-  --surface-soft: #1d241a;
-  --text: #edf2e9;
-  --text-soft: #bdc6b8;
-  --text-muted: #aeb8aa;
-  --text-faint: #a0ab9c;
-  --line: #2d352a;
-  --line-strong: #414c3c;
-  --accent: #a8dd61;
-  --accent-strong: #b8ea77;
-  --accent-soft: #26351c;
-  --focus: #c7f58c;
-  --code-background: #1a2117;
-  --code-border: #3a4635;
-  --code-text: #e5eee0;
-  --inline-code-background: #222b1e;
-}
-
 * {
   box-sizing: border-box;
 }
@@ -170,15 +149,6 @@ a {
   border-color: var(--line);
   background: var(--surface-soft);
   color: var(--text);
-}
-
-.moon-icon,
-:root[data-theme='dark'] .sun-icon {
-  display: none;
-}
-
-:root[data-theme='dark'] .moon-icon {
-  display: contents;
 }
 
 .index-shell {
@@ -1126,11 +1096,6 @@ a {
 .prose pre code {
   white-space: pre;
   overflow-wrap: normal;
-}
-
-:root[data-theme='dark'] .prose .astro-code,
-:root[data-theme='dark'] .prose .astro-code span {
-  color: var(--shiki-dark) !important;
 }
 
 .prose img {

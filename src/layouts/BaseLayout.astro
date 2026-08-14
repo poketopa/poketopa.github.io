@@ -59,13 +59,6 @@ const imageURL = new URL(image, Astro.site);
     <title>{pageTitle}</title>
     <script is:inline>
       (() => {
-        const saved = localStorage.getItem('theme');
-        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-        document.documentElement.dataset.theme = saved || (prefersDark ? 'dark' : 'light');
-      })();
-    </script>
-    <script is:inline>
-      (() => {
         const storageKey = `scroll-position:${location.pathname}${location.search}`;
         const navigationEntry = performance.getEntriesByType('navigation')[0];
         const isHistoryNavigation = navigationEntry?.type === 'back_forward';
@@ -105,13 +98,5 @@ const imageURL = new URL(image, Astro.site);
       <slot />
     </main>
     <Footer />
-    <script>
-      const toggle = document.querySelector<HTMLButtonElement>('.theme-toggle');
-      toggle?.addEventListener('click', () => {
-        const next = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark';
-        document.documentElement.dataset.theme = next;
-        localStorage.setItem('theme', next);
-      });
-    </script>
   </body>
 </html>
