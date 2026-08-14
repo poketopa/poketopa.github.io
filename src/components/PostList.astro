@@ -25,7 +25,14 @@ const { posts, featuredFirst = false } = Astro.props;
             <a class="category-badge" href={`/categories/${post.data.category.toLocaleLowerCase()}/`}>
               {CATEGORY_LABELS[post.data.category]}
             </a>
-            {post.data.book && <span class="book-list-facts">★ {post.data.book.rating} · {post.data.book.pageCount}쪽</span>}
+            {post.data.book && (post.data.book.rating !== undefined || post.data.book.pageCount) && (
+              <span class="book-list-facts">
+                {[
+                  post.data.book.rating !== undefined ? `★ ${post.data.book.rating}` : null,
+                  post.data.book.pageCount ? `${post.data.book.pageCount}쪽` : null,
+                ].filter(Boolean).join(' · ')}
+              </span>
+            )}
             <span aria-hidden="true">·</span>
             <time datetime={post.data.publishedAt.toISOString()}>{formatDate(post.data.publishedAt)}</time>
           </div>

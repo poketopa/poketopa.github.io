@@ -16,6 +16,7 @@
   --code-background: #f5f7f3;
   --sans: 'Pretendard Variable', Pretendard, -apple-system, BlinkMacSystemFont, system-ui, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif;
   --serif: var(--sans);
+  --book-serif: 'Nanum Myeongjo', 'Noto Serif KR', Batang, serif;
 }
 
 :root[data-theme='dark'] {
@@ -41,7 +42,7 @@
 }
 
 html {
-  scroll-behavior: smooth;
+  scroll-behavior: auto;
   scrollbar-gutter: stable;
 }
 
@@ -777,6 +778,11 @@ a {
   border-bottom: 1px solid var(--line);
 }
 
+.article-shell.has-toc .article-header {
+  width: min(1032px, 100%);
+  padding-right: 252px;
+}
+
 .article-header h1 {
   margin: 22px 0 16px;
   font-family: var(--serif);
@@ -883,6 +889,16 @@ a {
 .prose img {
   max-width: 100%;
   border-radius: 8px;
+}
+
+.article-shell.is-book-post .prose,
+.article-shell.is-book-post .prose h2,
+.article-shell.is-book-post .prose h3 {
+  font-family: var(--book-serif);
+}
+
+.article-shell.is-book-post .prose {
+  font-weight: 700;
 }
 
 .toc {
@@ -1080,6 +1096,11 @@ a {
 
   .article-grid {
     grid-template-columns: minmax(0, 740px);
+  }
+
+  .article-shell.has-toc .article-header {
+    width: min(780px, 100%);
+    padding-right: 0;
   }
 
   .toc {

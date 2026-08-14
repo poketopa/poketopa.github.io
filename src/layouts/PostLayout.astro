@@ -12,10 +12,12 @@ interface Props {
 
 const { post, previous, next, headings } = Astro.props;
 const toc = headings.filter((heading) => heading.depth === 2 || heading.depth === 3);
+const hasToc = toc.length >= 3;
+const isBook = post.data.category === 'Books';
 ---
 
 <BaseLayout title={post.data.title} description={post.data.description} article>
-  <article class="article-shell">
+  <article class:list={['article-shell', { 'has-toc': hasToc, 'is-book-post': isBook }]}>
     <header class="article-header">
       <div class="post-meta">
         <a href={`/categories/${post.data.category.toLocaleLowerCase()}/`}>
@@ -27,18 +29,18 @@ const toc = headings.filter((heading) => heading.depth === 2 || heading.depth ==
         <span>{readingTime(post.body ?? '')}분 읽기</span>
       </div>
       <h1>{post.data.title}</h1>
-      <p>{post.data.description}</p>
+      {!isBook && <p>{post.data.description}</p>}
       <div class="tag-row">
         {post.data.tags.map((tag) => <a href={`/tags/${encodeURIComponent(tag.toLocaleLowerCase())}/`}>#{tag}</a>)}
       </div>
     </header>
 
-    <div class:list={['article-grid', { 'without-toc': toc.length < 3 }]}>
+    <div class:list={['article-grid', { 'without-toc': !hasToc }]}>
       <div class="prose">
         <slot />
       </div>
       {
-        toc.length >= 3 && (
+        hasToc && (
           <aside class="toc" aria-label="목차">
             <strong>목차</strong>
             <ol>

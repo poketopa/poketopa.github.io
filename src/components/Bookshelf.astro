@@ -29,7 +29,7 @@ const books = posts
             class="display-book"
             href={`/posts/${id}/`}
             style={style}
-            aria-label={`${data.title}, ${book.author}, ${book.pageCount}쪽${book.rating ? `, 평점 ${book.rating}점` : ''}`}
+            aria-label={`${data.title}${book.author ? `, ${book.author}` : ''}${book.pageCount ? `, ${book.pageCount}쪽` : ''}${book.rating !== undefined ? `, 평점 ${book.rating}점` : ''}`}
           >
             <span class="display-object">
               <span class="display-order" aria-hidden="true">{String(index + 1).padStart(2, '0')}</span>
@@ -42,8 +42,8 @@ const books = posts
             <span class="display-caption">
               <strong>{data.title}</strong>
               <span class="display-caption-meta">
-                <small>{book.author}</small>
-                {book.rating && <span class="display-rating" aria-label={`평점 ${book.rating}점`}>★ {book.rating}</span>}
+                {book.author && <small>{book.author}</small>}
+                {book.rating !== undefined && <span class="display-rating" aria-label={`평점 ${book.rating}점`}>★ {book.rating}</span>}
               </span>
             </span>
           </a>
