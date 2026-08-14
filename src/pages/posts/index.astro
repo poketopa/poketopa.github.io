@@ -2,6 +2,7 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import PostList from '../../components/PostList.astro';
 import CategoryTabs from '../../components/CategoryTabs.astro';
+import CategorySummary from '../../components/CategorySummary.astro';
 import { getPublishedPosts } from '../../utils/posts';
 
 const posts = await getPublishedPosts();
@@ -10,6 +11,9 @@ const posts = await getPublishedPosts();
 <BaseLayout title="글" description="ludens의 개발 기록, 회고, 독후감">
   <div class="index-shell container">
     <CategoryTabs active="all" />
+    <div class="category-overview">
+      <CategorySummary category="all" count={posts.length} />
+    </div>
     <section class="index-list" aria-label="전체 글">
     {posts.length > 0 ? <PostList posts={posts} /> : <p class="empty-state">아직 공개된 글이 없습니다.</p>}
     </section>

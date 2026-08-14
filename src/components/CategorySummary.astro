@@ -1,0 +1,18 @@
+---
+import type { Category } from '../consts';
+
+interface Props {
+  category: Category | 'all';
+  count: number;
+}
+
+const { category, count } = Astro.props;
+const suffix = {
+  all: '개의 기록이 차곡차곡 쌓였습니다.',
+  Development: '개의 개발 경험을 기록했습니다.',
+  Retrospective: '번의 배움과 변화를 돌아봤습니다.',
+  Books: '권을 읽고 생각을 남겼습니다.',
+}[category];
+---
+
+<p class="category-summary"><strong>{count}</strong>{suffix}</p>

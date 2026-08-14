@@ -1,6 +1,7 @@
 ---
 import type { Post } from '../utils/posts';
 import Bookshelf from './Bookshelf.astro';
+import CategorySummary from './CategorySummary.astro';
 import Icon from './Icon.astro';
 import PostList from './PostList.astro';
 
@@ -11,43 +12,37 @@ interface Props {
 const { posts } = Astro.props;
 ---
 
-<section class="book-library" data-book-views aria-labelledby="book-library-title">
-  <header class="book-library-heading">
-    <div>
-      <p class="bookshelf-eyebrow">READING LIST</p>
-      <div class="book-library-title-row">
-        <h1 id="book-library-title">독후감 목록</h1>
-        <div class="book-view-tabs" role="tablist" aria-label="독후감 보기 방식">
-          <button
-            id="bookshelf-tab"
-            type="button"
-            role="tab"
-            aria-label="책장 보기"
-            title="책장 보기"
-            aria-selected="true"
-            aria-controls="bookshelf-panel"
-            data-book-tab="shelf"
-          >
-            <Icon name="shelf" size={18} />
-          </button>
-          <button
-            id="book-list-tab"
-            type="button"
-            role="tab"
-            aria-label="목록 보기"
-            title="목록 보기"
-            aria-selected="false"
-            aria-controls="book-list-panel"
-            tabindex="-1"
-            data-book-tab="list"
-          >
-            <Icon name="list" size={18} />
-          </button>
-        </div>
-      </div>
+<section class="book-library" data-book-views aria-label="독후감 보기">
+  <div class="book-library-heading">
+    <CategorySummary category="Books" count={posts.length} />
+    <div class="book-view-tabs" role="tablist" aria-label="독후감 보기 방식">
+      <button
+        id="bookshelf-tab"
+        type="button"
+        role="tab"
+        aria-label="책장 보기"
+        title="책장 보기"
+        aria-selected="true"
+        aria-controls="bookshelf-panel"
+        data-book-tab="shelf"
+      >
+        <Icon name="shelf" size={18} />
+      </button>
+      <button
+        id="book-list-tab"
+        type="button"
+        role="tab"
+        aria-label="목록 보기"
+        title="목록 보기"
+        aria-selected="false"
+        aria-controls="book-list-panel"
+        tabindex="-1"
+        data-book-tab="list"
+      >
+        <Icon name="list" size={18} />
+      </button>
     </div>
-    <p><strong>{posts.length}</strong>권의 기록을 모았습니다.</p>
-  </header>
+  </div>
 
   <div id="bookshelf-panel" role="tabpanel" aria-labelledby="bookshelf-tab" data-book-panel="shelf">
     <Bookshelf posts={posts} />
