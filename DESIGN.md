@@ -29,11 +29,11 @@
 
 - Primary navigation: `ludens.dev` home link and GitHub.
 - Core routes/screens: `/`, `/posts/`, `/categories/[category]/`, `/tags/[tag]/`, `/posts/[id]/`, `/about/`; `/categories/books/` switches between a visual reading shelf and a standard review list.
-- Content hierarchy: Brand header -> category tabs -> category summary -> featured recent post on the home route -> searchable year-grouped archive or category list -> footer.
+- Content hierarchy: Brand header -> category tabs -> category summary and search -> chronological year-grouped archive or category list -> footer.
 
 ## Design principles
 
-- Content before introduction: The index starts with one editorially prominent recent post and practical discovery controls, not a manifesto hero.
+- Archive before promotion: The index starts with practical discovery controls and chronological year groups; no post is duplicated as a promotional block.
 - Large archives need retrieval: A single compact search control remains secondary to a visible chronological archive grouped by year.
 - Mobile reading is non-negotiable: No page-level horizontal overflow; cards may change composition rather than compress their desktop layout.
 - Lime as punctuation: Lime identifies state and category; it never becomes a large decorative field.
@@ -44,7 +44,7 @@
 
 - Color: White-only canvas, olive-black text, muted gray metadata, lime `#9DD84B`, pale lime `#F1F8E7`; the site does not expose or follow a dark color scheme.
 - Typography: `Pretendard Variable` across interface, index, wordmark, headings, and long-form content. Fallback order mirrors the approved reference: Pretendard, Apple/system UI, `Apple SD Gothic Neo`, then `Noto Sans KR`. Titles wrap at word boundaries; individual words break only as a last resort when they cannot fit the available width.
-- Spacing/layout rhythm: Maximum 1180px content width shared by the index and header; the left wordmark and right header actions align with the article-list edges; category summaries and their search fields share one horizontal centerline on desktop; 8px base rhythm; the home featured post is separated from the denser archive by a quiet divider and search control without redundant section titles; first-view spacing stays compact enough to reveal content without scrolling; shelf captions begin at least 10px below the visible shelf edge.
+- Spacing/layout rhythm: Maximum 1180px content width shared by the index and header; the left wordmark and right header actions align with the article-list edges; category summaries and their search fields share one horizontal centerline on desktop; 8px base rhythm; summary, search, and the chronological archive form one continuous discovery flow without redundant section titles; first-view spacing stays compact enough to reveal content without scrolling; shelf captions begin at least 10px below the visible shelf edge.
 - Shape/radius/elevation: 8px or less, hairline borders, no default shadows.
 - Motion: 160ms color/translation feedback; disabled for reduced-motion users.
 - Imagery/iconography: Optional 160px editorial thumbnails; simple line icons only; book-view icons depict literal books on a shelf and evenly spaced list rows rather than chart-like abstractions.
@@ -52,8 +52,8 @@
 ## Components
 
 - Existing components to reuse: `BaseLayout`, `PostLayout`, `Icon`, `Footer`.
-- New/changed components: Minimal `Header`, reusable `CategoryTabs`, `FeaturedPost`, searchable `ArchiveExplorer`, consistent `PostList` rows, `Bookshelf`, and an accessible `BookViewSwitcher` for book-review discovery.
-- Variants and states: Active category underline; image and generated monogram thumbnail variants; the home route separates one featured article from a denser archive; archive controls place one compact search field at the desktop right with visible-result feedback; matching posts appear in explicit year groups with per-year counts and load in batches of 24; book list rows retain portrait cover proportions and expose rating/page metadata; one white theme; equal-size book displays wrap into vertically stacked rows with one continuous shelf per row and show author plus rating below each title; compact icon tabs switch separate shelf and list panels.
+- New/changed components: Minimal `Header`, reusable `CategoryTabs`, searchable `ArchiveExplorer`, consistent `PostList` rows, `Bookshelf`, and an accessible `BookViewSwitcher` for book-review discovery.
+- Variants and states: Active category underline; image and generated monogram thumbnail variants; the home route uses the same chronological archive pattern as the all-posts route; archive controls place one compact search field at the desktop right with visible-result feedback; matching posts appear in explicit year groups with per-year counts and load in batches of 24; book list rows retain portrait cover proportions and expose rating/page metadata; one white theme; equal-size book displays wrap into vertically stacked rows with one continuous shelf per row and show author plus rating below each title; compact icon tabs switch separate shelf and list panels.
 - Token/component ownership: Global CSS variables in `src/styles/global.css`; components own semantic markup only.
 
 ## Accessibility
@@ -67,7 +67,7 @@
 ## Responsive behavior
 
 - Supported breakpoints/devices: 360px mobile through wide desktop.
-- Layout adaptations: Article rows become single-column cards on narrow mobile so text never competes with a fixed thumbnail width; featured media also stacks above its copy; book covers keep a portrait ratio and the shelf grid reduces columns without overflowing; long titles use safe emergency wrapping; code blocks scroll internally; header actions remain top-right.
+- Layout adaptations: Article rows become single-column cards on narrow mobile so text never competes with a fixed thumbnail width; book covers keep a portrait ratio and the shelf grid reduces columns without overflowing; long titles use safe emergency wrapping; code blocks scroll internally; header actions remain top-right.
 - Touch/hover differences: Primary icon targets are 44px and compact view tabs are 40px; shelf titles remain visible without hover; hover motion and title underlines are supplemental and not required for navigation.
 
 ## Interaction states

@@ -5,19 +5,17 @@ import { cleanDescription, formatDate } from '../utils/posts';
 
 interface Props {
   posts: Post[];
-  featuredFirst?: boolean;
 }
 
-const { posts, featuredFirst = false } = Astro.props;
+const { posts } = Astro.props;
 ---
 
-<div class:list={['post-list', { 'has-featured': featuredFirst }]}>
+<div class="post-list">
   {
-    posts.map((post, index) => (
+    posts.map((post) => (
       <article
-        class:list={['post-card', { 'is-featured': featuredFirst && index === 0, 'is-book-post': post.data.category === 'Books' }]}
+        class:list={['post-card', { 'is-book-post': post.data.category === 'Books' }]}
         data-post-item
-        data-post-id={post.id}
         data-title={post.data.title}
         data-year={post.data.publishedAt.getFullYear()}
         data-date={post.data.publishedAt.valueOf()}

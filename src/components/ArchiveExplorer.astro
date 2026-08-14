@@ -6,10 +6,9 @@ interface Props {
   posts: Post[];
   label?: string;
   pageSize?: number;
-  featuredId?: string;
 }
 
-const { posts, label = '기록', pageSize = 24, featuredId } = Astro.props;
+const { posts, label = '기록', pageSize = 24 } = Astro.props;
 const hasSummary = Astro.slots.has('summary');
 const years = [...new Set(posts.map((post) => post.data.publishedAt.getFullYear()))].sort((a, b) => b - a);
 const yearGroups = years.map((year) => ({
@@ -18,7 +17,7 @@ const yearGroups = years.map((year) => ({
 }));
 ---
 
-<section class="archive-explorer" data-archive-explorer data-page-size={pageSize} data-featured-id={featuredId} aria-label={`${label} 찾기`}>
+<section class="archive-explorer" data-archive-explorer data-page-size={pageSize} aria-label={`${label} 찾기`}>
   <div class:list={['archive-overview-row', { 'has-summary': hasSummary }]}>
     {hasSummary && <slot name="summary" />}
     <div class="archive-tools" role="search" aria-label={`${label} 검색`}>
@@ -67,17 +66,13 @@ const yearGroups = years.map((year) => ({
     const groups = Array.from(explorer.querySelectorAll<HTMLElement>('[data-archive-year-group]'));
     const items = Array.from(explorer.querySelectorAll<HTMLElement>('[data-post-item]'));
     const pageSize = Number(explorer.dataset.pageSize) || 24;
-    const featuredId = explorer.dataset.featuredId;
     let visibleLimit = pageSize;
 
     const applyFilters = () => {
       const query = normalizeArchiveText(search?.value ?? '');
       const isFiltered = Boolean(query);
 
-      const matching = items.filter((item) => {
-        if (!isFiltered && featuredId && item.dataset.postId === featuredId) return false;
-        return normalizeArchiveText(item.dataset.search ?? '').includes(query);
-      });
+      const matching = items.filter((item) => normalizeArchiveText(item.dataset.search ?? '').includes(query));
 
       matching.sort((a, b) => Number(b.dataset.date) - Number(a.dataset.date));
 

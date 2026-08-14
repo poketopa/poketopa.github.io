@@ -202,27 +202,13 @@ a {
 .category-summary {
   margin: 0;
   color: var(--text-soft);
-  font-size: clamp(0.92rem, 0.9rem + 0.1vw, 0.98rem);
+  font-size: 0.98rem;
   line-height: 1.55;
 }
 
 .category-summary strong {
   color: var(--text);
   font-size: 1em;
-}
-
-.home-featured {
-  padding-top: clamp(16px, 2.5vw, 26px);
-}
-
-.home-archive {
-  margin-top: clamp(28px, 4vw, 44px);
-  padding-top: clamp(22px, 3vw, 34px);
-  border-top: 1px solid var(--line);
-}
-
-.home-featured .post-card {
-  padding-top: 22px;
 }
 
 .archive-explorer {
@@ -729,17 +715,6 @@ a {
 .post-card:hover::before,
 .post-card:focus-within::before {
   opacity: 1;
-}
-
-.post-list.has-featured .post-card.is-featured {
-  --post-cover-width: 240px;
-  --post-row-gap: 40px;
-
-  padding-block: 46px;
-}
-
-.post-list.has-featured .post-card.is-featured .post-summary h2 {
-  font-size: clamp(1.5rem, 2.4vw, 1.9rem);
 }
 
 .post-card.is-book-post {
@@ -1525,22 +1500,6 @@ a {
 
   .post-card.is-book-post .post-cover img {
     padding: 0;
-  }
-
-  .post-list.has-featured .post-card.is-featured {
-    --post-cover-width: 100%;
-    --post-row-gap: 16px;
-
-    padding-block: 30px;
-    grid-template-columns: minmax(0, 1fr);
-  }
-
-  .post-list.has-featured .post-card.is-featured .post-cover {
-    width: var(--post-cover-width);
-  }
-
-  .post-list.has-featured .post-card.is-featured .post-summary h2 {
-    font-size: 1.24rem;
   }
 
   .post-summary h2 {
