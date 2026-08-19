@@ -1143,12 +1143,8 @@ a {
   font-weight: 700;
 }
 
-.article-shell.is-book-post.uses-split-book-body .prose > :nth-child(-n + 10) {
-  font-weight: 500;
-}
-
-.article-shell.is-book-post.uses-split-book-body .prose > :nth-child(n + 11) {
-  font-weight: 600;
+.article-shell.is-book-post.uses-book-body-650 .prose {
+  font-weight: 650;
 }
 
 .mobile-toc {
