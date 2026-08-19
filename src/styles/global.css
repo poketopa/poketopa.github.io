@@ -1140,10 +1140,6 @@ a {
 }
 
 .article-shell.is-book-post .prose {
-  font-weight: 700;
-}
-
-.article-shell.is-book-post.uses-book-body-650 .prose {
   font-weight: 650;
 }
 
