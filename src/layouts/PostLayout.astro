@@ -14,11 +14,11 @@ const { post, previous, next, headings } = Astro.props;
 const toc = headings.filter((heading) => heading.depth === 2 || heading.depth === 3);
 const hasToc = toc.length >= 3;
 const isBook = post.data.category === 'Books';
-const usesRegularBookBody = isBook && post.data.title === '싯다르타';
+const usesSplitBookBody = isBook && post.data.title === '싯다르타';
 ---
 
 <BaseLayout title={post.data.title} description={post.data.description} article>
-  <article class:list={['article-shell', `category-${post.data.category.toLocaleLowerCase()}`, { 'has-toc': hasToc, 'is-book-post': isBook, 'uses-regular-book-body': usesRegularBookBody }]}>
+  <article class:list={['article-shell', `category-${post.data.category.toLocaleLowerCase()}`, { 'has-toc': hasToc, 'is-book-post': isBook, 'uses-split-book-body': usesSplitBookBody }]}>
     <header class="article-header">
       <div class="post-meta">
         <a href={`/categories/${post.data.category.toLocaleLowerCase()}/`}>
