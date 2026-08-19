@@ -1143,6 +1143,10 @@ a {
   font-weight: 700;
 }
 
+.article-shell.is-book-post.uses-regular-book-body .prose {
+  font-weight: 400;
+}
+
 .mobile-toc {
   display: none;
 }
