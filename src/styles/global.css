@@ -986,13 +986,6 @@ a {
   word-break: keep-all;
 }
 
-.article-header > p {
-  color: var(--text-soft);
-  font-size: 1.04rem;
-  overflow-wrap: break-word;
-  word-break: keep-all;
-}
-
 .tag-row {
   display: flex;
   margin-top: 18px;
@@ -1567,11 +1560,6 @@ a {
     font-size: clamp(1.75rem, 7vw, 2.25rem);
     line-height: 1.28;
     overflow-wrap: anywhere;
-    word-break: normal;
-  }
-
-  .article-header > p {
-    font-size: 0.98rem;
     word-break: normal;
   }
 

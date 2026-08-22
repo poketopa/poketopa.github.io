@@ -1,7 +1,7 @@
 ---
 import BaseLayout from './BaseLayout.astro';
 import { CATEGORY_LABELS } from '../consts';
-import { cleanDescription, formatDate, readingTime, type Post } from '../utils/posts';
+import { formatDate, readingTime, type Post } from '../utils/posts';
 
 interface Props {
   post: Post;
@@ -29,7 +29,6 @@ const isBook = post.data.category === 'Books';
         <span>{readingTime(post.body ?? '')}분 읽기</span>
       </div>
       <h1>{post.data.title}</h1>
-      {!isBook && <p>{cleanDescription(post.data.description)}</p>}
       <div class="tag-row">
         {post.data.tags.map((tag) => <a href={`/tags/${encodeURIComponent(tag.toLocaleLowerCase())}/`}>#{tag}</a>)}
         {isBook && post.data.book?.rating !== undefined && (
