@@ -979,7 +979,7 @@ a {
 .article-header h1 {
   margin: 22px 0 16px;
   font-family: var(--serif);
-  font-size: clamp(2.25rem, 5vw, 3.8rem);
+  font-size: clamp(2rem, 4vw, 3rem);
   line-height: 1.32;
   letter-spacing: -0.055em;
   overflow-wrap: anywhere;
@@ -1564,7 +1564,7 @@ a {
   }
 
   .article-header h1 {
-    font-size: clamp(2rem, 9vw, 2.75rem);
+    font-size: clamp(1.75rem, 7vw, 2.25rem);
     line-height: 1.28;
     overflow-wrap: anywhere;
     word-break: normal;
