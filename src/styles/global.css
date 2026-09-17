@@ -1030,7 +1030,7 @@ a {
 .prose {
   min-width: 0;
   font-family: var(--serif);
-  font-size: 1.155rem;
+  font-size: 1.1rem;
   line-height: 1.9;
   word-break: keep-all;
 }
@@ -1101,7 +1101,7 @@ a {
   border-radius: 7px;
   background: var(--code-background) !important;
   color: var(--code-text);
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   line-height: 1.7;
   overflow-x: auto;
   overscroll-behavior-inline: contain;
@@ -1608,7 +1608,7 @@ a {
   }
 
   .prose {
-    font-size: 1.1rem;
+    font-size: 1.05rem;
     word-break: normal;
   }
 
