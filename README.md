@@ -1,4 +1,4 @@
-# ludens.dev
+# homoludens
 
 개발 기록, 회고, 독후감을 담는 블로그입니다.
 

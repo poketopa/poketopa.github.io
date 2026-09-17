@@ -11,7 +11,7 @@ const COVERS_DIR = join(ROOT, 'public/covers/velog');
 const IMAGES_DIR = join(ROOT, 'public/images/velog');
 const REPORT_FILE = join(ROOT, 'scripts/velog-migration-report.json');
 const WRITE = process.argv.includes('--write');
-const USER_AGENT = 'ludens.dev Velog migration (https://poketopa.github.io/)';
+const USER_AGENT = 'homoludens Velog migration (https://poketopa.github.io/)';
 
 const POST_PATHS = [
   '우아한-테크코스-8기-백엔드-최종-합격-후기',

@@ -1,13 +1,13 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Icon from '../../components/Icon.astro';
-import { CATEGORY_LABELS } from '../../consts';
+import { CATEGORY_LABELS, SITE } from '../../consts';
 import { getPublishedPosts } from '../../utils/posts';
 
 const posts = await getPublishedPosts();
 ---
 
-<BaseLayout title="분류" description="주제별로 보는 ludens.dev의 기록">
+<BaseLayout title="분류" description={`주제별로 보는 ${SITE.title}의 기록`}>
   <div class="page-header container">
     <p class="eyebrow">CATEGORIES</p>
     <h1>분류</h1>

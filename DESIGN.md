@@ -27,7 +27,7 @@
 
 ## Information architecture
 
-- Primary navigation: `ludens.dev` home link and GitHub.
+- Primary navigation: `homoludens` home link and GitHub.
 - Core routes/screens: `/`, `/posts/`, `/categories/[category]/`, `/tags/[tag]/`, `/posts/[id]/`, `/about/`; `/categories/books/` switches between a visual reading shelf and a standard review list.
 - Content hierarchy: Brand header -> category tabs -> category summary and search -> chronological year-grouped archive or category list -> footer.
 

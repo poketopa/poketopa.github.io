@@ -15,7 +15,7 @@ const REVIEW_FILE = join(ROOT, 'scripts/naver-book-review.json');
 const WRITE = process.argv.includes('--write');
 const REFRESH_METADATA = process.argv.includes('--refresh-metadata');
 const METADATA_VERSION = 3;
-const USER_AGENT = 'ludens.dev migration (https://poketopa.github.io/)';
+const USER_AGENT = 'homoludens migration (https://poketopa.github.io/)';
 
 const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 

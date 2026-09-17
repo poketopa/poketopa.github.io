@@ -5,7 +5,7 @@ import { SITE } from '../consts';
 
 <header class="site-header">
   <div class="header-inner">
-    <a class="wordmark" href="/" aria-label="ludens.dev 홈">ludens.dev</a>
+    <a class="wordmark" href="/" aria-label={`${SITE.title} 홈`}>{SITE.title}</a>
     <div class="header-actions">
       <a class="icon-button" href={SITE.github} target="_blank" rel="noreferrer" aria-label="ludens GitHub" title="GitHub">
         <Icon name="github" />

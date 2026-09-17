@@ -1,5 +1,5 @@
 export const SITE = {
-  title: 'ludens.dev',
+  title: 'homoludens',
   author: 'ludens',
   description: 'ludens의 개발 기록, 회고, 독후감',
   url: 'https://poketopa.github.io',
