@@ -1101,7 +1101,7 @@ a {
   border-radius: 7px;
   background: var(--code-background) !important;
   color: var(--code-text);
-  font-size: 0.84rem;
+  font-size: 1rem;
   line-height: 1.7;
   overflow-x: auto;
   overscroll-behavior-inline: contain;
