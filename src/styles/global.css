@@ -325,7 +325,7 @@ a {
 .archive-year-heading p {
   margin: 8px 0 0;
   color: var(--text-muted);
-  font-size: 0.68rem;
+  font-size: 0.75rem;
   font-weight: 650;
   letter-spacing: 0.06em;
 }
@@ -796,7 +796,7 @@ a {
   margin: 0;
   font-size: clamp(1.16rem, 1.8vw, 1.4rem);
   font-weight: 700;
-  line-height: 1.5;
+  line-height: 1.4;
   letter-spacing: -0.035em;
   overflow-wrap: break-word;
   word-break: keep-all;
@@ -825,7 +825,7 @@ a {
   margin: 10px 0 15px;
   color: var(--text-soft);
   font-size: 0.92rem;
-  line-height: 1.75;
+  line-height: 1.68;
   overflow-wrap: break-word;
   word-break: keep-all;
 }
@@ -1538,7 +1538,7 @@ a {
 
   .post-meta {
     gap: 5px;
-    font-size: 0.68rem;
+    font-size: 0.73rem;
   }
 
   .article-header {

@@ -29,7 +29,7 @@
 
 - Primary navigation: `homoludens` home link and GitHub.
 - Core routes/screens: `/`, `/posts/`, `/categories/[category]/`, `/tags/[tag]/`, `/posts/[id]/`, `/about/`; `/categories/books/` switches between a visual reading shelf and a standard review list.
-- Content hierarchy: Brand header -> home-only editorial wordmark cover -> category tabs -> category summary and search -> chronological year-grouped archive or category list -> footer. Non-home routes omit the cover.
+- Content hierarchy: Brand header -> shared editorial wordmark cover on the all/development/retrospective/books archive routes -> category tabs -> category summary and search -> chronological year-grouped archive or category list -> footer. Article and utility routes omit the cover.
 
 ## Design principles
 
@@ -43,7 +43,7 @@
 ## Visual language
 
 - Color: White-only canvas, olive-black text, muted gray metadata, lime `#9DD84B`, pale lime `#F1F8E7`; the site does not expose or follow a dark color scheme.
-- Typography: `Pretendard Variable` across interface, index, wordmark, headings, and every long-form category, including book reviews. Long-form text uses a 740px maximum measure, 17px desktop type at 1.82 line-height, and 16.8px mobile type at 1.78 line-height. Fallback order mirrors the approved reference: Pretendard, Apple/system UI, `Apple SD Gothic Neo`, then `Noto Sans KR`. Titles wrap at word boundaries; individual words break only as a last resort when they cannot fit the available width.
+- Typography: `Pretendard Variable` across interface, index, wordmark, headings, and every long-form category, including book reviews. The archive-cover wordmark uses a restrained 720 weight and its uppercase descriptor stays at least 12px desktop and 10.9px mobile. Index post titles use a compact 1.4 line-height, summaries use 1.68, and mobile metadata stays at least 11.7px. Long-form text uses a 740px maximum measure, 17px desktop type at 1.82 line-height, and 16.8px mobile type at 1.78 line-height. Fallback order mirrors the approved reference: Pretendard, Apple/system UI, `Apple SD Gothic Neo`, then `Noto Sans KR`. Titles wrap at word boundaries; individual words break only as a last resort when they cannot fit the available width.
 - Spacing/layout rhythm: Maximum 1180px content width shared by the index and header; the left wordmark and right header actions align with the article-list edges; category summaries and their search fields share one horizontal centerline on desktop; 8px base rhythm; category summaries sit closer to the category tabs than to result feedback so navigation and context read as one group; summary, search, and the chronological archive form one continuous discovery flow without redundant section titles; article bodies keep the layout-level header separation but suppress the first content element's own top margin to avoid stacked whitespace; first-view spacing stays compact enough to reveal content without scrolling; shelf captions begin at least 10px below the visible shelf edge.
 - Shape/radius/elevation: 8px or less, hairline borders, no default shadows.
 - Motion: 160ms color/translation feedback; disabled for reduced-motion users.
@@ -52,8 +52,8 @@
 ## Components
 
 - Existing components to reuse: `BaseLayout`, `PostLayout`, `Icon`, `Footer`.
-- New/changed components: Minimal `Header`, home-only editorial wordmark cover, reusable `CategoryTabs`, searchable `ArchiveExplorer`, consistent `PostList` rows, `Bookshelf`, and an accessible `BookViewSwitcher` for book-review discovery.
-- Variants and states: The home route opens with a centered `homoludens.` wordmark on the soft surface, a lime full stop, and a restrained category descriptor; active category underline; image and code-mark placeholder thumbnail variants; the home route uses the same chronological archive pattern as the all-posts route; archive controls place one compact search field at the desktop right with visible-result feedback; matching posts appear in explicit year groups with per-year counts and load in batches of 24; book list rows retain portrait cover proportions and expose rating/page metadata; book-review detail headers place the rating directly after the tag chips; one white theme; equal-size book displays wrap into vertically stacked rows with one continuous shelf per row and show author plus rating below each title; compact icon tabs switch separate shelf and list panels.
+- New/changed components: Minimal `Header`, shared `BrandCover` for the four primary archive routes, reusable `CategoryTabs`, searchable `ArchiveExplorer`, consistent `PostList` rows, `Bookshelf`, and an accessible `BookViewSwitcher` for book-review discovery.
+- Variants and states: The all/development/retrospective/books archive routes open with the same centered `homoludens.` wordmark on the soft surface, a lime full stop, and a restrained category descriptor; active category underline; image and code-mark placeholder thumbnail variants; the home route uses the same chronological archive pattern as the all-posts route; archive controls place one compact search field at the desktop right with visible-result feedback; matching posts appear in explicit year groups with per-year counts and load in batches of 24; book list rows retain portrait cover proportions and expose rating/page metadata; book-review detail headers place the rating directly after the tag chips; one white theme; equal-size book displays wrap into vertically stacked rows with one continuous shelf per row and show author plus rating below each title; compact icon tabs switch separate shelf and list panels.
 - Token/component ownership: Global CSS variables in `src/styles/global.css`; components own semantic markup only.
 
 ## Accessibility

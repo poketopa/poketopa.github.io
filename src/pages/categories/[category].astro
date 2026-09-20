@@ -2,6 +2,7 @@
 import type { GetStaticPaths } from 'astro';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import ArchiveExplorer from '../../components/ArchiveExplorer.astro';
+import BrandCover from '../../components/BrandCover.astro';
 import CategoryTabs from '../../components/CategoryTabs.astro';
 import CategorySummary from '../../components/CategorySummary.astro';
 import BookViewSwitcher from '../../components/BookViewSwitcher.astro';
@@ -20,6 +21,8 @@ const { category, label, posts } = Astro.props;
 ---
 
 <BaseLayout title={label} description={`${label} 분류의 글`}>
+  <BrandCover />
+
   <div class="index-shell container">
     <CategoryTabs active={category.toLocaleLowerCase()} />
     {category === 'Books' && posts.length > 0 ? (
