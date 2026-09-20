@@ -3,7 +3,7 @@
 ## Source of truth
 
 - Status: Active
-- Last refreshed: 2026-08-14
+- Last refreshed: 2026-09-21
 - Primary product surfaces: Blog index, category index, post detail, about, 404
 - Evidence reviewed: `src/pages`, `src/components`, `src/layouts`, `src/styles/global.css`, the approved references in `.omx/artifacts/visual-ralph/ludens-kurly/`, the 2026-08-14 five-session comparison with `geongyu09.github.io`, and `.omx/artifacts/visual-ralph/year-archive/`
 
@@ -43,7 +43,7 @@
 ## Visual language
 
 - Color: White-only canvas, olive-black text, muted gray metadata, lime `#9DD84B`, pale lime `#F1F8E7`; the site does not expose or follow a dark color scheme.
-- Typography: `Pretendard Variable` across interface, index, wordmark, headings, and long-form content. Fallback order mirrors the approved reference: Pretendard, Apple/system UI, `Apple SD Gothic Neo`, then `Noto Sans KR`. Titles wrap at word boundaries; individual words break only as a last resort when they cannot fit the available width.
+- Typography: `Pretendard Variable` across interface, index, wordmark, headings, and every long-form category, including book reviews. Long-form text uses a 740px maximum measure, 17px desktop type at 1.82 line-height, and 16.8px mobile type at 1.78 line-height. Fallback order mirrors the approved reference: Pretendard, Apple/system UI, `Apple SD Gothic Neo`, then `Noto Sans KR`. Titles wrap at word boundaries; individual words break only as a last resort when they cannot fit the available width.
 - Spacing/layout rhythm: Maximum 1180px content width shared by the index and header; the left wordmark and right header actions align with the article-list edges; category summaries and their search fields share one horizontal centerline on desktop; 8px base rhythm; category summaries sit closer to the category tabs than to result feedback so navigation and context read as one group; summary, search, and the chronological archive form one continuous discovery flow without redundant section titles; article bodies keep the layout-level header separation but suppress the first content element's own top margin to avoid stacked whitespace; first-view spacing stays compact enough to reveal content without scrolling; shelf captions begin at least 10px below the visible shelf edge.
 - Shape/radius/elevation: 8px or less, hairline borders, no default shadows.
 - Motion: 160ms color/translation feedback; disabled for reduced-motion users.

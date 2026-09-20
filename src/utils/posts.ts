@@ -17,17 +17,6 @@ export function formatDate(date: Date): string {
   }).format(date);
 }
 
-export function readingTime(body: string): number {
-  const koreanCharacters = body.match(/[\u3131-\uD79D]/g)?.length ?? 0;
-  const words = body
-    .replace(/[\u3131-\uD79D]/g, ' ')
-    .trim()
-    .split(/\s+/)
-    .filter(Boolean).length;
-
-  return Math.max(1, Math.ceil(koreanCharacters / 500 + words / 220));
-}
-
 export function cleanDescription(description: string): string {
   return description
     .replace(/!\[[\s\S]*?\]\([^)]*\)/g, '')

@@ -19,7 +19,6 @@
   --inline-code-background: #edf2e9;
   --sans: 'Pretendard Variable', Pretendard, -apple-system, BlinkMacSystemFont, system-ui, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif;
   --serif: var(--sans);
-  --book-serif: 'Nanum Myeongjo', 'Noto Serif KR', Batang, serif;
 }
 
 * {
@@ -965,23 +964,23 @@ a {
 }
 
 .article-header {
-  width: min(780px, 100%);
+  width: min(740px, 100%);
   margin-inline: auto;
   padding: 64px 0 44px;
   border-bottom: 1px solid var(--line);
 }
 
 .article-shell.has-toc .article-header {
-  width: min(1032px, 100%);
-  padding-right: 252px;
+  width: min(984px, 100%);
+  padding-right: 244px;
 }
 
 .article-header h1 {
   margin: 22px 0 16px;
   font-family: var(--serif);
-  font-size: clamp(2rem, 4vw, 3rem);
+  font-size: clamp(2rem, 4vw, 2.75rem);
   line-height: 1.32;
-  letter-spacing: -0.055em;
+  letter-spacing: -0.045em;
   overflow-wrap: anywhere;
   word-break: keep-all;
 }
@@ -1017,9 +1016,9 @@ a {
 .article-grid {
   display: grid;
   padding-top: 48px;
-  grid-template-columns: minmax(0, 780px) 180px;
+  grid-template-columns: minmax(0, 740px) 180px;
   justify-content: center;
-  gap: 72px;
+  gap: 64px;
 }
 
 .article-grid.without-toc {
@@ -1030,8 +1029,8 @@ a {
 .prose {
   min-width: 0;
   font-family: var(--serif);
-  font-size: 1.1rem;
-  line-height: 1.9;
+  font-size: 1.0625rem;
+  line-height: 1.82;
   word-break: keep-all;
 }
 
@@ -1062,12 +1061,12 @@ a {
 }
 
 .prose h2 {
-  margin: 3em 0 0.8em;
+  margin: 2.5em 0 0.8em;
   font-size: 1.65rem;
 }
 
 .prose h3 {
-  margin: 2.4em 0 0.7em;
+  margin: 2.1em 0 0.7em;
   font-size: 1.22rem;
 }
 
@@ -1124,16 +1123,6 @@ a {
   display: block;
   max-width: 100%;
   overflow-x: auto;
-}
-
-.article-shell.is-book-post .prose,
-.article-shell.is-book-post .prose h2,
-.article-shell.is-book-post .prose h3 {
-  font-family: var(--book-serif);
-}
-
-.article-shell.is-book-post .prose {
-  font-weight: 650;
 }
 
 .mobile-toc {
@@ -1557,7 +1546,7 @@ a {
   }
 
   .article-header h1 {
-    font-size: clamp(1.75rem, 7vw, 2.25rem);
+    font-size: clamp(1.75rem, 7vw, 2.15rem);
     line-height: 1.28;
     overflow-wrap: anywhere;
     word-break: normal;
@@ -1609,6 +1598,7 @@ a {
 
   .prose {
     font-size: 1.05rem;
+    line-height: 1.78;
     word-break: normal;
   }
 
