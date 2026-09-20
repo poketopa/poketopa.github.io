@@ -29,7 +29,7 @@
 
 - Primary navigation: `homoludens` home link and GitHub.
 - Core routes/screens: `/`, `/posts/`, `/categories/[category]/`, `/tags/[tag]/`, `/posts/[id]/`, `/about/`; `/categories/books/` switches between a visual reading shelf and a standard review list.
-- Content hierarchy: Brand header -> category tabs -> category summary and search -> chronological year-grouped archive or category list -> footer.
+- Content hierarchy: Brand header -> home-only editorial wordmark cover -> category tabs -> category summary and search -> chronological year-grouped archive or category list -> footer. Non-home routes omit the cover.
 
 ## Design principles
 
@@ -52,8 +52,8 @@
 ## Components
 
 - Existing components to reuse: `BaseLayout`, `PostLayout`, `Icon`, `Footer`.
-- New/changed components: Minimal `Header`, reusable `CategoryTabs`, searchable `ArchiveExplorer`, consistent `PostList` rows, `Bookshelf`, and an accessible `BookViewSwitcher` for book-review discovery.
-- Variants and states: Active category underline; image and code-mark placeholder thumbnail variants; the home route uses the same chronological archive pattern as the all-posts route; archive controls place one compact search field at the desktop right with visible-result feedback; matching posts appear in explicit year groups with per-year counts and load in batches of 24; book list rows retain portrait cover proportions and expose rating/page metadata; book-review detail headers place the rating directly after the tag chips; one white theme; equal-size book displays wrap into vertically stacked rows with one continuous shelf per row and show author plus rating below each title; compact icon tabs switch separate shelf and list panels.
+- New/changed components: Minimal `Header`, home-only editorial wordmark cover, reusable `CategoryTabs`, searchable `ArchiveExplorer`, consistent `PostList` rows, `Bookshelf`, and an accessible `BookViewSwitcher` for book-review discovery.
+- Variants and states: The home route opens with a centered `homoludens.` wordmark on the soft surface, a lime full stop, and a restrained category descriptor; active category underline; image and code-mark placeholder thumbnail variants; the home route uses the same chronological archive pattern as the all-posts route; archive controls place one compact search field at the desktop right with visible-result feedback; matching posts appear in explicit year groups with per-year counts and load in batches of 24; book list rows retain portrait cover proportions and expose rating/page metadata; book-review detail headers place the rating directly after the tag chips; one white theme; equal-size book displays wrap into vertically stacked rows with one continuous shelf per row and show author plus rating below each title; compact icon tabs switch separate shelf and list panels.
 - Token/component ownership: Global CSS variables in `src/styles/global.css`; components own semantic markup only.
 
 ## Accessibility

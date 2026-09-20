@@ -9,6 +9,11 @@ const posts = await getPublishedPosts();
 ---
 
 <BaseLayout>
+  <section class="home-cover" aria-labelledby="home-cover-title">
+    <h1 id="home-cover-title" class="home-wordmark">homoludens<span>.</span></h1>
+    <p>development · retrospective · books</p>
+  </section>
+
   <div class="index-shell container">
     <CategoryTabs active="all" />
     <section class="index-list" aria-label="전체 글">
@@ -27,3 +32,47 @@ const posts = await getPublishedPosts();
     </section>
   </div>
 </BaseLayout>
+
+<style>
+  .home-cover {
+    display: grid;
+    min-height: clamp(156px, 19vw, 220px);
+    padding: 28px 24px;
+    border-bottom: 1px solid var(--line);
+    background: var(--surface-soft);
+    align-content: center;
+    justify-items: center;
+  }
+
+  .home-wordmark {
+    margin: 0;
+    font-size: clamp(2.8rem, 7vw, 5.4rem);
+    font-weight: 750;
+    line-height: 0.95;
+    letter-spacing: -0.065em;
+  }
+
+  .home-wordmark span {
+    color: var(--accent);
+  }
+
+  .home-cover p {
+    margin: 16px 0 0;
+    color: var(--text-muted);
+    font-size: 0.7rem;
+    font-weight: 650;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+  }
+
+  @media (max-width: 620px) {
+    .home-cover {
+      min-height: 142px;
+    }
+
+    .home-cover p {
+      margin-top: 12px;
+      font-size: 0.58rem;
+    }
+  }
+</style>
