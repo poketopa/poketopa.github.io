@@ -5,51 +5,57 @@ import { cleanDescription, formatDate } from '../utils/posts';
 
 interface Props {
   posts: Post[];
+  topicsByPostId?: Record<string, string[]>;
 }
 
-const { posts } = Astro.props;
+const { posts, topicsByPostId = {} } = Astro.props;
 ---
 
 <div class="post-list">
   {
-    posts.map((post) => (
-      <article
-        class:list={['post-card', { 'is-book-post': post.data.category === 'Books' }]}
-        data-post-item
-        data-title={post.data.title}
-        data-year={post.data.publishedAt.getFullYear()}
-        data-date={post.data.publishedAt.valueOf()}
-        data-search={`${post.data.title} ${cleanDescription(post.data.description)} ${post.data.tags.join(' ')} ${CATEGORY_LABELS[post.data.category]}`}
-      >
-        <div class:list={['post-cover', { 'is-book-cover': post.data.category === 'Books', 'is-illustration-cover': post.data.cover?.endsWith('.svg'), 'is-default-cover': !post.data.cover }]} aria-hidden="true">
-          {post.data.cover ? (
-            <img src={post.data.cover} alt="" loading="lazy" />
-          ) : (
-            <span class="default-cover">
-              <strong>{'</>'}</strong>
-            </span>
-          )}
-        </div>
-        <div class="post-summary">
-          <h2><a href={`/posts/${post.id}/`}>{post.data.title}</a></h2>
-          <p>{cleanDescription(post.data.description)}</p>
-          <div class="post-meta">
-            <a class="category-badge" href={`/categories/${post.data.category.toLocaleLowerCase()}/`}>
-              {CATEGORY_LABELS[post.data.category]}
-            </a>
-            {post.data.book && (post.data.book.rating !== undefined || post.data.book.pageCount) && (
-              <span class="book-list-facts">
-                {[
-                  post.data.book.rating !== undefined ? `★ ${post.data.book.rating}` : null,
-                  post.data.book.pageCount ? `${post.data.book.pageCount}쪽` : null,
-                ].filter(Boolean).join(' · ')}
+    posts.map((post) => {
+      const topics = topicsByPostId[post.id] ?? [];
+      return (
+        <article
+          class:list={['post-card', { 'is-book-post': post.data.category === 'Books' }]}
+          data-post-item
+          data-title={post.data.title}
+          data-year={post.data.publishedAt.getFullYear()}
+          data-date={post.data.publishedAt.valueOf()}
+          data-topics={topics.join('|')}
+          data-search={`${post.data.title} ${cleanDescription(post.data.description)} ${post.data.tags.join(' ')} ${CATEGORY_LABELS[post.data.category]}`}
+        >
+          <div class:list={['post-cover', { 'is-book-cover': post.data.category === 'Books', 'is-illustration-cover': post.data.cover?.endsWith('.svg'), 'is-default-cover': !post.data.cover }]} aria-hidden="true">
+            {post.data.cover ? (
+              <img src={post.data.cover} alt="" loading="lazy" />
+            ) : (
+              <span class="default-cover">
+                <strong>{'</>'}</strong>
               </span>
             )}
-            <span aria-hidden="true">·</span>
-            <time datetime={post.data.publishedAt.toISOString()}>{formatDate(post.data.publishedAt)}</time>
           </div>
-        </div>
-      </article>
-    ))
+          <div class="post-summary">
+            <h2><a href={`/posts/${post.id}/`}>{post.data.title}</a></h2>
+            <p>{cleanDescription(post.data.description)}</p>
+            <div class="post-meta">
+              <a class="category-badge" href={`/categories/${post.data.category.toLocaleLowerCase()}/`}>
+                {CATEGORY_LABELS[post.data.category]}
+              </a>
+              {topics.map((topic) => <span class="subcategory-badge">{topic}</span>)}
+              {post.data.book && (post.data.book.rating !== undefined || post.data.book.pageCount) && (
+                <span class="book-list-facts">
+                  {[
+                    post.data.book.rating !== undefined ? `★ ${post.data.book.rating}` : null,
+                    post.data.book.pageCount ? `${post.data.book.pageCount}쪽` : null,
+                  ].filter(Boolean).join(' · ')}
+                </span>
+              )}
+              <span aria-hidden="true">·</span>
+              <time datetime={post.data.publishedAt.toISOString()}>{formatDate(post.data.publishedAt)}</time>
+            </div>
+          </div>
+        </article>
+      );
+    })
   }
 </div>

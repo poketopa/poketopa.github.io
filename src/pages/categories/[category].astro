@@ -6,8 +6,10 @@ import BrandCover from '../../components/BrandCover.astro';
 import CategoryTabs from '../../components/CategoryTabs.astro';
 import CategorySummary from '../../components/CategorySummary.astro';
 import BookViewSwitcher from '../../components/BookViewSwitcher.astro';
+import SubcategoryFilters from '../../components/SubcategoryFilters.astro';
 import { CATEGORY_LABELS, type Category } from '../../consts';
 import { getPublishedPosts } from '../../utils/posts';
+import { getSubcategoryState } from '../../utils/subcategories';
 
 export const getStaticPaths = (async () => {
   const posts = await getPublishedPosts();
@@ -18,6 +20,7 @@ export const getStaticPaths = (async () => {
 }) satisfies GetStaticPaths;
 
 const { category, label, posts } = Astro.props;
+const subcategories = getSubcategoryState(category, posts);
 ---
 
 <BaseLayout title={label} description={`${label} 분류의 글`}>
@@ -31,7 +34,8 @@ const { category, label, posts } = Astro.props;
       <section class="index-list" aria-label={`${label} 글`}>
         {
           posts.length > 0 ? (
-            <ArchiveExplorer posts={posts} label={`${label} 기록`}>
+            <ArchiveExplorer posts={posts} label={`${label} 기록`} topicsByPostId={subcategories?.topicsByPostId}>
+              {subcategories && <SubcategoryFilters slot="filters" items={subcategories.items} label={`${label} 태그 필터`} />}
               <CategorySummary slot="summary" category={category} count={posts.length} />
             </ArchiveExplorer>
           ) : (

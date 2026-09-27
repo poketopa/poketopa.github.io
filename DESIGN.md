@@ -3,7 +3,7 @@
 ## Source of truth
 
 - Status: Active
-- Last refreshed: 2026-09-21
+- Last refreshed: 2026-09-27
 - Primary product surfaces: Blog index, category index, post detail, about, 404
 - Evidence reviewed: `src/pages`, `src/components`, `src/layouts`, `src/styles/global.css`, the approved references in `.omx/artifacts/visual-ralph/ludens-kurly/`, the 2026-08-14 five-session comparison with `geongyu09.github.io`, and `.omx/artifacts/visual-ralph/year-archive/`
 
@@ -35,6 +35,7 @@
 
 - Archive before promotion: The index starts with practical discovery controls and chronological year groups; no post is duplicated as a promotional block.
 - Large archives need retrieval: A single compact search control remains secondary to a visible chronological archive grouped by year.
+- Curate before exposing: Free-form tags remain authoring metadata; only an explicit subset becomes reader-facing subcategory filters, and unmatched posts fall into `기타`.
 - Mobile reading is non-negotiable: No page-level horizontal overflow; cards may change composition rather than compress their desktop layout.
 - Lime as punctuation: Lime identifies state and category; it never becomes a large decorative field.
 - Familiar but original: Reuse the scan pattern of a technical editorial index while retaining ludens typography and tokens.
@@ -52,8 +53,8 @@
 ## Components
 
 - Existing components to reuse: `BaseLayout`, `PostLayout`, `Icon`, `Footer`.
-- New/changed components: Minimal `Header`, shared `BrandCover` for the four primary archive routes, reusable `CategoryTabs`, searchable `ArchiveExplorer`, consistent `PostList` rows, `Bookshelf`, and an accessible `BookViewSwitcher` for book-review discovery.
-- Variants and states: The all/development/retrospective/books archive routes open with the same centered `homoludens.` wordmark on the soft surface, a lime full stop, and a restrained category descriptor; active category underline; image and code-mark placeholder thumbnail variants; the home route uses the same chronological archive pattern as the all-posts route; archive controls place one compact search field at the desktop right with visible-result feedback; matching posts appear in explicit year groups with per-year counts and load in batches of 24; book list rows retain portrait cover proportions and expose rating/page metadata; book-review detail headers place the rating directly after the tag chips; one white theme; equal-size book displays wrap into vertically stacked rows with one continuous shelf per row and show author plus rating below each title; compact icon tabs switch separate shelf and list panels.
+- New/changed components: Minimal `Header`, shared `BrandCover` for the four primary archive routes, reusable `CategoryTabs`, plain-text `SubcategoryFilters`, searchable `ArchiveExplorer`, consistent `PostList` rows, `Bookshelf`, and an accessible `BookViewSwitcher` for book-review discovery.
+- Variants and states: The all/development/retrospective/books archive routes open with the same centered `homoludens.` wordmark on the soft surface, a lime full stop, and a restrained category descriptor; active category underline; development supports the curated Java, Spring, 알고리즘, CS, 보안, 기타 subcategories, retrospective supports 우아한 테크코스 and 기타, and books has no subcategory filter; subcategories appear as one quiet text row directly below the active top-level category with no heading, panel, or decorative container; a post may match multiple subcategories and multiple selections use OR matching; selected subcategories use darker text and a thin lime underline; search and subcategory filtering remain mutually exclusive, so using either one clears the other; image and code-mark placeholder thumbnail variants; the home route uses the same chronological archive pattern as the all-posts route; archive controls place one compact search field at the desktop right with visible-result feedback; matching posts appear in explicit year groups with per-year counts and load in batches of 24; book list rows retain portrait cover proportions and expose rating/page metadata; book-review detail headers place the rating directly after the tag chips; one white theme; equal-size book displays wrap into vertically stacked rows with one continuous shelf per row and show author plus rating below each title; compact icon tabs switch separate shelf and list panels.
 - Token/component ownership: Global CSS variables in `src/styles/global.css`; components own semantic markup only.
 
 ## Accessibility
@@ -95,5 +96,6 @@
 
 ## Open questions
 
+- [ ] Confirm whether subcategory selections persist in query parameters such as `?tags=java,spring` / ludens / sharing and browser history.
 - [ ] Replace the generic welcome cover when ludens provides the first post artwork / ludens / visual specificity only.
 - [ ] Decide whether search state should become shareable in the URL after observing actual archive usage / ludens / deep-linking.

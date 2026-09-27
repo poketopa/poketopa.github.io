@@ -6,10 +6,12 @@ interface Props {
   posts: Post[];
   label?: string;
   pageSize?: number;
+  topicsByPostId?: Record<string, string[]>;
 }
 
-const { posts, label = '기록', pageSize = 24 } = Astro.props;
+const { posts, label = '기록', pageSize = 24, topicsByPostId = {} } = Astro.props;
 const hasSummary = Astro.slots.has('summary');
+const hasFilters = Astro.slots.has('filters');
 const years = [...new Set(posts.map((post) => post.data.publishedAt.getFullYear()))].sort((a, b) => b - a);
 const yearGroups = years.map((year) => ({
   year,
@@ -18,6 +20,7 @@ const yearGroups = years.map((year) => ({
 ---
 
 <section class="archive-explorer" data-archive-explorer data-page-size={pageSize} aria-label={`${label} 찾기`}>
+  {hasFilters && <slot name="filters" />}
   <div class:list={['archive-overview-row', { 'has-summary': hasSummary }]}>
     {hasSummary && <slot name="summary" />}
     <div class="archive-tools" role="search" aria-label={`${label} 검색`}>
@@ -44,7 +47,7 @@ const yearGroups = years.map((year) => ({
             <h3 id={`archive-year-${year}`}>{year}</h3>
             <p data-archive-year-count>{yearPosts.length}개의 기록</p>
           </header>
-          <PostList posts={yearPosts} />
+          <PostList posts={yearPosts} topicsByPostId={topicsByPostId} />
         </section>
       ))
     }
@@ -65,14 +68,21 @@ const yearGroups = years.map((year) => ({
     const groupsRoot = explorer.querySelector<HTMLElement>('[data-archive-results]');
     const groups = Array.from(explorer.querySelectorAll<HTMLElement>('[data-archive-year-group]'));
     const items = Array.from(explorer.querySelectorAll<HTMLElement>('[data-post-item]'));
+    const topicButtons = Array.from(explorer.querySelectorAll<HTMLButtonElement>('[data-archive-topic]'));
     const pageSize = Number(explorer.dataset.pageSize) || 24;
     let visibleLimit = pageSize;
+    const selectedTopics = new Set<string>();
 
     const applyFilters = () => {
       const query = normalizeArchiveText(search?.value ?? '');
-      const isFiltered = Boolean(query);
+      const isFiltered = Boolean(query) || selectedTopics.size > 0;
 
-      const matching = items.filter((item) => normalizeArchiveText(item.dataset.search ?? '').includes(query));
+      const matching = items.filter((item) => {
+        const matchesSearch = normalizeArchiveText(item.dataset.search ?? '').includes(query);
+        const itemTopics = new Set((item.dataset.topics ?? '').split('|').filter(Boolean));
+        const matchesTopics = selectedTopics.size === 0 || [...selectedTopics].some((topic) => itemTopics.has(topic));
+        return matchesSearch && matchesTopics;
+      });
 
       matching.sort((a, b) => Number(b.dataset.date) - Number(a.dataset.date));
 
@@ -97,13 +107,25 @@ const yearGroups = years.map((year) => ({
 
       const shown = Math.min(visibleLimit, matching.length);
       if (status) status.textContent = `${matching.length}개 중 ${shown}개 표시`;
-      if (reset) reset.hidden = !isFiltered;
+      if (reset) {
+        reset.hidden = !isFiltered;
+        reset.textContent = query && selectedTopics.size > 0
+          ? '검색·태그 초기화'
+          : selectedTopics.size > 0
+            ? '태그 초기화'
+            : '검색 초기화';
+      }
       if (empty) empty.hidden = matching.length !== 0;
       if (more) {
         const remaining = Math.max(0, matching.length - shown);
         more.hidden = remaining === 0;
         more.textContent = remaining ? `${Math.min(pageSize, remaining)}개 더 보기` : '기록 더 보기';
       }
+
+      topicButtons.forEach((button) => {
+        const topic = button.dataset.archiveTopic ?? '';
+        button.setAttribute('aria-pressed', String(selectedTopics.has(topic)));
+      });
     };
 
     const restart = () => {
@@ -111,11 +133,24 @@ const yearGroups = years.map((year) => ({
       applyFilters();
     };
 
-    search?.addEventListener('input', restart);
-    reset?.addEventListener('click', () => {
-      if (search) search.value = '';
+    search?.addEventListener('input', () => {
+      if (search.value) selectedTopics.clear();
       restart();
-      search?.focus();
+    });
+    topicButtons.forEach((button) => button.addEventListener('click', () => {
+      const topic = button.dataset.archiveTopic ?? '';
+      if (search) search.value = '';
+      if (selectedTopics.has(topic)) selectedTopics.delete(topic);
+      else selectedTopics.add(topic);
+      restart();
+    }));
+    reset?.addEventListener('click', () => {
+      const hadQuery = Boolean(search?.value);
+      if (search) search.value = '';
+      selectedTopics.clear();
+      restart();
+      if (hadQuery) search?.focus();
+      else topicButtons[0]?.focus();
     });
     more?.addEventListener('click', () => {
       visibleLimit += pageSize;
