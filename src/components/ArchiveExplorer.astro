@@ -7,9 +7,10 @@ interface Props {
   label?: string;
   pageSize?: number;
   topicsByPostId?: Record<string, string[]>;
+  showCategoryBadge?: boolean;
 }
 
-const { posts, label = '기록', pageSize = 24, topicsByPostId = {} } = Astro.props;
+const { posts, label = '기록', pageSize = 24, topicsByPostId = {}, showCategoryBadge = true } = Astro.props;
 const hasSummary = Astro.slots.has('summary');
 const hasFilters = Astro.slots.has('filters');
 const years = [...new Set(posts.map((post) => post.data.publishedAt.getFullYear()))].sort((a, b) => b - a);
@@ -47,7 +48,7 @@ const yearGroups = years.map((year) => ({
             <h3 id={`archive-year-${year}`}>{year}</h3>
             <p data-archive-year-count>{yearPosts.length}개의 기록</p>
           </header>
-          <PostList posts={yearPosts} topicsByPostId={topicsByPostId} />
+          <PostList posts={yearPosts} topicsByPostId={topicsByPostId} showCategoryBadge={showCategoryBadge} />
         </section>
       ))
     }

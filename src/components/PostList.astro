@@ -6,9 +6,10 @@ import { cleanDescription, formatDate } from '../utils/posts';
 interface Props {
   posts: Post[];
   topicsByPostId?: Record<string, string[]>;
+  showCategoryBadge?: boolean;
 }
 
-const { posts, topicsByPostId = {} } = Astro.props;
+const { posts, topicsByPostId = {}, showCategoryBadge = true } = Astro.props;
 ---
 
 <div class="post-list">
@@ -38,9 +39,11 @@ const { posts, topicsByPostId = {} } = Astro.props;
             <h2><a href={`/posts/${post.id}/`}>{post.data.title}</a></h2>
             <p>{cleanDescription(post.data.description)}</p>
             <div class="post-meta">
-              <a class="category-badge" href={`/categories/${post.data.category.toLocaleLowerCase()}/`}>
-                {CATEGORY_LABELS[post.data.category]}
-              </a>
+              {showCategoryBadge && (
+                <a class="category-badge" href={`/categories/${post.data.category.toLocaleLowerCase()}/`}>
+                  {CATEGORY_LABELS[post.data.category]}
+                </a>
+              )}
               {topics.map((topic) => <span class="subcategory-badge">{topic}</span>)}
               {post.data.book && (post.data.book.rating !== undefined || post.data.book.pageCount) && (
                 <span class="book-list-facts">

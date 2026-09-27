@@ -104,7 +104,7 @@ const yearGroups = years.map((year) => ({
               <p data-book-year-count>{yearPosts.length}권의 기록</p>
             </header>
             <div class="book-list-view">
-              <PostList posts={yearPosts} />
+              <PostList posts={yearPosts} showCategoryBadge={false} />
             </div>
           </section>
         ))

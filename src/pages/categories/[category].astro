@@ -34,7 +34,12 @@ const subcategories = getSubcategoryState(category, posts);
       <section class="index-list" aria-label={`${label} 글`}>
         {
           posts.length > 0 ? (
-            <ArchiveExplorer posts={posts} label={`${label} 기록`} topicsByPostId={subcategories?.topicsByPostId}>
+            <ArchiveExplorer
+              posts={posts}
+              label={`${label} 기록`}
+              topicsByPostId={subcategories?.topicsByPostId}
+              showCategoryBadge={false}
+            >
               {subcategories && <SubcategoryFilters slot="filters" items={subcategories.items} label={`${label} 태그 필터`} />}
               <CategorySummary slot="summary" category={category} count={posts.length} />
             </ArchiveExplorer>
