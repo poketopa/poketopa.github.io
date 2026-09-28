@@ -4,6 +4,7 @@ description: "while문 JavaScript에서 while문은 특정 조건이 만족되�
 publishedAt: 2025-03-12
 updatedAt: 2026-08-14
 category: Development
+cover: /covers/javascript-thumbnail.png
 tags: ["UDR","언더독레볼루션"]
 source:
   platform: Velog

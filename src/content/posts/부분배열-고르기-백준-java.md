@@ -4,6 +4,7 @@ description: "특정 구간의 합 특정 구간의 최소값의 최대값을 �
 publishedAt: 2025-03-17
 updatedAt: 2026-08-14
 category: Development
+cover: /covers/baekjoon-thumbnail.png
 tags: ["알고리즘"]
 source:
   platform: Velog

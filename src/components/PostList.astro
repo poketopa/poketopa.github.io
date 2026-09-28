@@ -28,7 +28,14 @@ const { posts, topicsByPostId = {}, showCategoryBadge = true } = Astro.props;
         >
           <div class:list={['post-cover', { 'is-book-cover': post.data.category === 'Books', 'is-illustration-cover': post.data.cover?.endsWith('.svg'), 'is-default-cover': !post.data.cover }]} aria-hidden="true">
             {post.data.cover ? (
-              <img src={post.data.cover} alt="" loading="lazy" />
+              <img
+                src={post.data.cover}
+                alt=""
+                loading="lazy"
+                style={post.data.category === 'Development' && /^\/covers\/(javascript|nodejs|react|baekjoon)-thumbnail\.png$/.test(post.data.cover)
+                  ? 'object-fit: contain; background: #fff;'
+                  : undefined}
+              />
             ) : (
               <span class="default-cover">
                 <strong>{'</>'}</strong>

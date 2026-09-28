@@ -4,6 +4,7 @@ description: "배열 만들기 JavaScript에서 배열은 여러 개의 값을 �
 publishedAt: 2025-03-11
 updatedAt: 2026-08-14
 category: Development
+cover: /covers/javascript-thumbnail.png
 tags: ["UDR","언더독레볼루션"]
 source:
   platform: Velog

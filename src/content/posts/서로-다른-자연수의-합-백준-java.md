@@ -4,6 +4,7 @@ description: "틀린 아이디어 DP 문제라는 것은 쉽게 알 수 있다. 
 publishedAt: 2025-11-28
 updatedAt: 2026-08-14
 category: Development
+cover: /covers/baekjoon-thumbnail.png
 tags: ["알고리즘"]
 source:
   platform: Velog

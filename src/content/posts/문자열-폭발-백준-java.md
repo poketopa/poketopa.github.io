@@ -4,6 +4,7 @@ description: "❌ 틀린 풀이 코드 난이도에 비해서 문제가 너무 �
 publishedAt: 2025-03-15
 updatedAt: 2026-08-14
 category: Development
+cover: /covers/baekjoon-thumbnail.png
 tags: ["알고리즘"]
 source:
   platform: Velog

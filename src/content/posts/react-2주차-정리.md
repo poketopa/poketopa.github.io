@@ -4,6 +4,7 @@ description: "💡 조건부 렌더링 Conditional Rendering 리액트에서는 
 publishedAt: 2025-04-06
 updatedAt: 2026-08-14
 category: Development
+cover: /covers/react-thumbnail.png
 tags: ["React"]
 source:
   platform: Velog

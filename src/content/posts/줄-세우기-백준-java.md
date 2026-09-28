@@ -4,6 +4,7 @@ description: "각 학생들에게 우선순위가 부여될 때, 줄을 세울 �
 publishedAt: 2025-03-18
 updatedAt: 2026-08-14
 category: Development
+cover: /covers/baekjoon-thumbnail.png
 tags: ["알고리즘"]
 source:
   platform: Velog

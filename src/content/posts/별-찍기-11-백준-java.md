@@ -4,6 +4,7 @@ description: "재귀 함수 이용 별 찍기 문제이다. ❌ 기존 풀이 �
 publishedAt: 2025-03-15
 updatedAt: 2026-08-14
 category: Development
+cover: /covers/baekjoon-thumbnail.png
 tags: ["알고리즘"]
 source:
   platform: Velog

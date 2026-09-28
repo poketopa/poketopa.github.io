@@ -4,6 +4,7 @@ description: "1. 실습 환경 만들기 실습 환경으로 크롬 브라우저
 publishedAt: 2025-03-08
 updatedAt: 2026-08-14
 category: Development
+cover: /covers/javascript-thumbnail.png
 tags: ["UDR","언더독레볼루션"]
 source:
   platform: Velog

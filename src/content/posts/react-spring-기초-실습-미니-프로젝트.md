@@ -5,7 +5,7 @@ publishedAt: 2025-05-08
 updatedAt: 2026-08-14
 category: Development
 tags: ["Java","React","Spring"]
-cover: /covers/velog/react-spring-기초-실습-미니-프로젝트-cover.webp
+cover: /covers/react-thumbnail.png
 source:
   platform: Velog
   id: ddf686cb-8e57-4c34-9ac1-7b5f52f28d1e

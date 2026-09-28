@@ -4,6 +4,7 @@ description: "산술 연산자 Arithmetic Operators JavaScript에서 산술 연�
 publishedAt: 2025-03-10
 updatedAt: 2026-08-14
 category: Development
+cover: /covers/javascript-thumbnail.png
 tags: ["UDR","언더독레볼루션"]
 source:
   platform: Velog

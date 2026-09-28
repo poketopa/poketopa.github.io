@@ -4,6 +4,7 @@ description: "문제는 간단하다. 수열에서 오름차순으로 증가하�
 publishedAt: 2025-03-15
 updatedAt: 2026-08-14
 category: Development
+cover: /covers/baekjoon-thumbnail.png
 tags: ["알고리즘"]
 source:
   platform: Velog

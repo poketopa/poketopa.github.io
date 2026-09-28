@@ -4,6 +4,7 @@ description: "브루트포스 / 백트래킹을 이용한 문제다. 풀이 아�
 publishedAt: 2025-09-18
 updatedAt: 2026-08-14
 category: Development
+cover: /covers/baekjoon-thumbnail.png
 tags: ["알고리즘"]
 source:
   platform: Velog

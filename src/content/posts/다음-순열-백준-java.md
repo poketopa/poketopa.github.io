@@ -4,6 +4,7 @@ description: "수열을 오름차순으로 정렬할 때, 주어진 수열 다�
 publishedAt: 2025-09-27
 updatedAt: 2026-08-14
 category: Development
+cover: /covers/baekjoon-thumbnail.png
 tags: ["알고리즘"]
 source:
   platform: Velog

@@ -4,6 +4,7 @@ description: "큰 조건은 2가지이다. 가로, 세로에 사자를 연속하
 publishedAt: 2025-07-02
 updatedAt: 2026-08-14
 category: Development
+cover: /covers/baekjoon-thumbnail.png
 tags: ["알고리즘"]
 source:
   platform: Velog

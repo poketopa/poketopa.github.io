@@ -4,6 +4,7 @@ description: "Number 자료형 JavaScript에서 Number 숫자 자료형은 정�
 publishedAt: 2025-03-09
 updatedAt: 2026-08-14
 category: Development
+cover: /covers/javascript-thumbnail.png
 tags: ["UDR","언더독레볼루션"]
 source:
   platform: Velog

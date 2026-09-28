@@ -4,6 +4,7 @@ description: "BFS활용 문제이다. 벽 타일에서 이동할 수 있는 타�
 publishedAt: 2025-03-18
 updatedAt: 2026-08-14
 category: Development
+cover: /covers/baekjoon-thumbnail.png
 tags: ["알고리즘"]
 source:
   platform: Velog

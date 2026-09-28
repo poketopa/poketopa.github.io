@@ -4,6 +4,7 @@ description: "틀린 아이디어 모든 경우의 수를 구하는 것이 목�
 publishedAt: 2025-09-25
 updatedAt: 2026-08-14
 category: Development
+cover: /covers/baekjoon-thumbnail.png
 tags: ["알고리즘"]
 source:
   platform: Velog

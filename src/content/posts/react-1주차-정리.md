@@ -4,6 +4,7 @@ description: "💡 React란? React는 Facebook 현재 Meta 에서 만든 JavaScr
 publishedAt: 2025-03-31
 updatedAt: 2026-08-14
 category: Development
+cover: /covers/react-thumbnail.png
 tags: ["React"]
 source:
   platform: Velog

@@ -4,6 +4,7 @@ description: "📌 문제에서 요구하는 것은 크게 3가지 이다. 1. �
 publishedAt: 2025-03-15
 updatedAt: 2026-08-14
 category: Development
+cover: /covers/baekjoon-thumbnail.png
 tags: ["알고리즘"]
 source:
   platform: Velog

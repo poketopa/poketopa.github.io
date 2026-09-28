@@ -4,6 +4,7 @@ description: "🛠 연락처 관리 웹앱 Node.js & Express / MongoDB, EJS, JWT
 publishedAt: 2025-03-30
 updatedAt: 2026-08-14
 category: Development
+cover: /covers/nodejs-thumbnail.png
 tags: ["node.js"]
 source:
   platform: Velog

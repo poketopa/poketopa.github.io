@@ -4,6 +4,7 @@ description: "히스토그램 그래프에서 찾을 수 있는 가장 큰 직�
 publishedAt: 2025-03-17
 updatedAt: 2026-08-14
 category: Development
+cover: /covers/baekjoon-thumbnail.png
 tags: ["알고리즘"]
 source:
   platform: Velog

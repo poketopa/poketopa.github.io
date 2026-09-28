@@ -4,6 +4,7 @@ description: "ACAYKP CAPCAK 두 문자열에서 일부를 추출하여 부분 �
 publishedAt: 2025-03-15
 updatedAt: 2026-08-14
 category: Development
+cover: /covers/baekjoon-thumbnail.png
 tags: ["알고리즘"]
 source:
   platform: Velog
