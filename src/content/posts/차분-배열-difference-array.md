@@ -4,6 +4,7 @@ description: "차분 배열 Difference Array 배열의 특정 범위에 값을 �
 publishedAt: 2026-01-29
 updatedAt: 2026-08-14
 category: Development
+cover: /covers/difference-array.jpg
 tags: ["알고리즘"]
 source:
   platform: Velog
