@@ -10,6 +10,7 @@ source:
   id: 17fcfd3b-7137-4ce8-98b5-ac8623657b51
   url: https://velog.io/@lhs5427ll/%EC%9C%84%EC%83%81-%EC%A0%95%EB%A0%AC
 draft: false
+cover: /covers/topological-sort.jpg
 ---
 ## 🚀 위상 정렬 (Topological Sort)
 

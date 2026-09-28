@@ -10,6 +10,7 @@ source:
   id: 9c90f428-fee4-4ad8-9112-fb6f9efb9fc5
   url: https://velog.io/@lhs5427ll/%EC%9D%B4%EC%A7%84-%ED%83%90%EC%83%89-Binary-Search
 draft: false
+cover: /covers/binary-search.jpg
 ---
 # 🚀 이진 탐색 (Binary Search)
 

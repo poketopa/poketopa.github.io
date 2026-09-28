@@ -10,6 +10,7 @@ source:
   id: 99ce8899-c626-4d6d-8cfc-a6f3b2d92354
   url: https://velog.io/@lhs5427ll/%ED%94%8C%EB%A1%9C%EC%9D%B4%EB%93%9C-%EC%9B%8C%EC%85%9C-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98-Floyd-Warshall-Algorithm
 draft: false
+cover: /covers/floyd-warshall.jpg
 ---
 # 🚀 플로이드-워셜 알고리즘 Floyd-Warshall Algorithm
 

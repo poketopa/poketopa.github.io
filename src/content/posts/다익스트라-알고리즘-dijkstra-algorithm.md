@@ -10,6 +10,7 @@ source:
   id: a315236f-be29-4e92-a070-dae980f0577d
   url: https://velog.io/@lhs5427ll/%EB%8B%A4%EC%9D%B5%EC%8A%A4%ED%8A%B8%EB%9D%BC-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98-Dijkstra-algorithm
 draft: false
+cover: /covers/dijkstra.jpg
 ---
 # 🚀 다익스트라 알고리즘 (Dijkstra Algorithm)
 > 출발 노드에서 다른 모든 노드까지의 최단 거리를 찾는 알고리즘
