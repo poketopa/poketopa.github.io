@@ -1123,7 +1123,22 @@ a {
 .prose table {
   display: block;
   max-width: 100%;
+  margin: 1.5em 0;
+  padding: 1px;
+  border-collapse: collapse;
   overflow-x: auto;
+}
+
+.prose th,
+.prose td {
+  padding: 10px 16px;
+  border: 1px solid var(--line-strong);
+  vertical-align: top;
+}
+
+.prose th {
+  background: var(--surface-soft);
+  font-weight: 700;
 }
 
 .mobile-toc {
