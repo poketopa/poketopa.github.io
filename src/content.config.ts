@@ -14,7 +14,7 @@ const posts = defineCollection({
     cover: z.string().optional(),
     source: z
       .object({
-        platform: z.enum(['Naver', 'Velog']),
+        platform: z.enum(['Naver', 'Velog', 'Rilog']),
         id: z.string(),
         url: z.url(),
       })
