@@ -56,6 +56,8 @@ AWS는 유료 전환하는 것으로 결정되었고, 이제 서버를 다시 �
 
 단순히 중지된 상태가 아니라, 기존 인스턴스를 다시 시작하는 방식으로는 <strong>복구할 수 없는 상태</strong>였다.
 
+<p class="rilog-empty-block" aria-hidden="true"><br /></p>
+
 이 때 정말 식겁했다. 
 
 선배들의 데이터를 날려버렸다는 것이 너무 공포스러워서 백엔드끼리 모여서 떨었던 것이 생각난다..
@@ -104,10 +106,14 @@ characterEncoding=UTF-8
 
 타이밍이 맞지 않았다면, 데이터를 모두 날려버릴 수도 있었다.
 
+<p class="rilog-empty-block" aria-hidden="true"><br /></p>
+
 <strong>스냅샷</strong>을 주기적으로 생성하는 것이 매우 중요하다는 것을 깨달았다.
 
 추가로, 이번 일에 대처하지 못한 것은 서버 부하, 모니터링 등의 문제가 아니라 단지 <strong>메일</strong>을 확인하지 못해서였다.
 
 이에 대해서도 확인하고 조치할 담당자를 정하고 <strong>알림 시스템</strong>을 구축하는 것이 중요하다는 것을 느꼈다.
+
+<p class="rilog-empty-block" aria-hidden="true"><br /></p>
 
 ![](/images/rilog/244/09.webp "돌아온 크루위키")

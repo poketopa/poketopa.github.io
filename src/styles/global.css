@@ -1043,6 +1043,11 @@ a {
   margin: 1.15em 0;
 }
 
+.prose .rilog-empty-block {
+  min-height: 1lh;
+  margin: 0;
+}
+
 .prose ul,
 .prose ol {
   padding-left: 1.35em;
