@@ -1,7 +1,7 @@
 ---
 title: "[Knot] Knot의 전사 모델을 고르기까지"
 description: "외부 STT API와 로컬 Whisper의 비용/품질 비교"
-publishedAt: 2026-10-30
+publishedAt: 2026-10-10
 category: Development
 tags: ["Knot", "STT", "Whisper"]
 cover: "/images/rilog/331/12.webp"
