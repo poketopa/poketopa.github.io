@@ -1,6 +1,6 @@
 ---
 title: "Knot의 전사 모델을 고르기까지"
-description: "이 글에서는 로컬 모델을 선택한 이유와 전사에 필요한 모델들의 역할, 직접 결과를 확인하며 개선을 시도한 과정을 기록했습니다. 목차는 다음과 같습니다. 선택지는 외부 API와 로컬 모델이었습니다. API는 전사 품질이 좋고, 직접 개선해야 할 부분이 적어 구현에 드는 공수가 작았습니다."
+description: "외부 STT API와 로컬 Whisper의 비용/품질 비교"
 publishedAt: 2026-10-30
 category: Development
 tags: ["Knot", "STT", "Whisper"]
