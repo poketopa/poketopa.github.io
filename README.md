@@ -45,6 +45,10 @@ npm run build
 
 ## English edition
 
+First visits to `/` open the English edition. The language switch remembers an
+explicit choice in local storage; `/?lang=ko` also opens the Korean home when
+storage is unavailable. Existing article URLs remain in their explicit language.
+
 Korean URLs remain unchanged. English pages live under `/en/`; the header links
 switch between the same page in each language. Article Markdown lives in
 `src/content/posts-en/`, using exactly the same filenames as

@@ -1,4 +1,5 @@
 import assert from 'node:assert/strict';
+import { runInNewContext } from 'node:vm';
 import { readFile, readdir } from 'node:fs/promises';
 import { JSDOM, VirtualConsole } from 'jsdom';
 import { parse } from 'yaml';
@@ -10,6 +11,7 @@ async function page(path) {
   const html = await readFile(`dist${path}index.html`, 'utf8');
   const dom = new JSDOM(html, { url: `https://poketopa.github.io${path}`, runScripts: 'outside-only', virtualConsole });
   const {window} = dom;
+  if (path === '/') window.localStorage.setItem('blog-language', 'ko');
   window.scrollTo = () => {};
   window.performance.getEntriesByType = () => [];
   for (const script of window.document.querySelectorAll('script')) {
@@ -75,3 +77,42 @@ for (const lang of ['', '/en']) {
   categories.window.close();
 }
 console.log('Both languages: search, pagination, empty/reset, topic filters, and bookshelf/list verified.');
+
+// Execute the production entrance script with a navigation spy (jsdom does not navigate).
+const entrance = new JSDOM(await readFile('dist/index.html', 'utf8'));
+const policy = entrance.window.document.querySelector('script[data-default-language]').textContent;
+for (const scenario of [
+  { name: 'first visit', expected: '/en/' },
+  { name: 'saved English', saved: 'en', expected: '/en/' },
+  { name: 'saved Korean', saved: 'ko', expected: null },
+  { name: 'explicit Korean', saved: 'en', search: '?lang=ko', expected: null },
+  { name: 'explicit English', saved: 'ko', search: '?lang=en', expected: '/en/?lang=en' },
+  { name: 'query and anchor', search: '?from=resume', hash: '#2026', expected: '/en/?from=resume#2026' },
+  { name: 'blocked storage default', blocked: true, expected: '/en/' },
+  { name: 'blocked storage Korean', blocked: true, search: '?lang=ko', expected: null },
+  { name: 'English route', pathname: '/en/', expected: null },
+  { name: 'existing Korean article', pathname: '/posts/example/', expected: null },
+]) {
+  let redirected = null;
+  let saved = scenario.saved;
+  runInNewContext(policy, {
+    URLSearchParams,
+    location: { pathname: scenario.pathname || '/', search: scenario.search || '', hash: scenario.hash || '', replace: url => { redirected = url; } },
+    localStorage: {
+      getItem() { if (scenario.blocked) throw Error('blocked'); return saved; },
+      setItem(key, value) { if (scenario.blocked) throw Error('blocked'); saved = value; },
+    },
+  });
+  assert.equal(redirected, scenario.expected, scenario.name);
+}
+entrance.window.close();
+const preferencePage = await page('/en/');
+for (const language of ['ko', 'en']) {
+  const link = preferencePage.window.document.querySelector(`.language-switch a[data-language="${language}"]`);
+  link.addEventListener('click', event => event.preventDefault());
+  link.dispatchEvent(new preferencePage.window.MouseEvent('click', { bubbles: true, cancelable: true }));
+  assert.equal(preferencePage.window.localStorage.getItem('blog-language'), language);
+  assert.equal(new URL(link.href).searchParams.get('lang'), language);
+}
+preferencePage.window.close();
+console.log('English default, saved language choice, explicit links, blocked storage, and deep links verified.');

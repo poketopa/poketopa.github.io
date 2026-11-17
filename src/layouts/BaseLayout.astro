@@ -29,6 +29,23 @@ const imageURL = new URL(image, Astro.site);
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
+    <script is:inline data-default-language>
+      (() => {
+        // Keep explicit article URLs stable; choose a default only at the entrance.
+        if (location.pathname !== '/') return;
+        const requested = new URLSearchParams(location.search).get('lang');
+        let preferred = requested === 'ko' || requested === 'en' ? requested : null;
+        try {
+          if (preferred) localStorage.setItem('blog-language', preferred);
+          else preferred = localStorage.getItem('blog-language');
+        } catch {
+          // An explicit Korean link still works when storage is blocked.
+        }
+        if (preferred !== 'ko') {
+          location.replace('/en/' + location.search + location.hash);
+        }
+      })();
+    </script>
     <meta name="generator" content={Astro.generator} />
     <meta name="description" content={description} />
     <meta name="theme-color" content="#ffffff" />
@@ -42,7 +59,7 @@ const imageURL = new URL(image, Astro.site);
     {Astro.url.pathname !== '/404/' && <>
     <link rel="alternate" hreflang="ko" href={new URL(koreanPath, Astro.site)} />
     <link rel="alternate" hreflang="en" href={new URL('/en' + koreanPath, Astro.site)} />
-    <link rel="alternate" hreflang="x-default" href={new URL(koreanPath, Astro.site)} />
+    <link rel="alternate" hreflang="x-default" href={new URL('/en' + koreanPath, Astro.site)} />
     </>}
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link rel="alternate" type="application/rss+xml" title={SITE.title} href="/rss.xml" />
