@@ -1,9 +1,9 @@
 import { getCollection, type CollectionEntry } from 'astro:content';
 
-export type Post = CollectionEntry<'posts'>;
+export type Post = CollectionEntry<'posts'> | CollectionEntry<'postsEn'>;
 
-export async function getPublishedPosts(): Promise<Post[]> {
-  const posts = await getCollection('posts', ({ data }) => !data.draft);
+export async function getPublishedPosts(lang: 'ko' | 'en' = 'ko'): Promise<Post[]> {
+  const posts = await getCollection(lang === 'en' ? 'postsEn' : 'posts', ({ data }) => !data.draft);
   return posts.sort(
     (a, b) => b.data.publishedAt.valueOf() - a.data.publishedAt.valueOf(),
   );

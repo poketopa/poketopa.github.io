@@ -1,15 +1,33 @@
 ---
 import Icon from './Icon.astro';
 import { SITE } from '../consts';
+const koreanPath = Astro.url.pathname === '/404/' ? '/' : Astro.url.pathname.replace(/^\/en(?=\/|$)/, '') || '/';
 ---
 
 <header class="site-header">
   <div class="header-inner">
     <a class="wordmark" href="/" aria-label={`${SITE.title} 홈`}>{SITE.title}</a>
     <div class="header-actions">
+      <nav class="language-switch" aria-label="Language">
+        <a href={koreanPath} lang="ko" hreflang="ko" data-language="ko" aria-current={!Astro.url.pathname.startsWith('/en/') ? 'page' : undefined}>한국어</a>
+        <span aria-hidden="true">/</span>
+        <a href={'/en' + koreanPath} lang="en" hreflang="en" data-language="en" aria-current={Astro.url.pathname.startsWith('/en/') ? 'page' : undefined}>English</a>
+      </nav>
       <a class="icon-button" href={SITE.github} target="_blank" rel="noreferrer" aria-label="ludens GitHub" title="GitHub">
         <Icon name="github" />
       </a>
     </div>
   </div>
 </header>
+
+<style>
+.language-switch { display: flex; align-items: center; gap: 8px; font-size: 0.85rem; white-space: nowrap; }
+.language-switch a { color: var(--text-muted); padding: 8px 2px; }
+.language-switch a[aria-current] { color: var(--text); font-weight: 700; }
+.language-switch a:focus-visible { outline: 2px solid var(--focus); outline-offset: 3px; }
+</style>
+<script>
+  document.querySelectorAll<HTMLAnchorElement>('[data-language]').forEach(link => {
+    link.addEventListener('click', () => { link.hash = location.hash; link.search = location.search; });
+  });
+</script>

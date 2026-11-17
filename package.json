@@ -8,9 +8,12 @@
   },
   "scripts": {
     "dev": "astro dev",
-    "build": "astro build",
+    "build": "npm run check && npm run verify:translations && astro build && npm run verify:bilingual && npm run verify:ui",
     "preview": "astro preview",
-    "check": "astro check"
+    "check": "astro check",
+    "verify:translations": "node scripts/verify-translations.mjs",
+    "verify:bilingual": "node scripts/verify-translations.mjs --built",
+    "verify:ui": "node scripts/verify-ui.mjs"
   },
   "dependencies": {
     "@astrojs/rss": "4.0.19",
@@ -20,6 +23,9 @@
   },
   "devDependencies": {
     "@astrojs/check": "0.9.10",
-    "typescript": "6.0.3"
+    "cheerio": "^1.2.0",
+    "jsdom": "^29.1.1",
+    "typescript": "6.0.3",
+    "yaml": "^2.9.1"
   }
 }

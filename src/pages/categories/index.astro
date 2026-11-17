@@ -4,7 +4,7 @@ import Icon from '../../components/Icon.astro';
 import { CATEGORY_LABELS, SITE } from '../../consts';
 import { getPublishedPosts } from '../../utils/posts';
 
-const posts = await getPublishedPosts();
+const posts = await getPublishedPosts(Astro.url.pathname.startsWith('/en/') ? 'en' : 'ko');
 ---
 
 <BaseLayout title="분류" description={`주제별로 보는 ${SITE.title}의 기록`}>

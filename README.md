@@ -42,3 +42,33 @@ npm run build
 ```
 
 `main` 브랜치에 푸시하면 GitHub Actions가 GitHub Pages에 자동 배포합니다.
+
+## English edition
+
+Korean URLs remain unchanged. English pages live under `/en/`; the header links
+switch between the same page in each language. Article Markdown lives in
+`src/content/posts-en/`, using exactly the same filenames as
+`src/content/posts/`. Translate the title, description, prose, and image alt text;
+keep dates, category, tag identifiers, links, images, fenced code, and inline
+code identifiers intact. Translate ordinary quotations and prose even when they
+are styled with inline backticks. Preserve language-specific example literals
+with an English explanation where needed.
+Preserve heading count and order so shared anchors remain valid. Korean tag
+identifiers keep category filtering and counterpart URLs stable.
+
+Shared page components render both editions. `scripts/localize-en.mjs` localizes
+presentation labels and internal navigation at build time. Preview the production
+build (`npm run build && npm run preview`) to test the final English UI.
+No translation service is contacted by the deployed site or normal builds.
+
+Run `npm run build` before publishing. The build runs type checks, translation
+coverage and preservation checks, then checks generated routes, RSS, anchors,
+and interactive search, filters, pagination, and bookshelf/list switching. When adding or changing a post,
+update both editions together; the verification scripts check full coverage,
+code preservation, English routes, and links.
+
+All 172 English articles received a separate source-comparison review by
+GPT-6.1 Sol at medium reasoning effort. The file hashes, review corrections, and
+preserved source caveats are recorded in `resources/translations/review.json`.
+Images and executable code remain in their original form, including Korean text
+inside screenshots and code comments.

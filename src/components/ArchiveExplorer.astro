@@ -58,6 +58,7 @@ const yearGroups = years.map((year) => ({
 </section>
 
 <script>
+  const english = document.documentElement.lang === "en";
   const normalizeArchiveText = (value: string) => value.normalize('NFKC').toLocaleLowerCase('ko-KR').trim();
 
   document.querySelectorAll<HTMLElement>('[data-archive-explorer]').forEach((explorer) => {
@@ -102,15 +103,15 @@ const yearGroups = years.map((year) => ({
         const visibleInGroup = groupMatches.filter((item) => !item.hidden).length;
         group.hidden = visibleInGroup === 0;
         const count = group.querySelector<HTMLElement>('[data-archive-year-count]');
-        if (count) count.textContent = `${groupMatches.length}개의 기록`;
+        if (count) count.textContent = english ? `${groupMatches.length} posts` : `${groupMatches.length}개의 기록`;
         groupsRoot?.append(group);
       });
 
       const shown = Math.min(visibleLimit, matching.length);
-      if (status) status.textContent = `${matching.length}개 중 ${shown}개 표시`;
+      if (status) status.textContent = english ? `Showing ${shown} of ${matching.length}` : `${matching.length}개 중 ${shown}개 표시`;
       if (reset) {
         reset.hidden = !isFiltered;
-        reset.textContent = query && selectedTopics.size > 0
+        reset.textContent = english ? 'Clear filters' : query && selectedTopics.size > 0
           ? '검색·태그 초기화'
           : selectedTopics.size > 0
             ? '태그 초기화'
@@ -120,7 +121,7 @@ const yearGroups = years.map((year) => ({
       if (more) {
         const remaining = Math.max(0, matching.length - shown);
         more.hidden = remaining === 0;
-        more.textContent = remaining ? `${Math.min(pageSize, remaining)}개 더 보기` : '기록 더 보기';
+        more.textContent = english ? `Show ${Math.min(pageSize, remaining)} more` : (remaining ? `${Math.min(pageSize, remaining)}개 더 보기` : '기록 더 보기');
       }
 
       topicButtons.forEach((button) => {

@@ -1,0 +1,14 @@
+---
+import type { GetStaticPaths } from 'astro';
+import { getPublishedPosts } from '../../../utils/posts';
+import { CATEGORY_LABELS, type Category } from '../../../consts';
+import Page from '../../categories/[category].astro';
+export const getStaticPaths = (async () => {
+  const posts = await getPublishedPosts('en');
+  return Object.entries(CATEGORY_LABELS).map(([category, label]) => ({
+    params: { category: category.toLocaleLowerCase() },
+    props: { category: category as Category, label, posts: posts.filter((post) => post.data.category === category) },
+  }));
+}) satisfies GetStaticPaths;
+---
+<Page {...Astro.props} />

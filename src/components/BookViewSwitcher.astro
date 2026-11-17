@@ -116,6 +116,7 @@ const yearGroups = years.map((year) => ({
 </section>
 
 <script>
+  const english = document.documentElement.lang === "en";
   document.querySelectorAll<HTMLElement>('[data-book-views]').forEach((switcher) => {
     const tabs = Array.from(switcher.querySelectorAll<HTMLButtonElement>('[data-book-tab]'));
     const panels = Array.from(switcher.querySelectorAll<HTMLElement>('[data-book-panel]'));
@@ -150,20 +151,20 @@ const yearGroups = years.map((year) => ({
           const groupMatches = matching.filter((item) => item.dataset.year === group.dataset.bookYearGroup);
           group.hidden = !groupMatches.some((item) => !item.hidden);
           const count = group.querySelector<HTMLElement>('[data-book-year-count]');
-          if (count) count.textContent = `${groupMatches.length}권의 기록`;
+          if (count) count.textContent = english ? `${groupMatches.length} books` : `${groupMatches.length}권의 기록`;
         });
 
         if (view === activeView) activeMatches = matching.length;
       });
 
       const shown = Math.min(visibleLimit, activeMatches);
-      if (status) status.textContent = `${activeMatches}권 중 ${shown}권 표시`;
+      if (status) status.textContent = english ? `Showing ${shown} of ${activeMatches}` : `${activeMatches}권 중 ${shown}권 표시`;
       if (reset) reset.hidden = !isFiltered;
       if (empty) empty.hidden = activeMatches !== 0;
       if (more) {
         const remaining = Math.max(0, activeMatches - shown);
         more.hidden = remaining === 0;
-        more.textContent = remaining ? `${Math.min(pageSize, remaining)}권 더 보기` : '독후감 더 보기';
+        more.textContent = english ? `Show ${Math.min(pageSize, remaining)} more` : (remaining ? `${Math.min(pageSize, remaining)}권 더 보기` : '독후감 더 보기');
       }
     };
 

@@ -17,13 +17,15 @@ const {
   image = '/social-card.svg',
   article = false,
 } = Astro.props;
+const english = Astro.url.pathname.startsWith('/en/');
+const koreanPath = Astro.url.pathname.replace(/^\/en(?=\/|$)/, '') || '/';
 const pageTitle = title === SITE.title ? title : `${title} | ${SITE.title}`;
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 const imageURL = new URL(image, Astro.site);
 ---
 
 <!doctype html>
-<html lang="ko">
+<html lang={english ? "en" : "ko"}>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
@@ -37,6 +39,11 @@ const imageURL = new URL(image, Astro.site);
       crossorigin="anonymous"
     />
     <link rel="canonical" href={canonicalURL} />
+    {Astro.url.pathname !== '/404/' && <>
+    <link rel="alternate" hreflang="ko" href={new URL(koreanPath, Astro.site)} />
+    <link rel="alternate" hreflang="en" href={new URL('/en' + koreanPath, Astro.site)} />
+    <link rel="alternate" hreflang="x-default" href={new URL(koreanPath, Astro.site)} />
+    </>}
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link rel="alternate" type="application/rss+xml" title={SITE.title} href="/rss.xml" />
     <link rel="sitemap" href="/sitemap-index.xml" />
@@ -45,7 +52,7 @@ const imageURL = new URL(image, Astro.site);
     <meta property="og:title" content={pageTitle} />
     <meta property="og:description" content={description} />
     <meta property="og:image" content={imageURL} />
-    <meta property="og:locale" content="ko_KR" />
+    <meta property="og:locale" content={english ? "en_US" : "ko_KR"} />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={pageTitle} />
     <meta name="twitter:description" content={description} />

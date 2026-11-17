@@ -1,0 +1,1100 @@
+{
+  "reviewedAt": "2026-11-17T05:57:10.206954+00:00",
+  "model": "gpt-6.1-sol",
+  "reasoningEffort": "medium",
+  "method": "Every English article was separately reread against its Korean original by one of three GPT-6.1 Sol agents at medium reasoning effort. Automated checks additionally verify metadata, code, links, images, heading anchors, routes, feeds and UI behavior.",
+  "files": {
+    "1-2-레벨의-객체지향에-대한-생각-변화-회고.md": {
+      "sourceSha256": "f34c614e8f043d530deab0a0a9184c067f5181fae9264adcebac088350b1143f",
+      "translationSha256": "6462acd1216352a9952649ad2bf818624d7797aaccd9f579e6f943d2feb18ab1"
+    },
+    "http-주소창에-넣는-그거.md": {
+      "sourceSha256": "c7862f7e9c240d383e6170242099cf313cd711594cd7ffd695803b0f553af67e",
+      "translationSha256": "ae88266555a418adfdf95942e25af20eab007e81ecabe4d54cd9f71e2c3fd343"
+    },
+    "jackson-라이브러리와-dto-규칙.md": {
+      "sourceSha256": "979e85a35d386d0160a9ce4f3c0a57803f67e0882ff3f312ac1763256612944f",
+      "translationSha256": "3bcd4ea60805066e76f26734352bab309feb3481ec27a59a25f7738d42a2e903"
+    },
+    "java-integer가-있는데-int를-왜-쓰나요-래퍼-클래스-wrapper-class-에-대하여.md": {
+      "sourceSha256": "33c3f5d25d9e6dd17b9c39631a88fc084cc0140c2de0d670f694521991d90ac1",
+      "translationSha256": "ce54880a9b4c1b132ecc5a4312109ccc35ab9a66d950f0dab3a01b6d0e8d93ae"
+    },
+    "java-리플렉션-reflection.md": {
+      "sourceSha256": "4c70ce3d935b1a5bd47b7a31d499842014afc38ad5ea4a75bc6374e3bb95306b",
+      "translationSha256": "a41031cfe5620cf9613df5cc900c6858b4c5062f68ce1034da80852303b98f35"
+    },
+    "java-모든-클래스의-어머니-object-클래스에-대하여.md": {
+      "sourceSha256": "db6404fefcc0c0f7b87ce468f91cb5d9f6601a67afc17a6768cec1415e57c95e",
+      "translationSha256": "6bea28ba64f13fa0a6a3e64badf94e1f3abf4dd80b5e1278e7627f7afc2ce485"
+    },
+    "js-챌린지-1일차-til.md": {
+      "sourceSha256": "582f74e86c48beecf4c777e966de8a5000a65dbb88415514962726cb783c9a99",
+      "translationSha256": "53038e362a7b26f1a01158f4c625918bd3954716e66599ebf82193f84c179c73"
+    },
+    "js-챌린지-2일차-til.md": {
+      "sourceSha256": "ac75781cb3620ae9f21857b2a888c51bd838f8195186473271034010172c09c1",
+      "translationSha256": "1c1da66892a5cad25543eeb3602610f986dfde1165e31fe3ac14d6c991c19e8b"
+    },
+    "js-챌린지-3일차-til.md": {
+      "sourceSha256": "eaac637a5699940ead1a2696b5faf85d20e38e61d21e6a0efc81971cb05a7bb3",
+      "translationSha256": "a8b5e4a35765dc14154169a341464e327ce68590f41960483bbbf03297a312e1"
+    },
+    "js-챌린지-4일차-til.md": {
+      "sourceSha256": "45395f8c195c3aabcddf532c7405a7a2cc2940fcaeaa72d284d68679db0b6f4a",
+      "translationSha256": "98037adef00399c6b8fe34c920b5ba1aa9c11d1b331309c7dd00c5e0ea3c3282"
+    },
+    "js-챌린지-5일차-til.md": {
+      "sourceSha256": "08e3007aecc32f8f365df0769ff5cfc1ab691b7e118db9f7bc9e4dfd1bf4f4fd",
+      "translationSha256": "30608bffb6712d21c3bb5a2e97e7bd9fc6cfd2b8d7664581e6195553dcb94bc7"
+    },
+    "jwt-json-web-token-란.md": {
+      "sourceSha256": "2e2484b6f081d3849772f935baf19604c5090e423b42ec1ca0b815c5fade4899",
+      "translationSha256": "093948df632aaf69d56322cd55492cfd35afe23898924bc831b146343b093d30"
+    },
+    "knot의-전사-모델을-고르기까지.md": {
+      "sourceSha256": "ba940fd0a8726ca320316e90a8a305280544aa9dd20b3e6250198785f7f39a0e",
+      "translationSha256": "3ebfb7b8d8363cdb454dbaa200ebff76ccdc656ee35c3705a131904e974ab9cd"
+    },
+    "lcs-longest-common-subsequence-백준-java.md": {
+      "sourceSha256": "6a53f7f6d628ed4ada073563135d7fdd74bdd2cfc0e006c03731e1cdb72b8ba1",
+      "translationSha256": "b1b4e16bb6d3bf9b12ddd7e15e68ccdf859e38225ec11bfb0cb2c251ebb84a05"
+    },
+    "mysql-innodb에서-동시에-두-요청을-다루는-법.md": {
+      "sourceSha256": "d3b6de703bd9ceb96f9780c1b14fee2204cacf6bec4bd06b72dff21344a72c5a",
+      "translationSha256": "491eb83a920c600ec4186a1350f41d807f11e80fe9533ad6ff8796fe55d5c482"
+    },
+    "naver-222123483004.md": {
+      "sourceSha256": "575b4177b96913138b29f7151dab899f0883927d2f5e5e60fee0991c9427f85e",
+      "translationSha256": "6211eb41cb22bfcb49f658b134472257a0b5e4c6ea3052e47ad6ffcb20396619"
+    },
+    "naver-223023379456.md": {
+      "sourceSha256": "eb3a779ee899de0d6dd02dd9fbee8063199e98b72cfb8b545c4dd90731a85cad",
+      "translationSha256": "6b7880bc704ce02593bdf6c0af5a791b2bba4901e26bba8c092fffee869bfe65"
+    },
+    "naver-223023388345.md": {
+      "sourceSha256": "15257f0279190c89be70d0341f07c9a5867a9f1e27d22d58c6d66754af927d46",
+      "translationSha256": "35eec33b1f7a76d719b15b62628e4285bf097b870e4ffdcff023e3e98444bb9e"
+    },
+    "naver-223023397871.md": {
+      "sourceSha256": "479e0f4b91e89559456b7c2216a67adb7d26758148d10022351b70a1de6f9f6e",
+      "translationSha256": "595af7cc76cd1fae06cfef96f9992e582914af5f50b0af6274031ae6efe112ca"
+    },
+    "naver-223023405696.md": {
+      "sourceSha256": "d60cee294b98244a3f21944ec3c2f1651bbab5684efaf9653cda777a6018c237",
+      "translationSha256": "649936dd0ea77401258538953736b3e84b468c095f8e0e479e5c9d2e2cf21d7d"
+    },
+    "naver-223023410825.md": {
+      "sourceSha256": "1430e92d9ba3d9673a4edc081188e64561afe883891815286ad76c4935950cc3",
+      "translationSha256": "13f5499f60a5699792404626e5bf055224775371568788a02d12fbbb3fcdd9d5"
+    },
+    "naver-223023415109.md": {
+      "sourceSha256": "2d1ca41438737ded5815f89b56283a78b016f9b5432bd1f3acaf2ee0751fe3b2",
+      "translationSha256": "97eec0886b77a6e6ec673b93b42e0d69ed2ba1ff0b10df5c2e7f33d3f1854681"
+    },
+    "naver-223023420327.md": {
+      "sourceSha256": "b8b8d26a873012bc48b341c3f7133066494870cfd9dbc2a5060ed8b419361317",
+      "translationSha256": "a3fe41ec8cab3087109aad835d649d9ec0e2f31ad9884b708feffce7ed72b67f"
+    },
+    "naver-223023461279.md": {
+      "sourceSha256": "c070be64285b8e4357b1ad3f5a84c7551bd01f5b36b6935cdd9228b45f2fb2f1",
+      "translationSha256": "97a9ddc0d90288b7d1e781979cb956c280e4d8bf4069a565e2004c69042a48aa"
+    },
+    "naver-223023470929.md": {
+      "sourceSha256": "6ef5bbc2cc33a038bc73b72afa6edc28764a6b05327adecd1f44cf8cf394d8e1",
+      "translationSha256": "0f5c903d2460a6dcd5d1927d4100f0f4260baf23d62984fcd83938d0b1c811cb"
+    },
+    "naver-223023480632.md": {
+      "sourceSha256": "19a6f71a253f27cf301ccadb4b668039f915380b417a311da7933b99e7ee9eb7",
+      "translationSha256": "79d3d0beaad7491baa510dd170d56729cb0912707ac39b001abf6c29b5a86cf1"
+    },
+    "naver-223023484946.md": {
+      "sourceSha256": "e4c8c0b0395b42e0bfab06dce281c9212e3663f0bff78674704a69db326a830a",
+      "translationSha256": "878777fb177fa864a50cce2cdfaddaf0aef7b3d5bd54c7ef57e8a3f1f7379a7f"
+    },
+    "naver-223023496140.md": {
+      "sourceSha256": "c2807ff80883ebab20391789ebb5dab0725847d154d1225345ed8c06031c84ee",
+      "translationSha256": "2ab10a3ea25dbe14722a500d144286a461312ebd4214cccbb6f3beb04f3e5fbd"
+    },
+    "naver-223023504190.md": {
+      "sourceSha256": "4dee480f38cf06cd5adffea68632498346090feeaf53d753499066c788049982",
+      "translationSha256": "fe466d41dff326b2f4e668b19faef208a6057022555a4b7752ec4a780db781aa"
+    },
+    "naver-223023512111.md": {
+      "sourceSha256": "cc732cd38b694f19b47342fd18ce1dd29760e23dbf590893de8a44b2ee7a020b",
+      "translationSha256": "34ebb1e3b7ca40dd3a898b921b9413e1c3d61410b9f7143cb803a41605400615"
+    },
+    "naver-223023519896.md": {
+      "sourceSha256": "ba146b35c28bae8f39fa8cf13ca9d78ffa3fa4b68772bc76dab1a56926553812",
+      "translationSha256": "a36b70219c832d6c0f9171005d7df754a6ea0ae410c8d2c21cff692e501c1e83"
+    },
+    "naver-223023522635.md": {
+      "sourceSha256": "e966e45d842e92f271aa1574837c3d38e292ad26119eb3c67153df1fe23c86c9",
+      "translationSha256": "9eb1003b7e421da90b489070d81b020b64b09288afbf15825e04bc057b115f7b"
+    },
+    "naver-223023539606.md": {
+      "sourceSha256": "d0a39e0e656bd22500c9e843663624d557cc1c3725e29d9447b86f88fdf1bf71",
+      "translationSha256": "72a4113623d0166f0ac4a8ba4f31f9f37cb1849337f9a5c069b6d8f962723ad5"
+    },
+    "naver-223023548752.md": {
+      "sourceSha256": "e1ffa2795343294dd096e1f7c413ab0d0396b5b9abed58948beb8fed32c8fa0a",
+      "translationSha256": "3c8dcb4e13c72eaa8f342d52fa3b19acf22f863dba01a14fe8d5088a340ed103"
+    },
+    "naver-223023553830.md": {
+      "sourceSha256": "36268de58fa70dfeac4f9b64a4c0502b8a660a8782d68c812d195a9f39484cc7",
+      "translationSha256": "a67cc1640c091e3c15b1f9a4fd0b527885bf9478199b2298557b9066a0da7846"
+    },
+    "naver-223023559823.md": {
+      "sourceSha256": "6d915533136e3ec311b27194100d7c56590bac9290223e7e4de927fa3ffac4e3",
+      "translationSha256": "a28b1e56084cef88f37268388009dc302c927c9ddc59a4cc16e3c3c072364709"
+    },
+    "naver-223027708704.md": {
+      "sourceSha256": "8361e108c5ab61521dfa9c0fe9bd6863ed01a627012422e0105686f5441db735",
+      "translationSha256": "a9a2224e435e45c0d0df45facf4887a6ae9c139e3a926ce438a96f1b2a753f80"
+    },
+    "naver-223027716031.md": {
+      "sourceSha256": "56adc97a9626ed88f5699e0f24d735785a44869fe59fbb967f7e6185359267f0",
+      "translationSha256": "5ecdf4f5cb226f0c0e9213762adc607d5cd1b764cfbdf78fc5d82ae8de1a4381"
+    },
+    "naver-223027718765.md": {
+      "sourceSha256": "e3d8c58118699b5903f5cf8a1f1b3ec33669a07123a16dbaef0478b48b14405d",
+      "translationSha256": "fdd43a9a5b0d6340891e0089589066a5a3f22ac4ee61ce503d4bfe913b793466"
+    },
+    "naver-223035696030.md": {
+      "sourceSha256": "18f6b3ed60bbeffcbefefc0371832d8dd2a1589baa277c54b880a5e4912e7257",
+      "translationSha256": "ac7c30bbdefca50eb78fa272d07fbc2647e14161f9e25ceb9d3589b0178a3b47"
+    },
+    "naver-223035704438.md": {
+      "sourceSha256": "f5ad76929de75d34f82041c326f61e9b440720edca97d4bf0aa8190e9bb29c4b",
+      "translationSha256": "60cec7666f48c60a06d74fe2460a2bdd701cf6825be006dbd868dcc20b38631c"
+    },
+    "naver-223036847502.md": {
+      "sourceSha256": "d9a7cf0adad061623185e3e9f94c4695165962e1bef1f6fedc9404972c58ddf8",
+      "translationSha256": "b049050939459de6b5b91dbf6e2a9655ca21901fea3402621427000673014a3e"
+    },
+    "naver-223057266639.md": {
+      "sourceSha256": "54d16bdcc37e33ad184c80636d3bab11addfdcbb126057c305ef65ca31232e7c",
+      "translationSha256": "5e6f78b9ee2fd1ec0725f9554dc84b4f4904fc66f700d3615afe628ec736f76a"
+    },
+    "naver-223057275265.md": {
+      "sourceSha256": "1dd0dd5c2c584ed1bbc7ec962589f94c4bff3eb7724c8f6f87d5d458818a385a",
+      "translationSha256": "62b6aa3c4531bd9946d1b5f52cdb6c2bb04c1c31acb903c0a7f3554497a06831"
+    },
+    "naver-223102911207.md": {
+      "sourceSha256": "977afe6deda872f6483aad9a102976a82ded826e652c45e19b1adf7ed381a9ad",
+      "translationSha256": "7c2c9321a4c3ab60d42eb6dad2d49d9cac0880446b2c0bd557ee4c70702daabb"
+    },
+    "naver-223102924316.md": {
+      "sourceSha256": "950d96f7d9c10c04f791482ac482dbcf7acd6a92bdae24e106d2b2f8a026d48b",
+      "translationSha256": "6380295a6377e16f7427111b68c350ee0e464cef2c07d49e8c2e398f5c7cfa04"
+    },
+    "naver-223102931530.md": {
+      "sourceSha256": "0673ff5142a977de1f726e3d566213ac256b2fb81dff951ef6b81e57db9f0d84",
+      "translationSha256": "6ef4523ae4acb1e04053a3d18c2ab1c4c8382d4dca9d4ec49b59d925b85b5ec4"
+    },
+    "naver-223102936280.md": {
+      "sourceSha256": "46d0a8361982fe6c5ee3ea8fa35ddd2292f73070f9a54a9a3520f525c59114f6",
+      "translationSha256": "b5008f092d7fd712fa578541a1959926c12302629555776eb16d583e45cbea09"
+    },
+    "naver-223102940127.md": {
+      "sourceSha256": "5bd59eeb65f323e76ba9f36d27acbde49624c59ed5f7c7ea773faecc6f26fa4e",
+      "translationSha256": "0f0c041aa580319439b8643edbd91cd154fc3e343dd9d60539fce096659adee7"
+    },
+    "naver-223104928781.md": {
+      "sourceSha256": "45a85395100c3a638258089fd1bfdf690dc4d94986e59561cc0fbfae7c8a0650",
+      "translationSha256": "ceb6c37d6a6ad4dc6dcef669da28af0f43092cd03e7de815015e7a86160a40d7"
+    },
+    "naver-223104931029.md": {
+      "sourceSha256": "357a3db022c1e14f4189089470b2a0265b1c8710e073a0025f4112b0c2641d51",
+      "translationSha256": "adbfab4a3823a3bf785ce231b8ab58bbfc1f9cc830075f085e84e1f5504de368"
+    },
+    "naver-223104937371.md": {
+      "sourceSha256": "b3df523ea144110efa50549e5f098d6ab699549c21edd7731140d408bd0be5fb",
+      "translationSha256": "71aa0dfcd2c81ccc585bde22d2720d4190b81718d065e8599dffbb7b742694de"
+    },
+    "naver-223104992221.md": {
+      "sourceSha256": "aa2d79d51b3d0b97178d51c716314eb75fd7b811b054423187203779b51c751b",
+      "translationSha256": "e3e5dc9f4205a323f73c18b51bb653c833246eec7fe0bf88584e4ca46546962e"
+    },
+    "naver-223110585373.md": {
+      "sourceSha256": "3c9fc4f421a6516d108da8ba472a3d4b449b30b95d2e6ddb273d996346ec36d4",
+      "translationSha256": "e02424a33ca1882ec63fc01aa4201b41f8e5fdd80985e3b978573ca9b3929914"
+    },
+    "naver-223110961257.md": {
+      "sourceSha256": "c5608812c97da1f5511b3dc16d7ab9776e59ec871b6a6bd8d61831fcec74ff92",
+      "translationSha256": "f644ff1a089a5f8e3e1994eef82ab2e865c4fab9880795392cf658680a7a0b58"
+    },
+    "naver-223123886503.md": {
+      "sourceSha256": "06870710262146f135bca7f5a3bea7dd413edd2f56688d4469d4c09f126d4627",
+      "translationSha256": "f6f34b6727d34a768f03e5a3a99122a0cf31e6170b9abd6fd459e37e58d3cdd7"
+    },
+    "naver-223123890669.md": {
+      "sourceSha256": "1597bd46c120f91020e71e61a3d1a13deefb266cc393fa49fecb3cdab36b0cee",
+      "translationSha256": "cbf0a89464ef9cd3a21381ef9e53e3366d307c0848c716a07e467215bdd3e7fd"
+    },
+    "naver-223130353955.md": {
+      "sourceSha256": "05009d95d8d33e8d4df35f02f8da0659e121fb7c9936e01211b194c737368453",
+      "translationSha256": "2efedba82dafd794c79aa58389e59ed1cb9f930b5f5b7f03604d1646e903ffe8"
+    },
+    "naver-223130376368.md": {
+      "sourceSha256": "e97e675f0c7ddfca7ee5376fcac2630d1cc54f16229231bd5e390bd4b552091d",
+      "translationSha256": "a85c98ee10711e8938e6b838a2112d68d4c7d9735f6cc4a814a0de6f4fdfe590"
+    },
+    "naver-223130399049.md": {
+      "sourceSha256": "382f6e4cd480c20f8a36108caacff7b1fc253aa92b5670dada581fb8887e8740",
+      "translationSha256": "1ff8cdc5591d0698500b34db4d291a45dd686972f6cc36c3e5c7dab5c77d3d1f"
+    },
+    "naver-223138462461.md": {
+      "sourceSha256": "ca9d7e06f19d33d5146d50c5a4ed33164c257bc55b0942ea25b119898d187925",
+      "translationSha256": "efea389ba26bf104fcf50c1751fdd05d91642725a39921f263a498f66659443e"
+    },
+    "naver-223183634510.md": {
+      "sourceSha256": "23aa2b288e1f90a64f82ed5b8ec388542f250b83ead8db5460df8242989a044c",
+      "translationSha256": "744f480be1fb6be4f958fc2eaec32fbe6f0b5e306d165378403d36d63b029936"
+    },
+    "naver-223183641673.md": {
+      "sourceSha256": "9f2a2e9246e7b28d2f8c469d3c9ff5100a4f54e81e0a7238c4891db7aba1f644",
+      "translationSha256": "2d713ec0ad374071d5d55a9b03f417ce87405d3e453365adf98dc13024d92163"
+    },
+    "naver-223183665170.md": {
+      "sourceSha256": "8598b0b8d5e00ec3130f3dd2dd8d341861db86071469180ee1bd757427f003fd",
+      "translationSha256": "0b970c3097d6a39b5dcfd9d1067e91768ff9fa1785dad2182336fde76c634102"
+    },
+    "naver-223183668103.md": {
+      "sourceSha256": "b3d8cf3730bd7a425cc353f98c23251958243bc31d648dffee8d84d3bec4be55",
+      "translationSha256": "ad8057fa642818979fcb73dfb4d94724b43fbb936aea518133af3dbd33581fbe"
+    },
+    "naver-223183672880.md": {
+      "sourceSha256": "02f5d66c6bcb8570318c4b2dcc334e997f47920c5d99b1f8f478ad0209d16b00",
+      "translationSha256": "76b73b32d5c79afea50e305854ddda75b0512e793c6238b5980d1c36d53feffe"
+    },
+    "naver-223188675132.md": {
+      "sourceSha256": "f85b951f9b927822d0a3be2cf38e2a4d2b3e6177163714805b587c1ba4606d2b",
+      "translationSha256": "d653859245aa9cc31c253cf2706c97186793d5e5d05b8271759bb4ef587f327d"
+    },
+    "naver-223202006303.md": {
+      "sourceSha256": "89e2a38e309ded2237fe053aac60861cc77a7c9523132055e8c101766bd48696",
+      "translationSha256": "2c74178b2799cd6ffc0b4c182c20eff6f1394642612a0d9856f200e12cf5a5a4"
+    },
+    "naver-223202027038.md": {
+      "sourceSha256": "7fe4e91ddd57128ebf948ec2162806112da62fc72e6f708b21295a117fc8284a",
+      "translationSha256": "fbcfbce2806550dc21c82265c2eef6f89e9e22a7043da6f58297195988f09cd4"
+    },
+    "naver-223251942081.md": {
+      "sourceSha256": "62098dbc0397e3d06fd369aa343a1fff29111e6ef76a82b14a1144cb92366911",
+      "translationSha256": "9d0a9bd8bd52824f4e5e23e35a66e7c5cebaf6607f47d99459af59d960ff8ea3"
+    },
+    "naver-223252990469.md": {
+      "sourceSha256": "5c62f9288ad3dd097dad9ae43f75e6ef393935ee9dfa3f27f3263ec67d4971f7",
+      "translationSha256": "161dba29487108cc13b6b87047bf6bf790dd1250744a8b1ef813ef400b12b5c5"
+    },
+    "naver-223252998460.md": {
+      "sourceSha256": "7dd670e5f0f1ff95dfe6b0021ecf07945df5f8567b12d8bc81a11d64e0dea70e",
+      "translationSha256": "4522b14fc1cfc62da38b38f32f6d31650c99e0efb2619135471329cdef4b1477"
+    },
+    "naver-223254008254.md": {
+      "sourceSha256": "074b37c4fb3bf9129e2bc0d91f4a7848f646f96af93c04e2bb632d202d0e7024",
+      "translationSha256": "1660410df6fc4126ce4a78acd5aa6eb65f523ae03598d2a0573c278de159f40e"
+    },
+    "naver-223254965712.md": {
+      "sourceSha256": "4d2496f57bb8533aab506f9bd5004458f13c26c1229b1bc4ef719db1f5b4b83a",
+      "translationSha256": "dea320c1526e16b3eb67cf9de2bcfa1f6a3d562c91bb4a9797cfb682e9285869"
+    },
+    "naver-223254978538.md": {
+      "sourceSha256": "5748940706f8a2e1813c98a83ac4aab0642eadd7ba86a75d3a6bdf527ebf7375",
+      "translationSha256": "da40e987a82193e8bfce9664f8ebb99b3595d73d76f24d4ce2fa7d8f7d700309"
+    },
+    "naver-223255030014.md": {
+      "sourceSha256": "d6eb1a708ef7122d815083e3ae17d90747557711a8f35a2689655869560cf667",
+      "translationSha256": "b9cffc6ee463442e92c7b6b30508ef373bc4779ae9889281ac8c9685bda62196"
+    },
+    "naver-223256919870.md": {
+      "sourceSha256": "bb91de661bf3580bc2c386e7ef0ba22b10e470efb9ae64426e50f39cf9b7a43e",
+      "translationSha256": "4675f9d4d2a3401ded38e23e02ffa555b4244554dedbdad667d7d7d15b6e758c"
+    },
+    "naver-223263776883.md": {
+      "sourceSha256": "91c64fc2b04c624a12dd2ed1bb943bfba3094523bd9437e57b1dd6b4be1125a2",
+      "translationSha256": "c60fc6cf1388789848effb7cecde539b7702c7af0299589acbe3bd96ee8ef977"
+    },
+    "naver-223263781519.md": {
+      "sourceSha256": "9f4f466d477a61709f9bce3e9a9cb8b903adcce84994b34f06be06d6300cd91b",
+      "translationSha256": "dad2feb62d7bbd732e6e93df4cc687176457c3ac5aaa0830b9b4e2255b4addc9"
+    },
+    "naver-223329041836.md": {
+      "sourceSha256": "ccf68ac844b6c610c85fe0512d6a4dca3bbd678dd0127c75d5a58bf16b9b8235",
+      "translationSha256": "806242694fe4050a58ac373a93127d144920f943f9d445bf58849b7a69eb82bd"
+    },
+    "naver-223338598841.md": {
+      "sourceSha256": "8ee2c42c4d6d050817707f6f1258b7175e10a8d5e1b1ae8922f46c595e6e366e",
+      "translationSha256": "231c6f9a2d0a5455604481a034c0ef57746c33e686b7dacaecfdc514a4bba669"
+    },
+    "naver-223608257898.md": {
+      "sourceSha256": "c691e1b02f590cb61f7e9aa1f9c69088a81138b4217ce1ddaff6d199347b7229",
+      "translationSha256": "cdac0efa92b516cea1da10bdce313ee0537291de9e48709b86b9e339cee090d6"
+    },
+    "naver-223611938140.md": {
+      "sourceSha256": "30abf5caa540e3ffca810d486fe9be61c978e9eab0e94f6bca2115fd2262a0d0",
+      "translationSha256": "16a3c20714887a921a2fb7580bd3c34954ce35842b7964a6f3bccfba4c1a986c"
+    },
+    "naver-223620089376.md": {
+      "sourceSha256": "a95074eece6cfec25d3849aeaa7e0dabc39d03fb0b0b7a6fa22c023733ab9c49",
+      "translationSha256": "aef057a8ea157875d5208b817aaec40aa27cbbbbdb7c8d0ee8c3389bb9640063"
+    },
+    "naver-223620243229.md": {
+      "sourceSha256": "a87557a5a9efb25339e296d4ead847fdcb91dd6844a38be1c97c74ae9d7a8596",
+      "translationSha256": "724af95b0e1025b986c8b0a1e12f77d21f2e0de5f023d67cb487dab1b52fad31"
+    },
+    "naver-223637481357.md": {
+      "sourceSha256": "830135eed63de922546ddca9c7f0543cf2a58322e625cacc5a10a9ffc998486c",
+      "translationSha256": "767d43f973d9eb1d9705e188af901e68966c2cdff61f45f970b47dae5dc99642"
+    },
+    "naver-223666296733.md": {
+      "sourceSha256": "79cfe8c25485195e6bd1f7716a0f03b649a87fba2ae6474aae4161c8a8eee6cc",
+      "translationSha256": "297ee7971cb6d17278103970de7081f9736d74564226cd7dc9cdd8997c5e0349"
+    },
+    "naver-223666668304.md": {
+      "sourceSha256": "409f9ce30e6da75a0250300f18bdf2ae72b891ca685cd65719b1eec32509af49",
+      "translationSha256": "71e1d075b4d38743477367d2786d66848caac4f19e8b7e287717226d9a2b720a"
+    },
+    "naver-223723893823.md": {
+      "sourceSha256": "f2f2a04a845460a6f1d2c067d08ec29a799e9d87f2b7b376163bb5e789863e8c",
+      "translationSha256": "0fae8b6c109d651fda6c22ffff9a088d71bafeb6da223d876aa41acda2c06701"
+    },
+    "naver-223736984015.md": {
+      "sourceSha256": "22d14df1841b7eb3512fa162372552f062e5d2c22f375b670d090b9496540853",
+      "translationSha256": "c16888fd2fcfb675655c7376a6b5138aa75a55a4c9fd1b4eb5b8c785389fc13f"
+    },
+    "naver-223876674407.md": {
+      "sourceSha256": "0287a46487b60987d406ef13e61a3f3211860c0d5a96196ea9af5e25101f5cb2",
+      "translationSha256": "088610ad44767bc20e1c5066cb31eeae32fed204a91f4f941c8beae304ad6576"
+    },
+    "naver-223985852314.md": {
+      "sourceSha256": "f1e4208c2a4517a15fb41483cb33db9e86696cb55c2a33589ec00c1914aab757",
+      "translationSha256": "2a9e77442a44c3471a1aad84ff65a3ed0010d4a83a583684f14c5b7d438ef47e"
+    },
+    "naver-224034843710.md": {
+      "sourceSha256": "e254413f8bf3771561e27748c0f696b7696e205a759da5a96c47e60ba429edf9",
+      "translationSha256": "438f767ba9d6dcec34516895011bcc52c9b088a8ca0726d3bae05fa3e50f99a4"
+    },
+    "naver-224101694735.md": {
+      "sourceSha256": "3b8e6274a8e47c4cf92909fd2d846cc1b4506dd7e8139099fddbee80416a62d7",
+      "translationSha256": "16587435f3c95c3423a83578e1f811926b1ad5e061af69246a2b42f855c450a9"
+    },
+    "naver-224120341163.md": {
+      "sourceSha256": "073639e25f530807e0d874cea1157f382c2290edfb385755b86d1a4a56d686a8",
+      "translationSha256": "956bd76a72242ea263a13d14c62a89ceae80f4df6c8aefc867be0f697c11dd1f"
+    },
+    "naver-224155205208.md": {
+      "sourceSha256": "39b92ec0cd36fc0c9a41635a67c228734268d8b34777f5722ffced10b5d3f1de",
+      "translationSha256": "de3d91f158260933b486c81cf3550ba5b19b39f3438a2acaf2398960218c6f3c"
+    },
+    "naver-224178026194.md": {
+      "sourceSha256": "6bb7671c553d15c1f09f849e7e2802cf0773e70980cf67aa9efbcf0720377d27",
+      "translationSha256": "fa624dabf59206ce1aad32d9a2efc594c85dbe8125c1608c4e298f068d6a7287"
+    },
+    "naver-224179385769.md": {
+      "sourceSha256": "92fefa45d5bf2eeffb1e4af65b492d3976aff8fe5e4ef4cc5eb6b2a45ff6fed1",
+      "translationSha256": "e7a643e0688fd0f8e787918777aea34ef052e68b6f08b7a93aac2d64e309843a"
+    },
+    "naver-224183843164.md": {
+      "sourceSha256": "d79e8cadb43d5f8eab3d55ea60af671c93e1b5e47fc18ce2b9232666ce52f4e7",
+      "translationSha256": "0a8c3e2bfebec363814b94455743f7a50578824006b5a3bce80aa383d1d47f2f"
+    },
+    "naver-224193275608.md": {
+      "sourceSha256": "4124c5b6b28582ac926e85a79600107b11c5e61e75cc0a8de22c85b18fa38993",
+      "translationSha256": "b84f639b61ce97ee98c247cdba623dd49f1517c30ce71eee5de004de5b00b34c"
+    },
+    "naver-224195985491.md": {
+      "sourceSha256": "514a017b207ed19fa6bbca56e8a7f881dc7579ccc128686d21c4f0068c2bb499",
+      "translationSha256": "0e61e127201ccf04f68afa60128152519c98dc5cc22119db8980b30da292964e"
+    },
+    "naver-224200698281.md": {
+      "sourceSha256": "022f72e6599db5ea620e8941ed54eb6a504a03b36176c4f743a4af87fb19a346",
+      "translationSha256": "db00307c904a36589fed36f387fc1590ca1bb18228f7da4f861bc6960c7cc084"
+    },
+    "naver-224264887581.md": {
+      "sourceSha256": "f8f0209e7c8b72287c426d8a513f29fd482ae02a384abb7e2e0989da2aaf9133",
+      "translationSha256": "b8db067ad1f32dff16b14947aa6c65f82395e539ffe5186f2621b789b15d05fd"
+    },
+    "naver-224264916085.md": {
+      "sourceSha256": "7146b12a926dd14069ed90a956d9c243a270ac0b871d89554e732b4450020bc9",
+      "translationSha256": "c40d574958337eb7093f6a77d9253d610fe1440a276a7140f01085bcd3155de9"
+    },
+    "naver-224265022407.md": {
+      "sourceSha256": "36b9bca287cdc6af763be448ada996d1f4eeb5d0b42ca771e324c3f005ad6d6c",
+      "translationSha256": "f2e5cea240b9b1ecdc99c1039db24d9c05f980d227ea8ce716a9d128147ca00c"
+    },
+    "naver-224265147049.md": {
+      "sourceSha256": "333da526863ceca89799d1d6e4c8580f884512b15522c02d7694e37b0a6e3d95",
+      "translationSha256": "d70fba4bf6c5aac184e0179087a6ace9f61701fbffac853482de93729a1ed43d"
+    },
+    "naver-224265220105.md": {
+      "sourceSha256": "f9c090c0064e1c7fc38752c3e7eb7e114916e777f72468d54f1ce0cab9646c92",
+      "translationSha256": "6a7db61f80773b2f5253d46366cbaff725404b31576bf677455bac4859f18e62"
+    },
+    "naver-224266923896.md": {
+      "sourceSha256": "f4c7dab8ee75c05fa2010b53ccc00291467569c5b828e0f3771f21517b8c272e",
+      "translationSha256": "a396b69d551d12d4e4cc330d957f8ae73100019b6481debab69fd35b918cd3f7"
+    },
+    "noargsconstructor-안전한-객체-생성을-위한-접근-제어.md": {
+      "sourceSha256": "b62e8a4186923c5b2adef34ec4ac4a2b6f8b6d3ba80485ea3775455928c82712",
+      "translationSha256": "3c5375e6d44b445ddd3a03d447c09280a98b7b39b14ae14505dbd5e365be0d94"
+    },
+    "node-js-실습-코드-복기.md": {
+      "sourceSha256": "8b35fcfc9da511b69c1e2878dc56ea8af93305e52da0a2b5da0628676a521c76",
+      "translationSha256": "7a79a509500ac44d2148cb0d259543f6a016abd84767b6ac3201fe78bc952f84"
+    },
+    "react-1주차-정리.md": {
+      "sourceSha256": "5c200edbb4b75c95fcd873219ff81f335233cd213af9e2a0e7d5ce6ecd84a545",
+      "translationSha256": "66ba7f652c6df2e0307e7600e0153ca4a4a356d57ac5ac5216e85d1b694f880e"
+    },
+    "react-2주차-정리.md": {
+      "sourceSha256": "b5104911b5454d676b10b7b980a1ea294011971c264e3bce15f2b1ed2ca6576a",
+      "translationSha256": "3deaf153fe63b142f37f3721a8a3d161f839829c292c287cc01a7edab834a33c"
+    },
+    "react-spring-기초-실습-미니-프로젝트.md": {
+      "sourceSha256": "9e7ca1482a2b1c3c183b0f21f38f28cfc6d934b27fbaba62e12e7a0e0a039957",
+      "translationSha256": "3b61597df508ad5b7577a24a8f6ee3933c32ec53c4b42762989230e7cba4e3bf"
+    },
+    "spring-security-자동-설정으로-인한-swagger-postman-401-unauthorized-에러.md": {
+      "sourceSha256": "420d438a0e47940481b4a28b7d93917865e16a9a7a10485f14e08876242a86ed",
+      "translationSha256": "c181f5eff5f013e75cfc7475c02118cd0bae97a82fc33b1c656581b523b6bd82"
+    },
+    "static-내부-클래스의-사용.md": {
+      "sourceSha256": "4488cd330c57c8bd164968c9ed0e98bb833001bde4ad2c0efd008bd1bc94c9da",
+      "translationSha256": "8f3551831238af543789256792c13bdcf729881f994f46f9eb6d67e18269fa18"
+    },
+    "가장-긴-증가하는-부분-수열-2-백준-java.md": {
+      "sourceSha256": "168a3831baba64ff333f39f217203bb55a89612bef1192485ad31c594917a01c",
+      "translationSha256": "4f5f1af3a6ac572c1739e9492f39c163bf99bd3eee1f0faa2da65aba80959a6c"
+    },
+    "감시-백준-java.md": {
+      "sourceSha256": "dbdee959a2e4576792e59f11a2fed5cdac3b25fbde75036ef93b597b6d9748b3",
+      "translationSha256": "f2e630460d0300002acae1bc5ff561139d10b26f8e4ea4b4f9d4ee27bd527600"
+    },
+    "강릉-여행.md": {
+      "sourceSha256": "85b67e3fb8163a85d0fbe4eef7cb170e475db6df5c9df8895c8f6234bc9d75ae",
+      "translationSha256": "4a57079ed60250658baea96c86d380b20a866bf13375f529989f88edd930c3fd"
+    },
+    "계획에-얽매이지-않기.md": {
+      "sourceSha256": "f4df72978f9625b38a98b4eef067003c5e2ddededd44878a5beee2d0db812485",
+      "translationSha256": "2b0f3959d99eecfa4782f766869c6e71d3ded558aca40045fd1f2cacab38d4fd"
+    },
+    "글쓰기-스터디-자살-사건.md": {
+      "sourceSha256": "e36d18e7e54385c25cb1a49d7d0acba41f3ec04cd6c86e8289e2ca4d1c46a57c",
+      "translationSha256": "fc58011ecf028a003bcf72b403701b7f10b3e7642b9c5bcf34ab50316ba8ead6"
+    },
+    "기획은-힘들다.md": {
+      "sourceSha256": "a1f773f94da82d8b95ee7af4d4c698dc0eb587b7d4a525d2bc4ef0ddf232c116",
+      "translationSha256": "458d210a4c8bc31793008c2feab89ee24ff3295237a20356e0b882915ef371dd"
+    },
+    "나는-내가-거절에-강한-사람인-줄-알았다.md": {
+      "sourceSha256": "730252fd180377efd6f4c1aeed8eadd1e6caed74f9f35c6a84440c3fadc6212d",
+      "translationSha256": "9d37319299fc173eab71da2b4e0ca61c9807c7e52929c0a01c1e2f0dbe95bcd7"
+    },
+    "나는-좋은-피드백을-주는-사람.md": {
+      "sourceSha256": "356d7a7c2fe0cb3b3ca23a7916fa96ced953e4e9873e29ed42b8ebd45eecffc0",
+      "translationSha256": "f5944ab72741fbe2abb5ed40e7d0387418f0acb6749037a869f59426fd05086f"
+    },
+    "나는-프롬프트를-잘-쓰고-있었을까.md": {
+      "sourceSha256": "ebb144297f84c21a2803f25ebd00577c6258dc9f315cbef28d2096b95c1b7374",
+      "translationSha256": "db4f416ccf8858688672129a53a3da2e1644d6c686e0b239c88560f24cd8286c"
+    },
+    "내-앞에-돌좀-치워.md": {
+      "sourceSha256": "d633f9f08f69aa47d8a529d09fcae7a6f198d175e83d9d2358078668676a391b",
+      "translationSha256": "7c3d8b123ba3500ea5711f3598e99433999c508b54cf5f750cef0cd4b2b29332"
+    },
+    "내-의견이-선택되지-않은-다음의-나는.md": {
+      "sourceSha256": "14c1593d06bdc507edf0509ff76497120f2448b2e307a3ee79f7229205019f2f",
+      "translationSha256": "ac281425af8c7f416a09b0792a6432f642fbc22c73e791510af02036e4d43c12"
+    },
+    "내리막-길-백준-java.md": {
+      "sourceSha256": "a429f7331e9420d5787fe081cd254d6a32195e5f1c7bab21197154e9c962b7c4",
+      "translationSha256": "0ff423afd0e0cad9408cac018b4597a5e79ac021fc6d1a99de8392139ae50ee7"
+    },
+    "녹음-모델-전사-품질-개선-과정.md": {
+      "sourceSha256": "4ee1ea7451d28dd35b0b69ad1e06e106650dd0a57044a9a43eb9252a044af357",
+      "translationSha256": "3f1b872317546f55eac9d82e28206c808792739580a7ca08655e8cdc703bba23"
+    },
+    "녹음-유실-해결하기.md": {
+      "sourceSha256": "daf4d0fbd6609d29f678f2c963a40ed271e54dd4f8ed66e516a2d383bdba9ba4",
+      "translationSha256": "ffd22fd2727f1dc47b7c110df2675e3b81b892cba93f18638d9d1503c481b718"
+    },
+    "다음-순열-백준-java.md": {
+      "sourceSha256": "5148af49fb6285f7d4c47ce4d246f701eda8f19e43d01cd6d7cb2b3b6ca20147",
+      "translationSha256": "792e9776870637435c4149b379dfb68cfcb668e5bc4ee590ad266d792314fb36"
+    },
+    "다익스트라-알고리즘-dijkstra-algorithm.md": {
+      "sourceSha256": "d4a58d0309c802a61a66b210052cba990d027f2b3e1ff6bb3199f8df1f920a40",
+      "translationSha256": "5475cbf31f97e193a34a954dbbb94496575ef7ac112bfc7db0166eacdc28c0f2"
+    },
+    "동물원-백준-java.md": {
+      "sourceSha256": "d7fe38fa59f2c36d9532976ade89bf5be3225666a4cd4ec1a046f52183f6e632",
+      "translationSha256": "c83401470136125a265844d6d76c3ee04c950586f91eaab90e2f33bff96c2824"
+    },
+    "레벨3-회고-조각들.md": {
+      "sourceSha256": "b89c5494b5d3a85b12b7f4a770a3bbdec1441e2a64e72d57ca8543b980368c40",
+      "translationSha256": "eaf1a23c3af10fcb4de3da83124a9c34bbc738d1d2107bced25f1051e7be2a17"
+    },
+    "마음은-어떻게-움직이는가.md": {
+      "sourceSha256": "5a4638e02100646cbde85cae02a1fc67c3fcab0b55afbb43f4d2596e7fcfc201",
+      "translationSha256": "55fd68c924b5216b4bf87a446a9159183647c23837d3d4892525efd27372ec4f"
+    },
+    "메타인지의-힘.md": {
+      "sourceSha256": "3a0847d5628e113f1283d935799ce704820060e2ab6cf76ac60c22ef915ceed6",
+      "translationSha256": "57e56362c1fe583c9974f6bc25ec0c50769b35b1b6afacb4e8697fa3bf7753a0"
+    },
+    "무엇을-어디까지.md": {
+      "sourceSha256": "00fc86eb5a29759b4e01611fc1404fac751eb404a475a4653c60b5c47f356b8a",
+      "translationSha256": "07f330994396ef91dbf82b9394e927f95af3da82df39844cf108bb485532662e"
+    },
+    "문자열-폭발-백준-java.md": {
+      "sourceSha256": "883208daaab318ff6ce22a5ceb490cc057f9fe51de40a68b45477361143a58d2",
+      "translationSha256": "582c3e795b80e360af303af6ce00427ffed9705840ab8c1d6a0fe5621e3fc920"
+    },
+    "배낭-문제-knapsack-problem.md": {
+      "sourceSha256": "2f9c6f3a0160fcb5aedf67ee3ccef62de6366b7b808c212b850a217b295a79fd",
+      "translationSha256": "b740d268368c9253492a2885fbaebf35ad32d37e4f37f272579d9f9c5612aa4d"
+    },
+    "백준-2565번-전깃줄-java.md": {
+      "sourceSha256": "276588a66823ca75c4c3347bb5a0f6b1c3ad317f2d046d65a588225c2529decc",
+      "translationSha256": "2cdf3dc2a1627ccf1e0bd51bfc98f9a3ffc1409cee4d6340202468dacd684c9a"
+    },
+    "벽-부수고-이동하기-4-백준-java.md": {
+      "sourceSha256": "7e9c6c02c133b082ae63d5eba0d7c0f2e37b6a3cb7e3f5684067357c99a7d013",
+      "translationSha256": "263e1b13448df10d8e475293c8084d6e8e6547066f7134b3ac30e67d9e24e8a0"
+    },
+    "별-찍기-11-백준-java.md": {
+      "sourceSha256": "009e68ee3b87dfb4dfc016e0e38837ec41cd24d5db5ad9206048f109a0834602",
+      "translationSha256": "2efb1580987f669a9d7a61f230384409a492bf9704e2b1dc0d126596cac633c6"
+    },
+    "부분배열-고르기-백준-java.md": {
+      "sourceSha256": "1eaa3c91700e31bd30cf9b42876ad86b7b189163e0f14a0bba1d49d25c5ec646",
+      "translationSha256": "eb2eb52b17dd70bb0a42198c9a951336880f2edc9ebc99eafd63a41d43cd461e"
+    },
+    "삶이-그림자라면-빛은-죽음이다.md": {
+      "sourceSha256": "3e3a5699f62ebf60e8b614cce73b18830505aff77f85fcac46af0e12443b49a4",
+      "translationSha256": "e67a17d20db133857040a5be5cb1cde00710596494c10f74d5283e998e5f2871"
+    },
+    "서로-다른-안다의-기준.md": {
+      "sourceSha256": "3904f89788523a0ac96b69c4827ab0d33b6f1b0fa0d3f850d2ecc495bc10aa6b",
+      "translationSha256": "f13f2b09dbe69baf6a01d1a360fd95119071be542ba184676ddae6b53fd60ca1"
+    },
+    "서로-다른-자연수의-합-백준-java.md": {
+      "sourceSha256": "ab664dde9eeeba67572f7c929ffda13a544e0678d8345b2b1b1d5943e76ba47d",
+      "translationSha256": "e4a4e6cb1dce47fff4c770a208a40a2d98c029c02eee2c24d3f27fbaecce2de9"
+    },
+    "성장이-조바심이-되지-않게.md": {
+      "sourceSha256": "d99fa8e9f81e37a33e9f17bb20dbd33877b0ac61f86fa8582272a9c56c04fdc0",
+      "translationSha256": "7779ba66916a1a58b63e271b863d611845267265a2f7428e2cc54b651991cb10"
+    },
+    "싯다르타.md": {
+      "sourceSha256": "f8ff9c61c4e7ae19925c57afe2b55fe05ae28243b7682a08487128a1a0defa0e",
+      "translationSha256": "19e39ab249ca6a5ba654e14719745d25405f11e4af01228d6d405c68842acff5"
+    },
+    "왜-우리는-그토록-두렵고-괴로운가.md": {
+      "sourceSha256": "dc64abd538aff162cfc5c13e9274be08c361feb69e087cc17ea33e3d4e30b7a8",
+      "translationSha256": "4c8897d9ff35acc56526cbb76630477ea8332a5296aeb50fad8a9ad34ee4550a"
+    },
+    "우아한-테크코스-8기-백엔드-최종-합격-후기.md": {
+      "sourceSha256": "625efbbfbb4f450e919540e47f082c31b2ee640a64a2dc3325e838d8193b4d62",
+      "translationSha256": "2988fc6b7d756e6df10ff3d71824e0bdf9a4a23057d8cf4790ab4512c32a02c7"
+    },
+    "우아한-테크코스-8기-오픈미션-보고서.md": {
+      "sourceSha256": "653022939bb9c8ba764405d90efc895c59e9e67980a3b9e84eaa8ab24b952ab6",
+      "translationSha256": "8b1928db4aecd627093cd18384b8aed0e4a1d002c91c4b35c8b18c709a5ec347"
+    },
+    "우아한-테크코스-8기-최종-코딩테스트-후기.md": {
+      "sourceSha256": "865c30b5f98582addb78a85d9ab512c9e1e9f3fe1e611077d40cc84e84319d50",
+      "translationSha256": "8232b00c402c2c6b17202763ae3d2e73f802ee5cb75d1cb905182e6041c9d02d"
+    },
+    "우아한-테크코스-8기-프리코스-1주차-회고.md": {
+      "sourceSha256": "471871ad543f596b6275776f9bede39ddd2d8c9d442adfd923e33a92bb21d88c",
+      "translationSha256": "61036efc35875020169da24823aaf62b1f62450a6f5192abd5636a811271ae0c"
+    },
+    "우아한-테크코스-8기-프리코스-2주차-회고.md": {
+      "sourceSha256": "380bf4a7fcc3d5b6e569f4ac0077e56a6854e6f0474ec60949b67ab3631a022a",
+      "translationSha256": "a6ee505132bcc38b8a499044f86ff7bc2c332dc23b19cb2699e353a330b09894"
+    },
+    "우아한-테크코스-8기-프리코스-3주차-회고.md": {
+      "sourceSha256": "b7f7fc6fe6c69b0da55db913605b900abb119b9e306c1489d62fc031935285ed",
+      "translationSha256": "75fdbf012998e487e18ef93b4b3f080c249c6ed088f0073320e254773465eabd"
+    },
+    "위상-정렬-topological-sort.md": {
+      "sourceSha256": "e9887b92a2c0e465a1a4a1a7961412914270125f2415c7021a07e202c72a29e9",
+      "translationSha256": "93a0f73cb1793d019021f50ff9991e6bed9ca1e14cefd50cdf4121d5f1ed695f"
+    },
+    "유니온-파인드-union-find.md": {
+      "sourceSha256": "363e6723a2754c549d9d9f1443e0e0bc2729ea887ccf5646eee0aeb1297f09c8",
+      "translationSha256": "dd75253330aed3f30f97dbb9e10845289a526a38c5b2599c260c0b99f1a7710e"
+    },
+    "이진-탐색-binary-search.md": {
+      "sourceSha256": "e0bc1d64db1a790d3d7b0c9f6c404963d4e58db92c3367ff376a95f28c1d6324",
+      "translationSha256": "274db7ca24ab675b16b05403a040175b14cee09a147807ceea3f1975f8dde76a"
+    },
+    "이토록-타인이-홀가분해지는-순간.md": {
+      "sourceSha256": "233ecccef5ecbe0c3f51071160a8f81d06e098b6e338edd0ee0a7e553e3eeb39",
+      "translationSha256": "6ede7a3cdcf220361da0b96ce14cef17a9c650aa4f1331f72d5aa50f3052ac56"
+    },
+    "인생을-살아가는-데는-오직-두-가지-방법밖에-없다.md": {
+      "sourceSha256": "3884e25066d8c848426358ee1873ca61a66e803228f5c37ef10d1d0374b3d80a",
+      "translationSha256": "a85e3e4e09e4962ac2bf72b6b132b114fe260a971f4ce924d2b82ba106abfa14"
+    },
+    "전사-시간-단축-과정.md": {
+      "sourceSha256": "0a0a0c4b975056f3f83d6cb8d3b89493ea0e2717e4081962fd29ba31d9abbde6",
+      "translationSha256": "6c64ff8cd51fc7ddbe9e64f5886e9bfdf6965129e3d85e36ccbfaf9f45118946"
+    },
+    "정체-모를-녹음-종료-이슈-해결-과정.md": {
+      "sourceSha256": "5b02ea0141a11acdd62303f600853c68cf7bbf1e982f8399a2ef2f0e910b80f0",
+      "translationSha256": "d203db36a76f2226509235e26c134de4effa65360e6f238bf5ca0b4e439d2866"
+    },
+    "줄-세우기-백준-java.md": {
+      "sourceSha256": "46232d625c818b198fc242709aaf774d7c93d2048cfac4e9f5ffc5de194186cb",
+      "translationSha256": "9eb3f28991e8320c87a7539418f5660a390685a592c679cca97bb06a8fd56918"
+    },
+    "질문도-실력이다.md": {
+      "sourceSha256": "d4b74901007a2a6cc43faf848b66ef09e7a052feaf4aadac72220c7756c4ef66",
+      "translationSha256": "69114378ae5fa79b658cebc466b8aaf75c182c95fc8c8075d0df29f867dd6d7b"
+    },
+    "차분-배열-difference-array.md": {
+      "sourceSha256": "3734848464750e9fb3c580d2ac4265dbaca7e143c4220c7d4f6211006369673e",
+      "translationSha256": "43862cfd73e3f1cd6ead7dd4bf203be80aa56c24d95de86aa3834e3b6d18341a"
+    },
+    "최소비용-구하기-2-백준-java.md": {
+      "sourceSha256": "3de4e90b7aa9a72ca3fe1fdbcacd924b6dedab00db220ae489cab93e18de799b",
+      "translationSha256": "fc5d2af04aa2d9cd1a1c456ce93e3787f91fe8f97ba5a16148cc8b68560f7413"
+    },
+    "크루위키-db를-날려먹었어요.md": {
+      "sourceSha256": "f725d4d919e579d6292bf390171659e4b8d23b9d51dcca994ae1b4cee404c632",
+      "translationSha256": "3304a7ec1997883ac1b5181b8580ca2e66bd334673f649ebd016d08aaad46f94"
+    },
+    "클래스-레벨-setter-사용의-위험성.md": {
+      "sourceSha256": "ebd99a0d6b3aa1d6cc235801274d3b7cbe02537162fe606f09c24bcd6ae129a7",
+      "translationSha256": "69aeebecb84d0f6407529fca4ba1ed53244711dcb1acf83be4cab63611d0ad2e"
+    },
+    "파괴는-창조에-앞선다.md": {
+      "sourceSha256": "9a16ee575b1fb5bc5bd353d325c2880c571abfb7d6f3ee0bd5bfd94aa5b0be12",
+      "translationSha256": "65dd5096841cf0f6cc09ac64582f444f4cf6797f4b4695fe3339b9a955151f35"
+    },
+    "플로이드-워셜-알고리즘-floyd-warshall-algorithm.md": {
+      "sourceSha256": "db864018f0cb438c9f32f0705cb844e6e15ff88cdf78b5c0e5c58de626a05178",
+      "translationSha256": "1661704e87ff6e5ddc014b756888700f3bf0ac5e053e7075aa5ab3e35ebf5fed"
+    },
+    "행복-전환-연습.md": {
+      "sourceSha256": "1da3200f4e6908170491d61d8cd908fb491c460af52b7d73f8769d4cb1fee554",
+      "translationSha256": "cb8675563d28d29d8110207a1ee33181a7dcab3d43a1d54dbdd5013b3eb6daf6"
+    },
+    "홍학의-자리.md": {
+      "sourceSha256": "892bbb15f96f0774da708e6f315fd24698c9cae2008da5abc2a8aee6b3fcdc97",
+      "translationSha256": "9d31f19d14dbb7a7db25858c909a9f1c2498136721d02dfb06d9c2547e2c6098"
+    },
+    "히스토그램에서-가장-큰-직사각형-백준-java.md": {
+      "sourceSha256": "4a90aa6933cbd185e93b219b4681fc06be4dce42d5d543b0ae9c129c755c5df1",
+      "translationSha256": "86377fd5f57c4fc76c0594a2ab1c2db02d0fda1e29fb41c9d17a62448923a714"
+    }
+  },
+  "corrections": [
+    {
+      "file": "node-js-실습-코드-복기.md",
+      "detail": "Localized human prose inside inline code formatting; kept process.env.변수명 as an actual placeholder with its English gloss."
+    },
+    {
+      "file": "knot의-전사-모델을-고르기까지.md",
+      "detail": "Translated the inline explanatory question and diarization label instead of retaining duplicate Korean text."
+    },
+    {
+      "file": "이토록-타인이-홀가분해지는-순간.md",
+      "detail": "Localized the two relationship quotes inside backticks while preserving their emotional implication."
+    },
+    {
+      "file": "noargsconstructor-안전한-객체-생성을-위한-접근-제어.md",
+      "detail": "Localized the inline technical label for the persistence context."
+    },
+    {
+      "file": "naver-223104931029.md",
+      "detail": "Removed the added qualifier cozy to match the original terse criticism more closely."
+    },
+    {
+      "file": "우아한-테크코스-8기-프리코스-1주차-회고.md",
+      "detail": "Smoothed the informal first-reaction punctuation without changing its tone."
+    },
+    {
+      "file": "react-2주차-정리.md",
+      "detail": "Localized prose labels inside inline backticks (ternary operator and && operator) while retaining actual identifiers. Used line-anchored fenced-block extraction so inline triple backticks do not consume subsequent prose."
+    },
+    {
+      "file": "우아한-테크코스-8기-최종-코딩테스트-후기.md",
+      "detail": "Localized the book title inside inline backticks."
+    },
+    {
+      "file": "나는-프롬프트를-잘-쓰고-있었을까.md",
+      "detail": "Localized quoted human prompts and opinions inside inline backticks, preserving their informal tone."
+    },
+    {
+      "file": "녹음-모델-전사-품질-개선-과정.md",
+      "detail": "Localized quoted service-comparison question and contrasting transcription sentences inside inline backticks; retained every measurement and evaluation limitation."
+    },
+    {
+      "file": "녹음-유실-해결하기.md",
+      "detail": "Localized the quoted lost-recording feedback inside inline backticks."
+    },
+    {
+      "file": "부분배열-고르기-백준-java.md",
+      "detail": "Refined the English explanation of multiplying the minimum by a sum of included values."
+    },
+    {
+      "file": "naver-223611938140.md",
+      "detail": "Removed an unintended hedge from the author’s view on cannibalism."
+    },
+    {
+      "file": "naver-224265022407.md",
+      "detail": "Changed whether to take responsibility to committing to take responsibility to preserve the original commitment."
+    },
+    {
+      "file": "다익스트라-알고리즘-dijkstra-algorithm.md",
+      "detail": "Preserved the original two-space opening-fence indentation."
+    },
+    {
+      "file": "naver-223666296733.md",
+      "detail": "Clarified that the aunt and husband are characters in the novel, rather than the reviewer’s relatives."
+    },
+    {
+      "file": "나는-내가-거절에-강한-사람인-줄-알았다.md",
+      "detail": "Preserved the present desire in the quoted refusal and made the team-finalization wording natural."
+    },
+    {
+      "file": "naver-223183634510.md",
+      "detail": "Removed an unsupported half-the-time qualifier."
+    },
+    {
+      "file": "naver-223254008254.md",
+      "detail": "Replaced an unsupported expansion of 한예고 with the conservative transliteration Hanyego."
+    },
+    {
+      "file": "naver-223023410825.md",
+      "detail": "Moved the fifteen-year and fifteen-minute time phrases to the start to prevent them attaching to the prior murders."
+    },
+    {
+      "file": "js-챌린지-4일차-til.md",
+      "detail": "Restored the full meaning of the source description excerpt, retaining its truncation instead of shortening the excerpt."
+    },
+    {
+      "file": "js-챌린지-1일차-til.md",
+      "detail": "Restored the full meaning of the source description excerpt, retaining its truncation instead of shortening the excerpt."
+    },
+    {
+      "file": "naver-224178026194.md",
+      "detail": "Restored the full meaning of the source description excerpt, retaining its truncation instead of shortening the excerpt."
+    },
+    {
+      "file": "naver-224266923896.md",
+      "detail": "Restored the full meaning of the source description excerpt, retaining its truncation instead of shortening the excerpt."
+    },
+    {
+      "file": "가장-긴-증가하는-부분-수열-2-백준-java.md",
+      "detail": "Restored the full meaning of the source description excerpt, retaining its truncation instead of shortening the excerpt."
+    },
+    {
+      "file": "플로이드-워셜-알고리즘-floyd-warshall-algorithm.md",
+      "detail": "Restored the full meaning of the source description excerpt, retaining its truncation instead of shortening the excerpt."
+    },
+    {
+      "file": "동물원-백준-java.md",
+      "detail": "Restored the full meaning of the source description excerpt, retaining its truncation instead of shortening the excerpt."
+    },
+    {
+      "file": "naver-223329041836.md",
+      "detail": "Restored the full meaning of the source description excerpt, retaining its truncation instead of shortening the excerpt."
+    },
+    {
+      "file": "naver-224101694735.md",
+      "detail": "Restored the full meaning of the source description excerpt, retaining its truncation instead of shortening the excerpt."
+    },
+    {
+      "file": "별-찍기-11-백준-java.md",
+      "detail": "Restored the full meaning of the source description excerpt, retaining its truncation instead of shortening the excerpt."
+    },
+    {
+      "file": "naver-223736984015.md",
+      "detail": "Restored the full meaning of the source description excerpt, retaining its truncation instead of shortening the excerpt."
+    },
+    {
+      "file": "줄-세우기-백준-java.md",
+      "detail": "Restored the full meaning of the source description excerpt, retaining its truncation instead of shortening the excerpt."
+    },
+    {
+      "file": "jackson-라이브러리와-dto-규칙.md",
+      "detail": "Restored the full meaning of the source description excerpt, retaining its truncation instead of shortening the excerpt."
+    },
+    {
+      "file": "naver-224264916085.md",
+      "detail": "Restored the full meaning of the source description excerpt, retaining its truncation instead of shortening the excerpt."
+    },
+    {
+      "file": "차분-배열-difference-array.md",
+      "detail": "Restored the full meaning of the source description excerpt, retaining its truncation instead of shortening the excerpt."
+    },
+    {
+      "file": "naver-223202006303.md",
+      "detail": "Restored the full meaning of the source description excerpt, retaining its truncation instead of shortening the excerpt."
+    },
+    {
+      "file": "naver-223620243229.md",
+      "detail": "Restored the full meaning of the source description excerpt, retaining its truncation instead of shortening the excerpt."
+    },
+    {
+      "file": "naver-223123886503.md",
+      "detail": "Restored the full meaning of the source description excerpt, retaining its truncation instead of shortening the excerpt."
+    },
+    {
+      "file": "naver-224195985491.md",
+      "detail": "Restored the full meaning of the source description excerpt, retaining its truncation instead of shortening the excerpt."
+    },
+    {
+      "file": "naver-223023480632.md",
+      "detail": "Restored the full meaning of the source description excerpt, retaining its truncation instead of shortening the excerpt."
+    },
+    {
+      "file": "naver-223035704438.md",
+      "detail": "Restored the full meaning of the source description excerpt, retaining its truncation instead of shortening the excerpt."
+    },
+    {
+      "file": "naver-223102940127.md",
+      "detail": "Restored the full meaning of the source description excerpt, retaining its truncation instead of shortening the excerpt."
+    },
+    {
+      "file": "naver-223023559823.md",
+      "detail": "Restored the full meaning of the source description excerpt, retaining its truncation instead of shortening the excerpt."
+    },
+    {
+      "file": "naver-223254965712.md",
+      "detail": "Restored the full meaning of the source description excerpt, retaining its truncation instead of shortening the excerpt."
+    },
+    {
+      "file": "naver-223023420327.md",
+      "detail": "Restored the full meaning of the source description excerpt, retaining its truncation instead of shortening the excerpt."
+    },
+    {
+      "file": "naver-223027708704.md",
+      "detail": "Restored the full meaning of the source description excerpt, retaining its truncation instead of shortening the excerpt."
+    },
+    {
+      "file": "naver-223254978538.md",
+      "detail": "Restored the full meaning of the source description excerpt, retaining its truncation instead of shortening the excerpt."
+    },
+    {
+      "file": "naver-223057266639.md",
+      "detail": "Restored the full meaning of the source description excerpt, retaining its truncation instead of shortening the excerpt."
+    },
+    {
+      "file": "naver-223183641673.md",
+      "detail": "Restored the full meaning of the source description excerpt, retaining its truncation instead of shortening the excerpt."
+    },
+    {
+      "file": "naver-223183665170.md",
+      "detail": "Restored the full meaning of the source description excerpt, retaining its truncation instead of shortening the excerpt."
+    },
+    {
+      "file": "naver-223036847502.md",
+      "detail": "Restored the full meaning of the source description excerpt, retaining its truncation instead of shortening the excerpt."
+    },
+    {
+      "file": "naver-223057275265.md",
+      "detail": "Restored the full meaning of the source description excerpt, retaining its truncation instead of shortening the excerpt."
+    },
+    {
+      "file": "naver-223876674407.md",
+      "detail": "Restored the full meaning of the source description excerpt, retaining its truncation instead of shortening the excerpt."
+    },
+    {
+      "file": "내-앞에-돌좀-치워.md",
+      "detail": "Changed the post-deployment workload from an increase in speed to a doubling of work, matching 곱절로 쌓여갔다."
+    },
+    {
+      "file": "홍학의-자리.md",
+      "detail": "Made explicit that Dahyun is the target of others’ hatred, without assigning a gender absent from the source."
+    },
+    {
+      "file": "naver-223188675132.md",
+      "detail": "Changed “title story” to “featured story” to avoid assuming that 대표작 necessarily means the title story."
+    },
+    {
+      "file": "naver-223876674407.md",
+      "detail": "Removed “throughout” from the ambiguous opening 내 불쾌했다 to avoid adding a duration not explicit in the source."
+    },
+    {
+      "file": "레벨3-회고-조각들.md",
+      "detail": "Translated human prose inside inline backticks following the coordinator’s clarification; preserved actual code identifiers and all fenced code."
+    },
+    {
+      "file": "서로-다른-안다의-기준.md",
+      "detail": "Translated human prose inside inline backticks following the coordinator’s clarification; preserved actual code identifiers and all fenced code."
+    },
+    {
+      "file": "정체-모를-녹음-종료-이슈-해결-과정.md",
+      "detail": "Translated human prose inside inline backticks following the coordinator’s clarification; preserved actual code identifiers and all fenced code."
+    },
+    {
+      "file": "나는-좋은-피드백을-주는-사람.md",
+      "detail": "Translated human prose inside inline backticks following the coordinator’s clarification; preserved actual code identifiers and all fenced code."
+    },
+    {
+      "file": "질문도-실력이다.md",
+      "detail": "Translated human prose inside inline backticks following the coordinator’s clarification; preserved actual code identifiers and all fenced code."
+    }
+  ],
+  "sourceCaveats": [
+    {
+      "file": "node-js-실습-코드-복기.md",
+      "detail": "Original teaching simplifications retained, including bcrypt described as encryption, JWT as a one-time encrypted token, and unconditional .env protection language; fenced code and its Korean comments remain verbatim."
+    },
+    {
+      "file": "react-1주차-정리.md",
+      "detail": "Original simplified claims about full HTML reloads, lifecycle timing, effect execution, and useCallback preventing Child rerenders are preserved rather than silently corrected."
+    },
+    {
+      "file": "java-integer가-있는데-int를-왜-쓰나요-래퍼-클래스-wrapper-class-에-대하여.md",
+      "detail": "Original blanket stack/heap explanation and object-allocation claims are preserved. Original malformed bold marker around Integer.valueOf and missing operators in an arithmetic list are also retained."
+    },
+    {
+      "file": "이진-탐색-binary-search.md",
+      "detail": "Original min/mid naming inconsistency and closest-index/insertion explanation preserved."
+    },
+    {
+      "file": "유니온-파인드-union-find.md",
+      "detail": "Original inconsistent complexity claim says path compression reduces O(log N) to O(N), despite earlier near-O(1) wording; translated exactly in meaning."
+    },
+    {
+      "file": "글쓰기-스터디-자살-사건.md",
+      "detail": "The today/tomorrow/Eden line is an intentional Korean sound-based joke; retained the backend cohort member Eden reference, though its wordplay cannot carry over directly."
+    },
+    {
+      "file": "전사-시간-단축-과정.md",
+      "detail": "Korean speech literals 안녕하세요 / 안녕 / 하세요 are preserved because the actual split is essential to the example; an English hello gloss explains them."
+    },
+    {
+      "file": "우아한-테크코스-8기-백엔드-최종-합격-후기.md",
+      "detail": "Large runs of HTML line breaks preserved from original."
+    },
+    {
+      "file": "우아한-테크코스-8기-프리코스-3주차-회고.md",
+      "detail": "Original unmatched quotation punctuation in the feedback block retained alongside its Markdown structure."
+    },
+    {
+      "file": "naver-223023522635.md",
+      "detail": "Pre-existing sample separately reread against its Korean original; no change required."
+    },
+    {
+      "file": "react-2주차-정리.md",
+      "detail": "Original claims that display:none removes elements from the DOM and that every child re-renders on Context value changes are retained as written, not fact-corrected. Original inline triple backticks in the backtick explanation are preserved."
+    },
+    {
+      "file": "naver-223637481357.md",
+      "detail": "Original overview says Carol calculates gxz and gxy, whereas its later detailed process says gxz and gyz; retained the original discrepancy. No protocol execution or independent verification was performed."
+    },
+    {
+      "file": "js-챌린지-5일차-til.md",
+      "detail": "Original simplified statements about function scope, this, and garbage collection are retained; fenced examples including Korean comments remain verbatim."
+    },
+    {
+      "file": "react-spring-기초-실습-미니-프로젝트.md",
+      "detail": "Original malformed GitHub link markup and the stated content-table name are retained. Docker/JVM analogy and generalizations are translated faithfully."
+    },
+    {
+      "file": "백준-2565번-전깃줄-java.md",
+      "detail": "Original remaining-array example omits 10 despite the stated removals; retained that numeric discrepancy."
+    },
+    {
+      "file": "http-주소창에-넣는-그거.md",
+      "detail": "Original describes the response receiver as a server, mentions GET among body-relevant methods, and spells applcation/json that way in prose; retained these claims/typo."
+    },
+    {
+      "file": "파괴는-창조에-앞선다.md",
+      "detail": "Bug bounty amounts are historical claims in the supplied post and were not independently refreshed. Image caption dates were translated without changing image paths."
+    },
+    {
+      "file": "다익스트라-알고리즘-dijkstra-algorithm.md",
+      "detail": "Original uses a plain Queue while claiming O(E log V) complexity and optimization via priority queue; retained those claims."
+    },
+    {
+      "file": "naver-223666668304.md",
+      "detail": "Original calls The Light in Your Eyes a film; retained its wording."
+    },
+    {
+      "file": "문자열-폭발-백준-java.md",
+      "detail": "Original String/StringBuilder memory-allocation simplifications and trailing slash in the delete heading are retained."
+    },
+    {
+      "file": "위상-정렬-topological-sort.md",
+      "detail": "Original gloss equates removal with not enqueuing and gives a simplified in-degree explanation; retained as written."
+    },
+    {
+      "file": "naver-223666296733.md",
+      "detail": "Original unusual adjacent emphasis markers in the long quotation are preserved."
+    },
+    {
+      "file": "naver-223254008254.md",
+      "detail": "Original institution abbreviation 한예고 is ambiguous; Hanyego avoids inventing an expansion."
+    },
+    {
+      "file": "우아한-테크코스-8기-오픈미션-보고서.md",
+      "detail": "Preserved the source’s bare generic/type-like HTML text, command headings, list structure, and Git implementation claims without technical correction."
+    },
+    {
+      "file": "js-챌린지-2일차-til.md",
+      "detail": "Preserved the original claim that Number exactly represents integers from -2^63 to 2^63-1; preserved the loosely formatted undefined/null comparison and unfenced example structure."
+    },
+    {
+      "file": "jwt-json-web-token-란.md",
+      "detail": "Preserved the original JWT simplifications and claims about encrypted signatures, Base64, forced logout, and stolen-token handling; translation is not a technical revision."
+    },
+    {
+      "file": "내-앞에-돌좀-치워.md",
+      "detail": "Korean organization names remain intentionally in the aside explaining that their Korean spellings contain no spaces. Team nickname 유루이흑넛 is romanized phonetically."
+    },
+    {
+      "file": "최소비용-구하기-2-백준-java.md",
+      "detail": "Preserved the source’s broad claim that Dijkstra has lower time complexity than DFS/BFS rather than silently correcting it."
+    },
+    {
+      "file": "가장-긴-증가하는-부분-수열-2-백준-java.md",
+      "detail": "Preserved original arithmetic 100,000 × 100,000 = one billion and malformed bold spans with a space before closing **."
+    },
+    {
+      "file": "나는-좋은-피드백을-주는-사람.md",
+      "detail": "The original contains Korean prose quotations inside fenced blocks. These remain verbatim because exact fenced-code preservation was explicitly required."
+    },
+    {
+      "file": "플로이드-워셜-알고리즘-floyd-warshall-algorithm.md",
+      "detail": "Preserved the original statement describing starting/destination/intermediate nodes as infinity, without rewriting it into a different technical claim."
+    },
+    {
+      "file": "동물원-백준-java.md",
+      "detail": "Preserved the original switches between left/right and upper/lower cells, and row/column terminology."
+    },
+    {
+      "file": "naver-222123483004.md",
+      "detail": "Preserved all-prose-as-H2 structure and malformed Markdown image excerpts in description; description image paths contain spaces in the source and remain unchanged."
+    },
+    {
+      "file": "naver-223736984015.md",
+      "detail": "Preserved original combinations/permutations terminology inconsistency and repeated H2 headings."
+    },
+    {
+      "file": "jackson-라이브러리와-dto-규칙.md",
+      "detail": "Preserved the source’s contradictory sentence “not Response DTOs, only Response DTOs” and generalized Jackson/record explanations without technical correction."
+    },
+    {
+      "file": "static-내부-클래스의-사용.md",
+      "detail": "Preserved original memory-leak and nested-class assertions, including the awkward instruction to manage static."
+    },
+    {
+      "file": "naver-223023470929.md",
+      "detail": "Preserved the source’s claim that humans alone among mammals get herniated discs as a reported book claim, not an independently verified fact."
+    },
+    {
+      "file": "naver-223876674407.md",
+      "detail": "The opening 내 불쾌했다 appears malformed; rendered conservatively as “I felt uncomfortable.”"
+    }
+  ]
+}

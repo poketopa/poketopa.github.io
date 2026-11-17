@@ -1,0 +1,18 @@
+---
+import type { GetStaticPaths } from 'astro';
+import { getPublishedPosts } from '../../../utils/posts';
+import Page from '../../posts/[...id].astro';
+export const getStaticPaths = (async () => {
+  const posts = await getPublishedPosts('en');
+
+  return posts.map((post, index) => ({
+    params: { id: post.id },
+    props: {
+      post,
+      previous: posts[index + 1],
+      next: posts[index - 1],
+    },
+  }));
+}) satisfies GetStaticPaths;
+---
+<Page {...Astro.props} />
