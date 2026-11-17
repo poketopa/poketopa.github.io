@@ -27,7 +27,7 @@ const koreanPath = Astro.url.pathname === '/404/' ? '/' : Astro.url.pathname.rep
 .language-switch a:focus-visible { outline: 2px solid var(--focus); outline-offset: 3px; }
 </style>
 <script>
-  document.querySelectorAll<HTMLAnchorElement>('[data-language]').forEach(link => {
+  document.querySelectorAll<HTMLAnchorElement>('a[data-language]').forEach(link => {
     link.addEventListener('click', () => { link.hash = location.hash; link.search = location.search; });
   });
 </script>
